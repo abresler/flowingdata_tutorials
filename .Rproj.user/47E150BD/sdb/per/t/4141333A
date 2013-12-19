@@ -1,0 +1,16 @@
+{
+    "contents" : "## Contour and Filled Contour map for UFO sightings\nsetwd(\"~/Desktop/Github/flowingdata_tutorials/contour_maps\")\n# Counts matrix derived using Python/MySQL\ncnts <- read.csv(\"cnt_matrix.txt\", header=FALSE)\ncnts_matrix <- as.matrix(cnts)\ndimnames(cnts_matrix)[[2]] <- NULL\n\n# Transform counts matrix\ncnts_matrix <- t(cnts_matrix[105:1,])\n\n# Make the contour map, different levels and colors\ncontour(cnts_matrix)\ncontour(log(cnts_matrix+1))\ncontour(log(cnts_matrix+1), xaxt=\"n\", yaxt=\"n\", nlevels=5, lwd=0.5)\n\n# Color palettes for contours\nbwpal <- colorRampPalette(c(\"white\", \"black\"))\norangepal <- colorRampPalette(c(\"white\", \"#c75a00\"))\n\n# Contour with colors\ncontour(log(cnts_matrix+1), xaxt=\"n\", yaxt=\"n\", nlevels=5, col=bwpal(6))\ncontour(log(cnts_matrix+1), xaxt=\"n\", yaxt=\"n\", nlevels=10, col=orangepal(12))\ncontour(log(cnts_matrix+1), xaxt=\"n\", yaxt=\"n\", nlevels=10, col=rainbow(12))\n\n\n\n# Palettes for filled contours\nredpal <- colorRampPalette(c(\"black\", \"red\", \"white\"))\ncyanpal <- colorRampPalette(c(\"black\", \"cyan\", \"white\"))\npurppal <- colorRampPalette(c(\"black\", \"purple\", \"white\"))\nbluepal <- colorRampPalette(c(\"black\", \"blue\", \"white\"))\n\n# Make the filled contour plot\nfilled.contour(log(cnts_matrix+1), color.palette=redpal, nlevels=5)\nfilled.contour(log(cnts_matrix+1), color.palette=redpal, nlevels=30)\n\n# Trying different palettes\nfilled.contour(log(cnts_matrix+1), color.palette=cyanpal, nlevels=30)\nfilled.contour(log(cnts_matrix+1), color.palette=purppal, nlevels=30)\nfilled.contour(log(cnts_matrix+1), color.palette=bluepal, nlevels=30)\nfilled.contour(log(cnts_matrix+1), color.palette=bwpal, nlevels=30)\n\n\n\n#### DEPRECATED - SUPER SLOW IN RETRIEVING COUNTS - USE THE PYTHON SCRIPT INSTEAD\n\ncon <- dbConnect(MySQL(), user=\"root\", password=\"\", dbname=\"ufo\", host=\"localhost\")\nsql_beg <- \"SELECT id, lat, lng FROM sightings WHERE MBRContains(GeomFromText('LineString(\"\nsql_end <- \")'), lat_lng)\"\n\n# 41.6 -91.6, 42 -91.5\n\nlat_NW <- 50.523427\nlng_NW <- -128.847656\nlat_SE <- 23.725012\nlng_SE <- -61.347656\n\nlats <- seq(lat_NW, lat_SE, by=-.0725)\nlngs <- seq(lng_NW, lng_SE, by=.0725)\n\nufo_matrix <- matrix(nrow=length(lats), ncol=length(lngs))\n\nfor (i in 2:length(lats)) {\n\tfor (j in 2:length(lngs)) {\n\t\t\n\t\tsql_full <- paste(sql_beg, lats[i-1], \" \", lngs[j-1], \", \", lats[i], \" \", lngs[j], sql_end, sep=\"\")\n\t\tsightings <- dbGetQuery(con, sql_full)\n\t\tcnt <- length(sightings$id)\n\t\tufo_matrix[i, j] <- cnt\n\t}\n}\n\n",
+    "created" : 1387142717043.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2047404973",
+    "id" : "4141333A",
+    "lastKnownWriteTime" : 1387209798,
+    "path" : "~/Desktop/Github/flowingdata_tutorials/contour_maps/ufo.R",
+    "project_path" : "contour_maps/ufo.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

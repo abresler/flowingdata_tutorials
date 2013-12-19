@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0078)http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> How to visualize data with cartoonish faces ala Chernoff</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./How to visualize data with cartoonish faces ala Chernoff_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./How to visualize data with cartoonish faces ala Chernoff_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./How to visualize data with cartoonish faces ala Chernoff_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<link rel="alternate" type="application/rss+xml" title="FlowingData » How to visualize data with cartoonish faces ala Chernoff Comments Feed" href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/feed/">
+<script type="text/javascript" src="./How to visualize data with cartoonish faces ala Chernoff_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./How to visualize data with cartoonish faces ala Chernoff_files/jquery.js"></script>
+<script type="text/javascript" src="./How to visualize data with cartoonish faces ala Chernoff_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="A house that knows when you’re happy and sad" href="http://flowingdata.com/2010/08/30/a-house-that-knows-when-youre-happy-and-sad/">
+<link rel="next" title="Best of FlowingData – August 2010" href="http://flowingdata.com/2010/08/31/best-of-flowingdata-august-2010/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./How to visualize data with cartoonish faces ala Chernoff_files/How to visualize data with cartoonish faces ala Chernoff.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=11227">
+ <script type="text/javascript" src="./How to visualize data with cartoonish faces ala Chernoff_files/democracy.js"></script><link rel="stylesheet" href="./How to visualize data with cartoonish faces ala Chernoff_files/basic.css" type="text/css"><link rel="stylesheet" href="./How to visualize data with cartoonish faces ala Chernoff_files/style(1).css" type="text/css"><link rel="stylesheet" href="./How to visualize data with cartoonish faces ala Chernoff_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#wgjjmuextjizqhzzpstgvivqexpzycyuvvi{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.wgjjmuextjizqhzzpstgvivqexpzycyuvvi-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#wgjjmuextjizqhzzpstgvivqexpzycyuvvi br{display:block !important;}#wgjjmuextjizqhzzpstgvivqexpzycyuvvi span{background:transparent !important;}#wgjjmuextjizqhzzpstgvivqexpzycyuvvi div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#wgjjmuextjizqhzzpstgvivqexpzycyuvvi a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#wgjjmuextjizqhzzpstgvivqexpzycyuvvi{display:none !important;}}</style></head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./How to visualize data with cartoonish faces ala Chernoff_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-11227">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/chernoff-faces/" rel="tag">Chernoff Faces</a>, <a href="http://flowingdata.com/tag/multivariate/" rel="tag">multivariate</a>, <a href="http://flowingdata.com/tag/r/" rel="tag">R</a> </div>
+<h1>How to visualize data with cartoonish faces ala Chernoff</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./How to visualize data with cartoonish faces ala Chernoff_files/How-to-visualize-data-with-cartoonish-faces.png" class="attachment-long-form-thumb wp-post-image" alt="How to visualize data with cartoonish faces" width="425" height="216" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2010/08/How-to-visualize-data-with-cartoonish-faces.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+The goal of Chernoff faces is to show a bunch of variables at once via facial features like lips, eyes, and nose size. Most of the time there are better solutions, but the faces can be interesting to work with. </div>
+<div id="tut-meta">
+<div class="button-link"><a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/crime-chernoff-faces-by-state-edited-2/">Demo</a></div>
+<div class="button-link"><a href="http://flowingdata.com/?s2member_file_download=2010/chernoff-source.zip">Download Source</a></div>
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>FlowingData reader Chris asks:</p>
+<blockquote><p>I was wondering, have you ever considered doing a Chernoff faces tutorial for R? I think Chernoff faces are pretty interesting and I haven't seen much about them on the web.</p></blockquote>
+<p>This wasn't the first time someone's asked how to make Chernoff faces, so I did a quick search. Guess what. There's an <a href="http://bm2.genes.nig.ac.jp/RGM2/R_current/library/aplpack/man/faces.html">R package for that</a>. This tutorial describes how to apply Chernoff faces to your own data.<br>
+<span id="more-11227"></span></p>
+<h2>Chernoff Faces</h2>
+<p>The point of Chernoff faces is to display multiple variables at once by positioning parts of the human face, such as ears, hair, eyes, and nose, based on numbers in a dataset. The assumption is that we can read people's faces easily in real life, so we should be able to recognize small differences when they represent data. Now that's a pretty big assumption, but debate aside, they're fun to make. </p>
+<p><span class="tip">1. Because these are faces rather than abstract geometric shapes, be careful what you show with this method and who you show it to. As was the case in this tutorial, those who aren't familiar with the method might take the faces literally and take offense.</span>We've seen them <a href="http://flowingdata.com/2008/04/04/chernoff-faces-to-display-baseball-managers-from-2007-mlb-season/">applied to baseball players</a> and <a href="http://en.wikipedia.org/wiki/File:Chernoff_faces_for_evaluations_of_US_judges.svg">judge ratings</a>. In this tutorial, we'll look at US crime rate by state.<sup>1</sup></p>
+<h2>Download R</h2>
+<p>Like in previous tutorials, we'll be using R (surprise, surprise), the software environment for statistical computing and graphics, to make our Chernoff faces, so if you haven't already,<a href="http://cran.stat.ucla.edu/"> download and install R</a> first before moving on. It's free, open-source, and a one-click install. Go on, I'll wait for you.</p>
+<h2>Step 1. Install package</h2>
+<p>Once you've opened up R, the first thing we need to do is install the <a href="http://cran.r-project.org/web/packages/aplpack/index.html">aplpack</a> (Another Plot Package) package by Peter Wolf. Go to the the "Packages &amp; Data" menu in R, and select the "Package Installer." Select "CRAN (binaries)" in the dropdown menu if it's not already on that, and then click on "Get List." Scroll down to "aplpack" and click on the "Install Selected" button and installation should begin.</p>
+<p><span class="tip">The Another Plot Package will do most of the grunt work.</span><img src="./How to visualize data with cartoonish faces ala Chernoff_files/Install-R-package.png" alt="" title="Install R package" class="alignnone size-medium wp-image-11241" width="550" height="600" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2010/08/Install-R-package.png?resize=550%2C600" scale="2"></p>
+<p>Alternatively, you can also just type this in the R console:</p>
+<p><code>install.packages("aplpack")</code></p>
+<h2>Step 2. Load the data</h2>
+<p>Next we need to load the data into the R environment. Like I said, we'll be looking at crime rates by state. I got the data from <a href="http://infochimps.org/datasets/crime-rates-by-state-2004-and-2005-and-by-type-2005-cleaned-up-v--2">Infochimps</a>, which is actually from Table 301 of the 2008 US Statistical Abstract, but it's typically a headache going through dot gov navigation, so I avoid it when I can. </p>
+<p>I cleaned the datafile I got from Infochimps a little bit more so it only includes the numbers we're interested in. You can find it <a href="http://datasets.flowingdata.com/crimeRatesByState-formatted.csv">here</a>, but you don't need to download it. We'll load it directly into R via the URL using the <code>read.csv()</code> command.</p>
+<p><code>crime &lt;- read.csv("http://datasets.flowingdata.com/crimeRatesByState-formatted.csv")</code></p>
+<p>To view the data, type the following:</p>
+<p><code>crime[1:6,]</code></p>
+<p>This shows you the first six lines of our dataset. Note that there are eight columns. The first column is state name, with the exception of the row for US average and District of Columbia later on. The rest of the columns are seven categories of crime.</p>
+<h2>Step 3. Make some faces</h2>
+<p>Once the data is in, it's actually really easy to make some faces using the <code>faces()</code> function from the <code>aplpack</code> package. So far we've only installed the package, so now we'll load it:</p>
+<p><code>library(aplpack)</code></p>
+<p>If you get errors when you try to load, you might want to check to see if you installed the package correctly.</p>
+<p>Okay, let's make some faces:</p>
+<p><code>faces(crime[,2:8])</code></p>
+<p>Here we're telling R to use the <code>faces()</code> function, using columns 2 through 8 of our crime data. Remember, the first column is state name. You get something that <a href="http://flowingdata.com/?attachment_id=11249">looks like this</a>:</p>
+<p><span class="tip">Default Chernoff Faces using <code>faces()</code></span><img src="./How to visualize data with cartoonish faces ala Chernoff_files/Chernoff-faces-showing-crime-part-1.png" alt="" title="Chernoff faces showing crime - part 1" class="alignnone size-medium wp-image-11249" width="550" height="605" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2010/08/Chernoff-faces-showing-crime-part-1.png?resize=550%2C605" scale="2"></p>
+<h2>Step 4. Change Features</h2>
+<p>This is pretty much what we want except for two things. The first is that the faces are labeled with numbers. That isn't of much use without a key. The second is that some of the faces are smiling. For more positive datasets like quality of life or baseball stats, that would make sense. The higher the value, the better. This is crime data though. The higher the value, the worse. Smiles for rate of larceny theft doesn't seem quite right.</p>
+<p>Unfortunately, the <code>faces()</code> function doesn't let us choose what face parts to associate with each metric, so we need to find a workaround. According to the documentation (view by typing <code>?faces</code>), the curve of the smile is applied to the sixth column in the input matrix, which is <code>crime</code> in this case.</p>
+<p>Ah. Here's what we'll do. We make the sixth column in our data all the same value. That way all smile curves will be neutral. Here's how we can do that:</p>
+<p><code>crime_filled &lt;- cbind(crime[,1:6], rep(0, length(crime$state)), crime[,7:8])</code></p>
+<p>The <code>cbind()</code> function combines multiple columns to form a matrix. In the above, we combine the first six columns of <code>crime</code>, stick a column of zeros whose length matches the number of rows in our crime data, and then we end with the last two columns in <code>crime</code>. We save the new matrix into a variable called <code>crime_filled</code>. Similar to in Step 2, you can type the following to see the first rows of <code>crime_filled</code>.</p>
+<p><code>crime_filled[1:6,]</code></p>
+<p>Notice the new column of zeros?</p>
+<p>Now use <code>faces()</code> with <code>crime_filled</code>: </p>
+<p><code>faces(crime_filled[,2:8])</code></p>
+<p>We get similar faces, but with no more smiles:</p>
+<p><span class="tip">Using different features to indicate variables</span><img src="./How to visualize data with cartoonish faces ala Chernoff_files/Chernoff-faces-with-no-smiles.png" alt="" title="Chernoff faces with no smiles" class="alignnone size-medium wp-image-11255" width="550" height="613" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2010/08/Chernoff-faces-with-no-smiles.png?resize=550%2C613" scale="2"></p>
+<h2>Step 5. Add labels</h2>
+<p>Instead of numbers, it'd be much more useful to include state names. Easy.</p>
+<p><code>faces(crime_filled[,2:8], labels=crime_filled$state)</code></p>
+<p>It's the same as previous, but we use the <code>labels</code> argument to use the <code>state</code> column in <code>crime_filled</code> to label with state names.</p>
+<p><span class="tip">Add state name labels so it's not so ambiguous.</span><img src="./How to visualize data with cartoonish faces ala Chernoff_files/Chernoff-faces-with-state-names.png" alt="" title="Chernoff faces with state names" class="alignnone size-medium wp-image-11258" width="550" height="571" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2010/08/Chernoff-faces-with-state-names.png?resize=550%2C571" scale="2"></p>
+<p>Much more useful now. We can easily associate the faces with a state. It's a little cluttered, but we can fix that up easy in Illustrator.</p>
+<h2>Step 6. Fix up in Illustrator (optional)</h2>
+<p>You can pretty much stop here if you like, but as most of you know, I like to save the image as a PDF, bring it into <a href="http://www.amazon.com/gp/product/B003B32AOW?ie=UTF8&tag=flowingdata-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B003B32AOW">Adobe Illustrator</a> (aff), and clean things up to make it more readable. You can also try <a href="http://www.inkscape.org/">Inkscape</a>, the open-source alternative, although I've never tried it.</p>
+<p>After some label cleanup and some annotation, <a href="http://flowingdata.com/?attachment_id=11265">here's our final result</a>. What's going on there Washington, D.C.?</p>
+<p><span class="tip">Uncluttered labels, unambiguous features, and cited data source</span><a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/crime-chernoff-faces-by-state-edited-2/" rel="attachment wp-att-20488"><img src="./How to visualize data with cartoonish faces ala Chernoff_files/Crime-Chernoff-Faces-by-state-edited1-625x871.gif" alt="" title="Crime Chernoff Faces by state edited" class="alignnone size-medium wp-image-20488" width="625" height="871" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2010/08/Crime-Chernoff-Faces-by-state-edited1-625x871.gif?resize=625%2C871" scale="2"></a></p>
+<p>Not too bad, right?</p>
+<p>Read the <a href="http://bm2.genes.nig.ac.jp/RGM2/R_current/library/aplpack/man/faces.html">R documentation</a> on <code>faces()</code> for more details on what else you can do with the function. Remember, documentation is your friend when it comes to making full use of R.</p>
+<p>Now go on. Have some fun with your new Chernoff toy.</p>
+<p>For more examples, guidance, and all-around data goodness like this, <a href="http://book.flowingdata.com/">order Visualize This</a>, the FlowingData book on visualization, statistics, and design.</p>
+				
+				<div class="clear-line"></div>
+			
+							</div><!-- @end .entry-content -->
+			
+			
+		</div><!-- @end entry -->
+		
+		<div class="clear-line"></div>
+		
+
+        <div id="end"></div>
+
+		        <!-- <hr class="thin" /> -->
+			
+
+			
+	<span id="comments"></span>
+
+<div style="width:625px">
+    
+
+
+
+		
+	<div id="comments-block">	
+		<h2>21 Comments</h2>
+			
+		<ul class="commentlist">
+				
+   	<li class="comment even thread-even depth-1" id="li-comment-49528">
+		<div id="comment-49528" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/26bef73f579ca85d84376a4e92739c37" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/26bef73f579ca85d84376a4e92739c37?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">lars</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49528">August 31, 2010 at 2:14 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>What you have done here is racist. Sorry to be so blunt. If you compare the facial features of a Caucasian with the one of an Afro-American, then the Afro-Americans have in average fuller lips than the Caucasians. Now you associate the fuller lips with “aggravated assault” and “robbery”. Seeing this, I am rather dubious about Chernoff faces at all. As you have put some effort in this and might not want to delete it, you might want to consider to reverse indicators. As I very much like you blog and am fond of all you other selections, please do not take this criticism personal. But I hope you can follow my reasoning. I am also happy to discuss with you via email.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+<ul class="children">
+	
+   	<li class="comment odd alt depth-2" id="li-comment-49531">
+		<div id="comment-49531" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/02db387b9275ca5e337f764e3f487199" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/02db387b9275ca5e337f764e3f487199?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">Robofish</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49531">August 31, 2010 at 3:30 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>Lars, you’re the person associating race to the images. Might want to do a double-take before pulling the race card…</p>
+<p>Interesting how a visualisation like this can be misconstrued though.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+<ul class="children">
+	
+   	<li class="comment even depth-3" id="li-comment-49534">
+		<div id="comment-49534" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/26bef73f579ca85d84376a4e92739c37" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/26bef73f579ca85d84376a4e92739c37?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">lars</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49534">August 31, 2010 at 3:59 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>Dear Robofish, thank you for your answer. Be assured that I am not a person being quick on pulling the race card. The argument you use I know. And I agree, that in many situations it is actually the interpreter who reveals more about his or her mindset (and that in a negative way) than about the object criticized. But on the other hand there are a number of codes understood by everyone in our culture which are used for communication. This starts with the same stop sign used around the world and continues with everyday iconography. Now when we turn to caricatures, then the full lips are an iconography used to depict people of African origin. So, I think that your argument does not carry. It is the same as saying that it is me who sees a Jew in a Nazi caricature that “only” shows a person with a beaked nose. </p>
+<p>I hope and assume that you support the above reasoning. If this is the case then the discussion is about what is part of established everyday iconography – taking the context in which it shows up into account also – and what is an association that is only revealing about the interpreters mindset. As there is no way to define a clear boundary here, this will be a very subjective discussion – and its outcome, if there is one at all, probably not very relevant. </p>
+<p>So in my view everyone trying to be conscious about such issues, should anticipate some of the potential criticism and at times make clear that his/her intentions are not of a racist nature and at other times ignore single opinions, so that the mindset of one will not cause divides where there were none before.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+	
+   	<li class="comment odd alt depth-3" id="li-comment-52062">
+		<div id="comment-52062" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/e71a2f4ff20d0023286957d46f8861c8" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/e71a2f4ff20d0023286957d46f8861c8?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">fred</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-52062">September 28, 2010 at 8:40 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>@lars: The Nazi example is a straw man. You’re familiar with Nazi ideology, so you can infer that they’re probably going to attack Jews.</p>
+<p>Your argument relies on historical knowledge of the author. Since no ideological context exists here, you cannot make an informed decision about his intent.</p>
+<p>FWIW, the faces with large lips looked like clowns to me, not any particular race or culture.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	
+   	<li class="comment even depth-2" id="li-comment-49549">
+		<div id="comment-49549" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/2c4874805030568a3b6714cd79d46c73" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/2c4874805030568a3b6714cd79d46c73?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49549">August 31, 2010 at 9:09 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>@lars – That honestly never crossed my mind, but I can see how you might see that now that you point it out. My apologies if it caused any offense. I hope people can see this only as a proof of concept over any kind of commentary on culture or race.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+<ul class="children">
+	
+   	<li class="comment odd alt depth-3" id="li-comment-49551">
+		<div id="comment-49551" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/93bea07e713080ed0d5be6865d6e7cf4" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/93bea07e713080ed0d5be6865d6e7cf4?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn"><a href="http://peltiertech.com/WordPress/" rel="external nofollow" class="url">Jon Peltier</a></cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49551">August 31, 2010 at 9:45 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>You mean, “disproof of concept.”</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	
+   	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-49536">
+		<div id="comment-49536" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/93bea07e713080ed0d5be6865d6e7cf4" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/93bea07e713080ed0d5be6865d6e7cf4?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn"><a href="http://peltiertech.com/WordPress/" rel="external nofollow" class="url">Jon Peltier</a></cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49536">August 31, 2010 at 5:29 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>I’ve seen this and numerous other glyph systems used to try to convey information. Aside from showing pretty icons, they are practically useless. Recognizing emotions in facial features is inbred, but converting facial features to unrelated variables is cognitively impossible.</p>
+<p>This data is better represented using parallel coordinates or a set of small multiple charts.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+<ul class="children">
+	
+   	<li class="comment odd alt depth-2" id="li-comment-49538">
+		<div id="comment-49538" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/deb0805d249a3986889f6d5d5deb7ab5" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/deb0805d249a3986889f6d5d5deb7ab5?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">bob</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49538">August 31, 2010 at 6:33 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>agreed.  boo.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+	
+   	<li class="comment even depth-2" id="li-comment-49548">
+		<div id="comment-49548" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/2c4874805030568a3b6714cd79d46c73" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/2c4874805030568a3b6714cd79d46c73?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49548">August 31, 2010 at 8:56 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>Robert already supplied a good critique of the methods:</p>
+<p><a href="http://eagereyes.org/VisCrit/ChernoffFaces.html" rel="nofollow">http://eagereyes.org/VisCrit/ChernoffFaces.html</a></p>
+<p>These are definitely not for analysis. Like I said already, they’re just for fun.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+<ul class="children">
+	
+   	<li class="comment odd alt depth-3" id="li-comment-49575">
+		<div id="comment-49575" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/135133ed487ab74854bb225627a4ad5d" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/135133ed487ab74854bb225627a4ad5d?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">Nathan</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49575">September 1, 2010 at 8:06 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>They might not have value for detail analysis, but they are excellent for a brief overview.  This is the same for other glyph based methods.</p>
+<p>For example, if you are a VP at a corporation and need to know who to yell at for the day, the District of Columbia, if for this example we consider a business unit, would be the whipping boy for the day. (Actually, for a good while considering its trend).  Not very post positive, but it is an effective way for a manager to make a quick gut check.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	
+   	<li class="comment even thread-even depth-1" id="li-comment-49544">
+		<div id="comment-49544" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/7fd359ed56b0d634d5c16dacbcf5f042" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/7fd359ed56b0d634d5c16dacbcf5f042?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">Audy</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49544">August 31, 2010 at 8:15 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>I find it appropriate that D.C. is a Minotaur.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+	
+   	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-49546">
+		<div id="comment-49546" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/de7badb3dc36d8f55ce92be9b5d81f29" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/de7badb3dc36d8f55ce92be9b5d81f29?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn"><a href="http://www.excelcharts.com/blog/" rel="external nofollow" class="url">Jorge Camoes</a></cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49546">August 31, 2010 at 8:27 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>Chernoff faces are funny but not ver usefull, and if you use them for socio-economic data, it’s is like opening Pandora’s box.</p>
+<p>If your audience believes that high crime is linked to black people or that rich people are fat, they expect to see that in your charts. If they don’t get that, there is a cognitive dissonance that it’s hard to explain. On the other hand, if you actually do it you’ll be called racist, sexist… and rightly so.</p>
+<p>So, use Chernoff faces for pure demograpic data. Even if you think that your prejudices are not reflected in the faces, someone will think otherwise.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+	
+   	<li class="comment even thread-even depth-1" id="li-comment-49552">
+		<div id="comment-49552" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/2438a8fee9a72856ab41ad7f04f05ae3" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/2438a8fee9a72856ab41ad7f04f05ae3?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">Blair</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49552">August 31, 2010 at 9:51 am</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>I’m making Chernoff faces at all of you. Right. Now.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+	
+   	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-49560">
+		<div id="comment-49560" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/fd6964ed425d626628bd057abbe6a85b" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/fd6964ed425d626628bd057abbe6a85b?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn"><a href="http://yihui.name/" rel="external nofollow" class="url">Yihui</a></cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49560">August 31, 2010 at 2:42 pm</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>Haah! You dare call an R <em>package</em> as a <em>library</em>?! Martin Machaeler will arrive in 5 minutes to correct you if he ever sees your post :lol:</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+<ul class="children">
+	
+   	<li class="comment even depth-2" id="li-comment-49561">
+		<div id="comment-49561" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/2c4874805030568a3b6714cd79d46c73" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/2c4874805030568a3b6714cd79d46c73?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-49561">August 31, 2010 at 4:37 pm</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>hey, as long as it works. library.</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	
+	<li class="pingback odd alt thread-even depth-1" id="li-comment-49562">
+		<div id="comment-49562">
+			<p>Pingback:
+			<cite class="fn"><a href="http://linklink.wordpress.com/2010/09/01/links-for-2010-08-31/" rel="external nofollow" class="url">links for 2010-08-31 « links and tweets</a></cite>	        </p>
+		</div>
+
+</li><!-- #comment-## -->
+	
+	<li class="pingback even thread-odd thread-alt depth-1" id="li-comment-49572">
+		<div id="comment-49572">
+			<p>Pingback:
+			<cite class="fn"><a href="http://www.baycityball.com/2010/09/01/wednesday-graph-major-league-chernoff-faces/" rel="external nofollow" class="url">Wednesday Graph: Major League Chernoff Faces</a></cite>	        </p>
+		</div>
+
+</li><!-- #comment-## -->
+	
+	<li class="pingback odd alt thread-even depth-1" id="li-comment-51059">
+		<div id="comment-51059">
+			<p>Pingback:
+			<cite class="fn"><a href="http://gustibusgustibus.wordpress.com/2010/09/06/dica-do-leo-monasterio/" rel="external nofollow" class="url">Dica do Leo Monasterio « De Gustibus Non Est Disputandum</a></cite>	        </p>
+		</div>
+
+</li><!-- #comment-## -->
+	
+   	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-51069">
+		<div id="comment-51069" class="">
+	  	<div class="avatar">
+			<img alt="" src="./How to visualize data with cartoonish faces ala Chernoff_files/868260cd64bf04a9636338726ad5029c" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/868260cd64bf04a9636338726ad5029c?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2">	  	</div><!-- @end gravatar -->
+		
+		<div class="comment-content">
+      		<div class="comment-author vcard"> 
+				<cite class="fn">tim</cite>				<span class="comment-meta">— <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/#comment-51069">September 6, 2010 at 6:09 pm</a>
+					</span>
+      		</div>
+      		
+			<div class="comment-text"><p>what variable does the “big hair” (or is it a hat?) on DC represent?</p>
+</div>
+
+      		<div class="reply">
+         		      		</div>
+     	</div><!-- @end comment-content -->
+		<div class="clear-line"></div>
+		</div>
+
+</li><!-- #comment-## -->
+	
+	<li class="pingback odd alt thread-even depth-1" id="li-comment-51729">
+		<div id="comment-51729">
+			<p>Pingback:
+			<cite class="fn"><a href="http://karlreinsch.com/2010/09/20/chernoff-face-tutorial-on-flowing-data/" rel="external nofollow" class="url">» Chernoff Face Tutorial on Flowing Data Karl Reinsch’s Blog</a></cite>	        </p>
+		</div>
+
+</li><!-- #comment-## -->
+	
+	<li class="pingback even thread-odd thread-alt depth-1" id="li-comment-52816">
+		<div id="comment-52816">
+			<p>Pingback:
+			<cite class="fn"><a href="http://year2lab2.wordpress.com/2010/10/13/nathan-yau-the-face-of-crime-in-the-united-states/" rel="external nofollow" class="url">Nathan Yau — The Face of Crime in the United States « lab2</a></cite>	        </p>
+		</div>
+
+</li><!-- #comment-## -->
+		</ul>
+		
+	</div><!-- @end comments-block -->
+	
+
+</div>				
+	
+				
+	
+	</div>
+</div><!-- end content -->
+		
+
+</div><!-- end content-wrapper -->
+
+</div><!-- end main-wrapper -->
+
+
+<div id="footer">
+    <div id="footer-container" class="content">
+        
+        <div class="float-left" style="width:32%;margin-right:5%;">
+            <div id="about" class="sec">
+                <h3>About</h3>
+    	        <p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p> 
+    	        <p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+    	        <p><a href="http://flowingdata.com/about/">More...</a></p>
+    	    </div>
+    	</div>
+    	
+    	<div class="float-left" style="width:36%;margin-right:5%;">
+            <div id="book-single" class="sec">
+                <h3>Books</h3>
+    			<ul id="books" style="margin-bottom:0">
+    			    <li>
+    			        <a href="http://flowingdata.com/data-points/"><img src="./How to visualize data with cartoonish faces ala Chernoff_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+    					    <div class="clear-line"></div>
+    			    </li>
+    				<li><a href="http://flowingdata.com/visualize-this/"><img src="./How to visualize data with cartoonish faces ala Chernoff_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+    					<div class="clear-line"></div>
+    				</li>
+    			</ul>
+    		</div><!-- @end books -->
+    		
+        </div>
+        
+        <div class="float-left" style="width:22%">
+            <div id="follow" class="sec">
+                <h3>Follow</h3>
+                <p>
+                    <a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp; 
+                    <a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+                    <a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+                    <a href="http://flowingdata.com/feed">RSS</a>
+                </p>
+            </div>
+            <div id="misc" class="sec">
+                <h3>Miscellaneous</h3>
+                <a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp; 
+    			<a href="http://flowingdata.com/advertise">Sponsorship</a>  &nbsp;•&nbsp; 
+    			<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+            </a></div><a>
+            
+        </a></div><a>
+        <div class="clear-line"></div>
+		
+    </a></div><!-- @end #footer-container --><a>
+</a></div><!-- @end #footer --><a>
+</a><div id="bottom"><a>
+    Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+
+
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./How to visualize data with cartoonish faces ala Chernoff_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./How to visualize data with cartoonish faces ala Chernoff_files/photon.js"></script>
+<script type="text/javascript" src="./How to visualize data with cartoonish faces ala Chernoff_files/devicepx-jetpack.js"></script>
+
+	<script src="./How to visualize data with cartoonish faces ala Chernoff_files/e-201350.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'11227',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,11227,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./How to visualize data with cartoonish faces ala Chernoff_files/g.gif" alt="" scale="0">
+</body></html>

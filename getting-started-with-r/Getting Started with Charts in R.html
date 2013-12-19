@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0067)http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> Getting Started with Charts in R</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./Getting Started with Charts in R_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./Getting Started with Charts in R_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./Getting Started with Charts in R_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<link rel="alternate" type="application/rss+xml" title="FlowingData » Getting Started with Charts in R Comments Feed" href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/feed/">
+<script type="text/javascript" src="./Getting Started with Charts in R_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Getting Started with Charts in R_files/jquery.js"></script>
+<script type="text/javascript" src="./Getting Started with Charts in R_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Solving for W" href="http://flowingdata.com/2012/12/14/solving-for-w/">
+<link rel="next" title="Small multiples with details on demand" href="http://flowingdata.com/2012/12/17/small-multiples-with-details-on-demand/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./Getting Started with Charts in R_files/Getting Started with Charts in R.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=27945">
+ <script type="text/javascript" src="./Getting Started with Charts in R_files/democracy.js"></script><link rel="stylesheet" href="./Getting Started with Charts in R_files/basic.css" type="text/css"><link rel="stylesheet" href="./Getting Started with Charts in R_files/style(1).css" type="text/css"><link rel="stylesheet" href="./Getting Started with Charts in R_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><link rel="stylesheet" type="text/css" href="./Getting Started with Charts in R_files/shCore.css"><link rel="stylesheet" type="text/css" href="./Getting Started with Charts in R_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#dziiguzkhuxrevykozjiqxerfnagzufr{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.dziiguzkhuxrevykozjiqxerfnagzufr-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#dziiguzkhuxrevykozjiqxerfnagzufr br{display:block !important;}#dziiguzkhuxrevykozjiqxerfnagzufr span{background:transparent !important;}#dziiguzkhuxrevykozjiqxerfnagzufr div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#dziiguzkhuxrevykozjiqxerfnagzufr a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#dziiguzkhuxrevykozjiqxerfnagzufr{display:none !important;}}</style></head>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./Getting Started with Charts in R_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-27945">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/introduction/" rel="tag">introduction</a>, <a href="http://flowingdata.com/tag/r/" rel="tag">R</a> </div>
+<h1>Getting Started with Charts in R</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-5.39.26-PM.png" class="attachment-long-form-thumb wp-post-image" alt="Getting started with charts in R" width="425" height="242" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-5.39.26-PM.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+You get a lot of bang for the buck with R, charting-wise, but it can be confusing at first, especially if you've never written code. Here are some examples to get started. </div>
+<div id="tut-meta">
+<div class="button-link"><a href="http://projects.flowingdata.com/tut/getting-started-with-r.zip">Download Source</a></div>
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>So you want to make some charts in R, but you don't know where to begin. This straightforward tutorial should teach you the basics, and give you a good idea of what you want to do next.<br>
+<span id="more-27945"></span></p>
+<h2>Install R</h2>
+<p><span class="tip">I know, I know, the <a href="http://r-project.org/">R homepage</a> looks horrible, but just ignore that part.</span>Of course, you need to actually have R installed and running on you computer before you do anything. You can download R for Windows, OS X, or Linux <a href="http://cran.stat.ucla.edu/">here</a>. For Windows, download the base and the latest version. It's a .exe file and quick installation. For OS X, download the latest .pkg, which is also a one-click install. For the Linux folk, I'll leave you to your own devices.</p>
+<h2>Loading and handling data</h2>
+<p><span class="tip">A <em>function</em> is a way to tell the computer what to do. The <code>c()</code> function is short for "combine" so you essentially tell the computer (in the R language) to combine the values.</span>You have to load and be able to handle data before you can chart it. No data means no chart. Enter the <em>vector</em>. It's a structure in R that you use to store data, and you use it often. Use the <code>c()</code> function to create one, as shown in the line of code below. (Hopefully, you've opened R by now. Enter this in the window that opened up aka the <em>console</em>.)</p>
+<div id="highlighter_19962" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_19962_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_19962" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Vector</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">c</code><code class="plain">(1,2,3,4,5)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Imagine that the values 1 through 5 are data points that you want to access later. When you enter the above, you create a vector of values, and it's just sort of gone. To save it for later, assign the vector to a <em>variable</em>.</p>
+<p><code></code></p><code>
+<div id="highlighter_828001" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_828001_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_828001" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Assign to variable</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">fakedata &lt;- </code><code class="functions">c</code><code class="plain">(1,2,3,4,5)</code></td></tr></tbody></table></div></div></div>
+</code><p><code></code></p>
+<p>In this example, the variable name is "fakedata." Now if you want to access the first value in the fakedata vector, use the syntax below where 1 is the <em>index</em>. You get back the value in that spot in the vector. Try using other indicies and see what values come up.</p>
+<div id="highlighter_824265" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_824265_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_824265" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Access a value from vector</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">fakedata[1]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Did you try using an index greater than five? That would give you an "NA" value, which is R's way of saying that there's nothing in that place (because the vector only has a length of five).</p>
+<p>Create another vector, <code>morefake</code>, of all a's. Notice the quotes around the a's to indicate that those are <em>characters</em> and not variables and that this new vector is of the same length as <code>fakedata</code>. Then use the <code>cbind()</code> function to combine the two to see what you get.</p>
+<div id="highlighter_16553" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_16553_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_16553" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Matrix, values converted to characters</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">morefake &lt;- </code><code class="functions">c</code><code class="plain">(</code><code class="string">"a"</code><code class="plain">, </code><code class="string">"a"</code><code class="plain">, </code><code class="string">"a"</code><code class="plain">, </code><code class="string">"a"</code><code class="plain">, </code><code class="string">"a"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">cbind</code><code class="plain">(fakedata, morefake)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>When you combine the two vectors, you get a <em>matrix</em> with two columns and five rows. The numbers have quotes around them too now, because a matrix can only have one data type. The <code>fakedata</code> vector has numeric values and again, the <code>morefake</code> vector has all character values.</p>
+<p>However, in many cases (as you'll see soon), you want a structure that has all your values, but with columns of different data types. The <em>data frame</em> in R lets you do this, and it's where most of your CSV-formatted data will go. Create a data frame from multiple vectors as follows:</p>
+<div id="highlighter_474887" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_474887_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_474887" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">fake.df &lt;- </code><code class="functions">data.frame</code><code class="plain">(</code><code class="functions">cbind</code><code class="plain">(fakedata, morefake))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">fake.df$morefake &lt;- </code><code class="functions">as.character</code><code class="plain">(fake.df$morefake)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">colnames</code><code class="plain">(fake.df)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>You use <code>cbind()</code> again to combine the vectors, and then pass the resulting matrix to <code>data.frame()</code>. Then convert the column that contains <code>morefake</code> values back to characters. </p>
+<p>The dollar sign ($) syntax is important here. The data frame is assigned to the variable <code>fake.df</code>. The column names are automatically assigned the variable names of the vectors, so to access the <code>morefake</code> column, follow the data frame variable, <code>fake.df</code>, with a dollar sign and the column name.</p>
+<h3>Loading a CSV file</h3>
+<p><span class="tip">The CSV file is included in the downloadable source linked at the beginning of this tutorial. Be sure to set your working directory in R to the directory where the file is via the Misc &gt; Change Working Directory... menu.</span>With data frame and vectors in mind, load "2009education.csv" with <code>read.csv()</code>. The data is assigned to the <code>education</code> variable as a data frame, so you can access rows and columns using index values. However, unlike the vector, the data frame is two-dimensional (rows and columns), so use two indices separated with a comma. The first index is the row number, and the second is the column number.</p>
+<div id="highlighter_560555" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_560555_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_560555" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">education &lt;- </code><code class="functions">read.csv</code><code class="plain">(</code><code class="string">"2009education.csv"</code><code class="plain">, header=</code><code class="keyword">TRUE</code><code class="plain">, sep=</code><code class="string">","</code><code class="plain">, as.is=</code><code class="keyword">TRUE</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">education[1,]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments"># First row</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">education[1:10,]&nbsp;&nbsp;&nbsp; </code><code class="comments"># First ten rows</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">education$state&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments"># First columnn</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">education[,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments"># Also first column</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">education[1,1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments"># First cell</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The data are US state estimates for people with at least high school degrees, bachelors, or higher — one column for each education level.</p>
+<p>It's often useful to sort rows by a certain column. For example, you can sort states by the percentage of people with at least high school diplomas, least to greatest, using the <code>order()</code> function. The function gives you a vector of indices, which you pass to the <code>education</code> data frame and assign to <code>education.high</code>.</p>
+<div id="highlighter_5454" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_5454_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_5454" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Sort least to greatest</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">high.order &lt;- </code><code class="functions">order</code><code class="plain">(education$high)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">education.high &lt;- education[high.order,]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Similarly, you can order from greatest to least by setting decreasing to TRUE in <code>order()</code>.</p>
+<div id="highlighter_696415" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_696415_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_696415" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Sort greatest to least</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">high.order &lt;- </code><code class="functions">order</code><code class="plain">(education$high, decreasing=</code><code class="keyword">TRUE</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">education.high &lt;- education[high.order,]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Okay, you got the data. On to charts. </p>
+<h2>Basic plotting</h2>
+<p><span class="tip">It's not <em>that</em> smart though. But at least it won't crash on you.</span>R has a <code>plot()</code> function that is kind of smart in that it adapts to the data that you pass it. For example, plot <code>fakedata</code>.</p>
+<div id="highlighter_522141" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_522141_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_522141" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions">plot</code><code class="plain">(fakedata)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>It's only a one-dimensional vector, so by default, R uses a dot plot with the values of the vector on the vertical axis and indices on the horizontal.</p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.30.54-PM.png" alt="Dot plot and fake data" class="alignnone size-medium wp-image-28027" width="625" height="461" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.30.54-PM.png?resize=625%2C461" scale="2"></p>
+<p>However, try to plot the education data frame, as shown below, and you get an error.</p>
+<div id="highlighter_267589" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_267589_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_267589" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The <code>plot()</code> function gets mixed up, because it doesn't know what to do with the first column, which is state names, and the other columns which are numeric values. What if you plot just one column?</p>
+<div id="highlighter_600670" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_600670_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_600670" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.38.05-PM.png" alt="Scatter plot" class="alignnone size-medium wp-image-28025" width="625" height="461" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.38.05-PM.png?resize=625%2C461" scale="2"></p>
+<p><span class="tip">This shouldn't surprise you, because when you passed <code>education.high$high</code> to <code>plot()</code>, you gave it a vector, just like in the <code>fakedata</code> example.</span>As you might expect, you get a dot plot, where each dot represents a state. Again, indicies are on the horizontal, and high school estimates are on the vertical.</p>
+<p>Want a scatter plot with high school on the horizontal and bachelors on the vertical? Pass <code>plot()</code> both columns of data.</p>
+<div id="highlighter_975561" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_975561_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_975561" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education$high, education$bs)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education[,2:3])</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The two lines of code above give you same plot. What if you pass three columns?</p>
+<div id="highlighter_491663" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_491663_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_491663" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Passing multiple columns</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education[,2:4])</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>You get a scatter plot matrix. The bachelor degree and advanced degree rates are strongly correlated.</p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.42.44-PM.png" alt="Scatter plot matrix" class="alignnone size-medium wp-image-28024" width="625" height="461" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.42.44-PM.png?resize=625%2C461" scale="2"></p>
+<h2>Using arguments</h2>
+<p>When you pass different valus to functions, you actually set the value of arguments. Change the values, and you get different output and charts. For example, the <code>plot()</code> function has a <code>type</code> argument, which use to specify the type of chart you want. If you don't specify, R will guess and use dots by default.</p>
+<p>Set type to "l" and you get a line chart.</p>
+<div id="highlighter_255369" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_255369_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_255369" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Line</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, type=</code><code class="string">"l"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">You would never use a line chart for this particular dataset, but for the sake of simplicity, let's pretend that it's useful.</span><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.43.10-PM.png" alt="Line chart" class="alignnone size-medium wp-image-28023" width="625" height="461" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.43.10-PM.png?resize=625%2C461" scale="2"></p>
+<p>Set it to "h" and you get a high density chart, or essentially a bar chart with skinny bars.</p>
+<div id="highlighter_254261" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_254261_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_254261" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># High-density</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, type=</code><code class="string">"h"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.43.21-PM.png" alt="High density chart" class="alignnone size-medium wp-image-28022" width="625" height="461" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.43.21-PM.png?resize=625%2C461" scale="2"></p>
+<p>Set it to "s" and you get a step chart.</p>
+<div id="highlighter_113059" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_113059_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_113059" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Step</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, type=</code><code class="string">"s"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.43.26-PM.png" alt="Step chart" class="alignnone size-medium wp-image-28021" width="625" height="461" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.43.26-PM.png?resize=625%2C461" scale="2"></p>
+<p>There are several other types that you can set it to. Simply enter "?plot" in the console to see documentation for the function. Most R functions offer pretty good documentation, which you can access with a question mark followed by the function name. Use this. A lot. It might be a little confusing at first, but the sooner you can read documentation, the easier learning R (or any code really) will be.</p>
+<p>There are quite a few other arguments to tinker with. For example, all the charts you made so far rotate vertical axis labels ninety degrees. Set <code>las</code> to 1 to change the label positions so that they are horizontal.</p>
+<div id="highlighter_876823" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_876823_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_876823" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Changing argument values</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, las=1)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.58.37-PM.png" alt="Default dot plot" class="alignnone size-medium wp-image-28020" width="625" height="461" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.58.37-PM.png?resize=625%2C461" scale="2"></p>
+<p>Or change labels for the axes and title with <code>xlab</code>, <code>ylab</code>, and <code>main</code>.</p>
+<div id="highlighter_86555" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_86555_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_86555" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, las=1, xlab=</code><code class="string">"States"</code><code class="plain">, ylab=</code><code class="string">"Percent"</code><code class="plain">, main=</code><code class="string">"At least high school degree or equivalent by state"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.59.48-PM.png" alt="Dot plot with title and labels" class="alignnone size-medium wp-image-28019" width="625" height="461" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.59.48-PM.png?resize=625%2C461" scale="2"></p>
+<p>You can also set the size of shapes (<code>cex</code>), labels (<code>cex.axis</code>), remove border (<code>bty</code>), or change the symbols used (<code>pch</code>).</p>
+<div id="highlighter_733375" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_733375_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_733375" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, las=1, xlab=</code><code class="string">"States"</code><code class="plain">, ylab=</code><code class="string">"Percent"</code><code class="plain">, main=</code><code class="string">"At least high school degree or equivalent"</code><code class="plain">, bty=</code><code class="string">"n"</code><code class="plain">, cex=0.5, cex.axis=0.6, pch=19)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>You get a plot that looks a little cleaner.</p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-4.59.55-PM.png" alt="Dot plot with changed options" class="alignnone size-medium wp-image-28018" width="625" height="461" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-4.59.55-PM.png?resize=625%2C461" scale="2"></p>
+<h2>Additional charts</h2>
+<p>Although <code>plot()</code> can handle a good bit, there will be times when you want to use other chart types that the function doesn't offer. For example, the function doesn't provide a basic bar chart. Instead, use <code>barplot()</code>.</p>
+<div id="highlighter_856136" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_856136_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_856136" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Bar plot</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">barplot</code><code class="plain">(education$high)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>And you get a basic bar plot.</p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-5.18.07-PM.png" alt="Default bar chart" class="alignnone size-medium wp-image-28017" width="625" height="461" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-5.18.07-PM.png?resize=625%2C461" scale="2"></p>
+<p>Like the <code>plot()</code> function, there are arguments to fiddle with to get what you want.</p>
+<div id="highlighter_174365" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_174365_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_174365" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Bar plot with changed parameters</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">barplot</code><code class="plain">(education$high, names.arg=education$state, horiz=</code><code class="keyword">TRUE</code><code class="plain">, las=1, cex.names=0.5, border=</code><code class="keyword">NA</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="comments"># Documentation for function</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">?barplot</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-5.20.06-PM.png" alt="Horizontal bar chart" class="alignnone size-medium wp-image-28016" width="545" height="779" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-5.20.06-PM.png?resize=545%2C779" scale="2"></p>
+<p>Similarly, you can use <code>boxplot()</code> to see distributions.</p>
+<div id="highlighter_358884" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_358884_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_358884" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Single box plot</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">boxplot</code><code class="plain">(education$high)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-5.25.53-PM.png" alt="A box plot" class="alignnone size-medium wp-image-28015" width="528" height="601" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-5.25.53-PM.png?resize=528%2C601" scale="2"></p>
+<p>Just as easily, you can make multiple boxplots in a single space.</p>
+<div id="highlighter_706808" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_706808_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_706808" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Multiple box plots for comparison</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">boxplot</code><code class="plain">(education[,2:4])</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-5.26.05-PM.png" alt="Multiple box plots" class="alignnone size-medium wp-image-28014" width="495" height="794" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-5.26.05-PM.png?resize=495%2C794" scale="2"></p>
+<p>Finally, you can set some universal parameters so that you don't have to specify them in every function. For example, <code>mfrow</code> sets the number of rows and columns if you want to show multiple charts in the same window, and <code>mar</code> sets the margins in between charts. Then like in previous examples, you've seen <code>las</code> and <code>bty</code>, but now you don't have to plug it in everywhere.</p>
+<div id="highlighter_499732" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_499732_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_499732" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Multiple charts in one window</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">par</code><code class="plain">(mfrow=</code><code class="functions">c</code><code class="plain">(3,3), mar=</code><code class="functions">c</code><code class="plain">(2,5,2,1), las=1, bty=</code><code class="string">"n"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education$high, education$bs)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, type=</code><code class="string">"l"</code><code class="plain">) </code><code class="comments"># Line</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, type=</code><code class="string">"h"</code><code class="plain">) </code><code class="comments"># High-density</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="functions">plot</code><code class="plain">(education.high$high, type=</code><code class="string">"s"</code><code class="plain">) </code><code class="comments"># Step</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="functions">barplot</code><code class="plain">(education$high)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="functions">barplot</code><code class="plain">(education$high, names.arg=education$state, horiz=</code><code class="keyword">TRUE</code><code class="plain">, las=1, cex.names=0.5, border=</code><code class="keyword">NA</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="functions">boxplot</code><code class="plain">(education$high)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="functions">boxplot</code><code class="plain">(education[,2:4])</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Bam. You get a grid of charts.</p>
+<p><img src="./Getting Started with Charts in R_files/Screen-Shot-2012-12-15-at-5.26.26-PM.png" alt="Grid of charts" class="alignnone size-medium wp-image-28013" width="625" height="562" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/12/Screen-Shot-2012-12-15-at-5.26.26-PM.png?resize=625%2C562" scale="2"></p>
+<h2>Wrapping up</h2>
+<p>Most basic charts only require a couple of lines of code in R, and you can make customizations by changing argument values. Use function documentation, which usually includes code snippets at the end, to learn how to use a new function. Want more? The examples in this tutorial are just tip of <a href="http://flowingdata.com/category/tutorials/">the iceberg</a>.</p>
+<div class="clear-line"></div>
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="end"></div>
+ 
+<span id="comments"></span>
+<div style="width:625px">
+<div id="comments-block">
+<h2>9 Comments</h2>
+<ul class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-203496">
+<div id="comment-203496" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/65d5a829d86b2bb5b02e4257edac1b20" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/65d5a829d86b2bb5b02e4257edac1b20?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://civilstat.com/" rel="external nofollow" class="url">Jerzy</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-203496">December 17, 2012 at 12:26 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Nice intro!</p>
+<p>&gt; Use function documentation, which usually includes code snippets at the end, to learn how to use a new function.<br>
+You could also mention that example(plot) will run those code snippets for you, so you don’t have to copy/paste them into the console.</p>
+<p>&gt; You would never use a line chart for this particular dataset, but for the sake of simplicity, let’s pretend that it’s useful.<br>
+Aw man, you don’t have anything in this dataset for which a line *would* make sense? Better for newbies to see a demo featuring sensible use-cases than arbitrary ones…</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-203542">
+<div id="comment-203542" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/e5775e00e75678d6a8cd22d2320885d6" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/e5775e00e75678d6a8cd22d2320885d6?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://yuezhao.net/blog" rel="external nofollow" class="url">yzhao</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-203542">December 18, 2012 at 7:05 am</a>
+</span>
+</div>
+<div class="comment-text"><p>You should really try CRAN:ggplot2</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="li-comment-203553">
+<div id="comment-203553" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/193856724c609acccd7a7e69e916c8e4" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/193856724c609acccd7a7e69e916c8e4?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://www.softwarestudies.com/" rel="external nofollow" class="url">Lev Manovich</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-203553">December 18, 2012 at 11:58 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Exellent guide! </p>
+<p>I taught myself how to do graphs in R using R built-in manual, but it took months…I will use your guide in my Spring class at CUNY</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-203782">
+<div id="comment-203782" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/1bca46df66478df95627af7ed5c46cf9" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/1bca46df66478df95627af7ed5c46cf9?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Nathan</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-203782">December 21, 2012 at 9:57 am</a>
+</span>
+</div>
+<div class="comment-text"><p>This wouldn’t be a problem for experienced users but since this is a tutorial for newbies (like me) I just thought I’d mention …</p>
+<p>I got stuck on the read.csv portion because I kept typing ‘true’ in lower case. (“object ‘true’ not found.”) I have now discovered that R is *very* much case sensitive (variable names too). Obvious once understood, but newbies might not know this.</p>
+<p>Thanks,</p>
+<p>NW</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="li-comment-204082">
+<div id="comment-204082" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/91b28fed30f3d2358983ff40409e7a2f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/91b28fed30f3d2358983ff40409e7a2f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://wp.vrabie.net/" rel="external nofollow" class="url">Adrian</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-204082">December 25, 2012 at 8:43 am</a>
+</span>
+</div>
+<div class="comment-text"><p>nice introduction! I think i will advise everyone interested in studyin R to check out your tutorial.<br>
+Another thing that would be awesome in this tutorial is to put the cvs file online so we could use the examples directly without having to download it.<br>
+thanks again</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-204653">
+<div id="comment-204653" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/198859fef7f0eb316f4cb03c74e48e8e" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/198859fef7f0eb316f4cb03c74e48e8e?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Luis</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-204653">January 2, 2013 at 3:53 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Great Post !</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="li-comment-204751">
+<div id="comment-204751" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/f258ccd6987dbe873c9935485a9383e0" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/f258ccd6987dbe873c9935485a9383e0?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Jdbaba</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-204751">January 6, 2013 at 12:56 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi think the code for the multi column is not working properly.</p>
+<p>I think education.high$high should be education$high</p>
+<p>par(mfrow=c(3,3), mar=c(2,5,2,1), las=1, bty=”n”)<br>
+plot(education$high)<br>
+plot(education$high, education$bs)<br>
+plot(education$high, type=”l”) # Line<br>
+plot(education$high, type=”h”) # High-density<br>
+plot(education$high, type=”s”) # Step<br>
+barplot(education$high)<br>
+barplot(education$high, names.arg=education$state, horiz=TRUE, las=1, cex.names=0.5, border=NA)<br>
+boxplot(education$high)<br>
+boxplot(education[,2:4])</p>
+<p>Thank you for sharing this wonderful code.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor odd alt depth-2" id="li-comment-204760">
+<div id="comment-204760" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-204760">January 7, 2013 at 10:19 am</a>
+</span>
+</div>
+<div class="comment-text"><p>@Jdbaba – Glad you found it helpful. In the “Loading a CSV file” section, the sorted (by high school) <code>education</code> data frame is assigned to <code>education.high</code>.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-204811">
+<div id="comment-204811" class="">
+<div class="avatar">
+<img alt="" src="./Getting Started with Charts in R_files/7b1d3668d031fcebd7366aae9b381a1c" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/7b1d3668d031fcebd7366aae9b381a1c?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Hermann Alvino</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/12/17/getting-started-with-charts-in-r/#comment-204811">January 13, 2013 at 7:24 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Delightful tutorial for beginners. Perfect to provide basic concepts and little practice in order to continue to learn R. Great!</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul>
+</div> 
+</div>
+</div>
+</div> 
+</div> 
+</div> 
+<div id="footer">
+<div id="footer-container" class="content">
+<div class="float-left" style="width:32%;margin-right:5%;">
+<div id="about" class="sec">
+<h3>About</h3>
+<p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p>
+<p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+<p><a href="http://flowingdata.com/about/">More...</a></p>
+</div>
+</div>
+<div class="float-left" style="width:36%;margin-right:5%;">
+<div id="book-single" class="sec">
+<h3>Books</h3>
+<ul id="books" style="margin-bottom:0">
+<li>
+<a href="http://flowingdata.com/data-points/"><img src="./Getting Started with Charts in R_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+<div class="clear-line"></div>
+</li>
+<li><a href="http://flowingdata.com/visualize-this/"><img src="./Getting Started with Charts in R_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+<div class="clear-line"></div>
+</li>
+</ul>
+</div> 
+</div>
+<div class="float-left" style="width:22%">
+<div id="follow" class="sec">
+<h3>Follow</h3>
+<p>
+<a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp;
+<a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+<a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/feed">RSS</a>
+</p>
+</div>
+<div id="misc" class="sec">
+<h3>Miscellaneous</h3>
+<a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/advertise">Sponsorship</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+</a></div><a>
+</a></div><a>
+<div class="clear-line"></div>
+</a></div><a> 
+</a></div><a> 
+</a><div id="bottom"><a>
+Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+ 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Getting Started with Charts in R_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./Getting Started with Charts in R_files/shCore.js"></script>
+<script type="text/javascript" src="./Getting Started with Charts in R_files/shBrushR.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="./Getting Started with Charts in R_files/photon.js"></script>
+<script type="text/javascript" src="./Getting Started with Charts in R_files/devicepx-jetpack.js"></script>
+<script src="./Getting Started with Charts in R_files/e-201350.js" type="text/javascript"></script>
+<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'27945',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,27945,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./Getting Started with Charts in R_files/g.gif" alt="" scale="0">
+</body><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style></html>

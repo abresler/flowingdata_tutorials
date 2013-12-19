@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> More on Making Heat Maps in R</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./More on Making Heat Maps in R_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./More on Making Heat Maps in R_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./More on Making Heat Maps in R_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<link rel="alternate" type="application/rss+xml" title="FlowingData » More on Making Heat Maps in R Comments Feed" href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/feed/">
+<script type="text/javascript" src="./More on Making Heat Maps in R_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./More on Making Heat Maps in R_files/jquery.js"></script>
+<script type="text/javascript" src="./More on Making Heat Maps in R_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Parse PDF files with R" href="http://flowingdata.com/2012/10/04/parse-pdf-files-with-r/">
+<link rel="next" title="RiTa" href="http://flowingdata.com/2012/10/04/rita/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./More on Making Heat Maps in R_files/More on Making Heat Maps in R.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=27067">
+ <script type="text/javascript" src="./More on Making Heat Maps in R_files/democracy.js"></script><link rel="stylesheet" href="./More on Making Heat Maps in R_files/basic.css" type="text/css"><link rel="stylesheet" href="./More on Making Heat Maps in R_files/style(1).css" type="text/css"><link rel="stylesheet" href="./More on Making Heat Maps in R_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><link rel="stylesheet" type="text/css" href="./More on Making Heat Maps in R_files/shCore.css"><link rel="stylesheet" type="text/css" href="./More on Making Heat Maps in R_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#tayxnezzvgiinekmblejcdikpyihxhzyiqkt{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.tayxnezzvgiinekmblejcdikpyihxhzyiqkt-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#tayxnezzvgiinekmblejcdikpyihxhzyiqkt br{display:block !important;}#tayxnezzvgiinekmblejcdikpyihxhzyiqkt span{background:transparent !important;}#tayxnezzvgiinekmblejcdikpyihxhzyiqkt div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#tayxnezzvgiinekmblejcdikpyihxhzyiqkt a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#tayxnezzvgiinekmblejcdikpyihxhzyiqkt{display:none !important;}}</style></head>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./More on Making Heat Maps in R_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-27067">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/heat-map/" rel="tag">heat map</a>, <a href="http://flowingdata.com/tag/r/" rel="tag">R</a> <span class="members-note"><a href="http://flowingdata.com/members-only">Members Only</a></span> </div>
+<h1>More on Making Heat Maps in R</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./More on Making Heat Maps in R_files/Points-per-shot-on-a-court.png" class="attachment-long-form-thumb wp-post-image" alt="Points per shot on a court" width="425" height="283" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/09/Points-per-shot-on-a-court.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+You saw how to make basic heat maps a while back, but you might want more flexibility for a specific data set. Once you understand the components of a heat map, the rest is straightforward. </div>
+<div id="tut-meta">
+<div class="button-link"><a href="http://flowingdata.com/wp-content/uploads/2012/09/8-Points-per-shot-on-a-court.png">Demo</a></div>
+<div class="button-link"><a href="http://flowingdata.com/?s2member_file_download=2012/201210heatmaps-custom-source.zip">Download Source</a></div>
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>There are a lot of ways to make a heat map, but people sometimes get stuck thinking the only way to make one is with an already-made function. When you break it down though, a heat map is just a set of colors, drawn in a two-dimensional space. If you can draw colors, you can make a heat map.</p>
+<h2>Setup</h2>
+<p>As per usual, you'll need to <a href="http://r-project.org/">download and install R</a> if you haven't already. It's free and a one-click install on most major platforms. You also use a couple of packages in this tutorial: plyr by Hadley Wickham and hexbin by Dan Carr. You can install the packages via the Package Installer in the R main menu. If you can't get hexbin to install or don't want to install it for some reason, no biggie.</p>
+<h2>Straightforward Heat Map</h2>
+<p><span class="tip">For more details on the <code>heatmap()</code> function, there's <a href="http://flowingdata.com/2010/01/21/how-to-make-a-heatmap-a-quick-and-easy-solution/">a tutorial for that</a>.</span>Before we go into any custom stuff, R makes it straightforward to create a heat directly from a data frame, with the <code>heatmap()</code> function. You load the data with <code>read.csv()</code>, turn it into a matrix, and then plug it in.</p>
+<div id="highlighter_909066" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_909066_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_909066" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Standard heat map (More details here: <a href="http://datafl.ws/2x">http://datafl.ws/2x</a>)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">leaders &lt;- </code><code class="functions">read.csv</code><code class="plain">(</code><code class="string">"<a href="http://datasets.flowingdata.com/ppg2008.csv">http://datasets.flowingdata.com/ppg2008.csv</a>"</code><code class="plain">, sep=</code><code class="string">","</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">leaders &lt;- leaders[</code><code class="functions">order</code><code class="plain">(leaders$PTS),]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">row.names</code><code class="plain">(leaders) &lt;- leaders$Name</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">leaders &lt;- leaders[,2:20]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">nba_matrix &lt;- </code><code class="functions">data.matrix</code><code class="plain">(leaders)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="functions">heatmap</code><code class="plain">(nba_matrix, Rowv=</code><code class="keyword">NA</code><code class="plain">, Colv=</code><code class="keyword">NA</code><code class="plain">, col = </code><code class="functions">cm.colors</code><code class="plain">(256), scale=</code><code class="string">"column"</code><code class="plain">, margins=</code><code class="functions">c</code><code class="plain">(5,10))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>This translates each value in the data frame into a color, relative to other values in the column, in the same layout. A darker purple means higher values, and a lighter cyan shade represents relatively low values. This by the way, is basketball stats for 2008 leading scorers in the NBA, and each column represents a stat, such as points per game or minutes per game.</p>
+<p><span class="tip">Standard heat map using <code>heatmap()</code>.</span><img src="./More on Making Heat Maps in R_files/1-heatmap.png" alt="" title="Standard heatmap" class="alignnone size-medium wp-image-27068" width="625" height="657" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/09/1-heatmap.png?resize=625%2C657" scale="2"></p>
+<h2>Load Data</h2>
+<p>What if you wanted to see your data in a different layout, other than the rectangular grid? What if you had, say play-by-play data for the 2008-09 NBA season, and you wanted to show where players scored the most points on a court (like <a href="http://flowingdata.com/2012/03/12/geography-of-the-basketball-court/">the shot charts</a> by Kirk Goldsberry)? You're going to do that now.</p>
+<p>Of course, before anything, you have to load the data. The data file is included in the source download for this tutorial. I downloaded it from BasketballGeek, which has <a href="http://www.basketballgeek.com/data/">detailed data for every play</a> during the 2008-09 season, but we only needed some of the information provided. The file in the source download is a truncated version of the file on BasketballGeek.</p>
+<div id="highlighter_353946" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_353946_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_353946" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Load play-by-play data.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">nba &lt;- </code><code class="functions">read.csv</code><code class="plain">(</code><code class="string">"2008-09nba.trunc.csv"</code><code class="plain">, sep=</code><code class="string">","</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">shots &lt;- nba[nba$etype == </code><code class="string">"shot"</code><code class="plain">,]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="comments"># Take a quick look.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">shots[1:10,]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>When you look at the loaded data in R, you should notice seven columns: team, play type (in this case, just shots), player name, points scored (<code>NA</code> indicates a missed shot), shot type, and x- and y-coordinates that indicate where on the court the shot was taken.</p>
+<p>If you were standing beneath a hoop looking towards the opposite end, (0, 0) is the bottom left corner and (50, 0) is the bottom right corner. The center of the hoop is at (25, 5.5). This is in units of feet, so the hoop is 25 feet from the sideline and five and a half feet away from the baseline.</p>
+<p>For some reason, there are a handful of values where the x- and y-coordinates are unknown. Get rid of those.</p>
+<div id="highlighter_851551" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_851551_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_851551" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Some are NA. Get only known shots.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">shots.known &lt;- shots[!</code><code class="functions">is.na</code><code class="plain">(shots$x) &amp; !</code><code class="functions">is.na</code><code class="plain">(shots$y),]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Once you have that done, the data is prepped and ready to visualize.</p>
+<h2>Show Some Data</h2>
+<p>You could look at the data all at once, but there are about 190k observations, so it could get cluttered. Instead, let's look at the shot chart for just one team, the Golden State Warriors.</p>
+<div id="highlighter_421418" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_421418_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_421418" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Golden State Warriors shots</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">gsw &lt;- </code><code class="functions">subset</code><code class="plain">(shots.known, team == </code><code class="string">"GSW"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="comments"># Basic symbol shot chart.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="functions">symbols</code><code class="plain">(gsw$x, gsw$y, circles=</code><code class="functions">rep</code><code class="plain">(1,</code><code class="functions">length</code><code class="plain">(gsw$x)), asp=1, inches=</code><code class="keyword">FALSE</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Using <code>symbols()</code> with all the same circle size, you get basically the same thing that you would if you used <code>plot()</code> on the x- and y-coordinates. Each dot represents a shot taken by the Golden State Warriors taken during the season, but it of course gets cluttered where they usually shot from. The lone dots on the top are mostly last-second hail maries from half and full court.</p>
+<p><span class="tip">A dot for every shot taken by the Golden State Warriors during the 2008-09 season.</span><img src="./More on Making Heat Maps in R_files/2-symbols.png" alt="" title="Symbols" class="alignnone size-medium wp-image-27069" width="625" height="614" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/09/2-symbols.png?resize=625%2C614" scale="2"></p>
+<p>You kind of get the shape of a court, but you can't see much within the blob.</p>
+<h2>Bring in a Third Dimension</h2>
+<p>The problem with the chart above is that when there is more than one shot on a spot on the court, you don't see any difference. Dots are just placed on top of one or another, so an area where more shots are taken looks roughly the same as one where one shot was taken. One solution would be to size circles by number of shots, instead of making them the same size. </p>
+<p>The <code>count()</code> function from the plyr package makes it straightforward to aggregate by two columns. You store the results in <code>gsw.agg</code>. If you look at the values in the new data frame, you'll notice a new third column for frequency. </p>
+<div id="highlighter_794590" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_794590_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_794590" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Aggregate by shot frequency</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">library</code><code class="plain">(plyr)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">gsw.agg &lt;- </code><code class="functions">count</code><code class="plain">(gsw, </code><code class="functions">c</code><code class="plain">(</code><code class="string">"x"</code><code class="plain">,</code><code class="string">"y"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="comments"># Size symbols by number of shots.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="functions">symbols</code><code class="plain">(gsw.agg$x, gsw.agg$y, circles=</code><code class="functions">sqrt</code><code class="plain">(gsw.agg$freq)/8, asp=1, inches=</code><code class="keyword">FALSE</code><code class="plain">, ylim=</code><code class="functions">c</code><code class="plain">(0,40))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The <code>symbols()</code> function is used the same as you did before, but values for the <code>circles</code> argument are now the frequency of each x and y pair. Remember that circles should be sized by area, hence the square root. In this example, division by the constant eight makes the circles overall a bit smaller so that you can see what's going on.</p>
+<p><span class="tip">Circles are sized by shot frequency.</span><img src="./More on Making Heat Maps in R_files/3-sized-symbols.png" alt="" title="Sized symbols - circles" class="alignnone size-medium wp-image-27070" width="625" height="616" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/09/3-sized-symbols.png?resize=625%2C616" scale="2"></p>
+<p>You can easily do the same thing with squares in place of circles.</p>
+<div id="highlighter_590800" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_590800_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_590800" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Do the same thing with squares</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">symbols</code><code class="plain">(gsw.agg$x, gsw.agg$y, squares=</code><code class="functions">sqrt</code><code class="plain">(gsw.agg$freq)/8, asp=1, inches=</code><code class="keyword">FALSE</code><code class="plain">, ylim=</code><code class="functions">c</code><code class="plain">(0,40))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Squares are sized by shot frequency.</span><img src="./More on Making Heat Maps in R_files/4-sized-squares.png" alt="" title="Sized squares by area" class="alignnone size-medium wp-image-27071" width="625" height="614" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/09/4-sized-squares.png?resize=625%2C614" scale="2"></p>
+<p>You might be wondering what this has to do with heat maps. There's no color yet and just a bunch of shapes. The main point is that the logic between these symbol plots and a heat map are the same, except the latter uses color as its visual cue instead of area. Placement, counting, and coordinates are the same.</p>
+<p>More for kicks than anything else, there's a package called hexbins that lets you do what you just did but with colored hexbins.</p>
+<div id="highlighter_723470" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_723470_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_723470" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Hexbins</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">library</code><code class="plain">(hexbin)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">h &lt;- </code><code class="functions">hexbin</code><code class="plain">(gsw$x, gsw$y, xbins=20, shape=80/50)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">plot</code><code class="plain">(h)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The darker the bin, the more shots that were taken.</p>
+<p><span class="tip">Counts are binned according to specifications, and then bins are colored based on totals.</span><img src="./More on Making Heat Maps in R_files/5-hexbins.png" alt="" title="Hexbins to show frequency" class="alignnone size-medium wp-image-27072" width="625" height="714" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/09/5-hexbins.png?resize=625%2C714" scale="2"></p>
+<p>The cool thing is that you can control the number of bins across, and the function will do the math for you. Notice that you didn't have to aggregate with this package. The challenge is that color doesn't seem to be very flexible in letting you color the bins by a metric other than count. If however, you're just interested in counts, this is a useful package to look deeper into.</p>
+<h2>Using Color</h2>
+<p>Let's come back to the color though. You want to convert the symbol plots above to a heat map. The more shots taken in an area, the darker that area should be. First, write a helper function that returns a color, given a value.</p>
+<div id="highlighter_40041" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_40041_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_40041" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Helper function to get color by shot frequency</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">getColor &lt;- </code><code class="functions">function</code><code class="plain">(val) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">minVal &lt;- </code><code class="functions">log</code><code class="plain">(1)&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments"># Using logarithmic scale</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">maxVal &lt;- </code><code class="functions">log</code><code class="plain">(1065)&nbsp; </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">numCols &lt;- 20</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">pal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"#f4d5d0"</code><code class="plain">, </code><code class="string">"#692518"</code><code class="plain">))&nbsp; # Light red to dark red</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">cols &lt;- </code><code class="functions">pal</code><code class="plain">(numCols)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments"># Get index to pick color.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">colIndex &lt;- </code><code class="functions">round</code><code class="plain">(numCols * (</code><code class="functions">log</code><code class="plain">(val) - minVal) / (maxVal - minVal))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">colIndex &lt;- </code><code class="functions">max</code><code class="plain">(1, colIndex)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">return</code><code class="plain">(cols[colIndex])</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>If you passed <code>getColor()</code> the value 1, it would return light red. A logarithmic scale was used in this case, because you have raw counts, and so for example, the counts in the paint are a lot higher than everywhere else.</p>
+<p>Using <code>sapply()</code> the helper function is applied to all shot frequencies, and the vector of colors is stored in <code>gridColors</code>. Then again, using <code>symbols()</code> just as before, but with <code>gridColors</code> as the value for <code>bg</code>, squares of the same size are created, but with different shades of read.</p>
+<div id="highlighter_835524" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_835524_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_835524" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Get colors and draw heat map of shot frequency.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">gridColors &lt;- </code><code class="functions">sapply</code><code class="plain">(gsw.agg$freq, getColor)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">symbols</code><code class="plain">(gsw.agg$x, gsw.agg$y, squares=</code><code class="functions">rep</code><code class="plain">(1,</code><code class="functions">length</code><code class="plain">(gsw.agg$x)), asp=1, inches=</code><code class="keyword">FALSE</code><code class="plain">, ylim=</code><code class="functions">c</code><code class="plain">(0,40), bg=gridColors, fg=</code><code class="keyword">NA</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Now that's a heat map. As you'd expect, there are lot of shots around the basket and an artificial ring around the three-point line.</p>
+<p><span class="tip">Heat map showing shot frequencies.</span><img src="./More on Making Heat Maps in R_files/6-Shot-frequency.png" alt="" title="Shot frequency" class="alignnone size-medium wp-image-27073" width="625" height="635" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/09/6-Shot-frequency.png?resize=625%2C635" scale="2"></p>
+<p>That's fairly obvious though. Anyone who's watched a basketball game could tell you that. What you want to know is the point efficiency of each shot area. How many points are scored per shot? You have to do some counting to calculate that. The code below iterates through each x- and y-coordinate for the Golden State Warriors, finds the total points scored in that area, and then divides that total by the number of shots taken. It stores the averages as a vector in <code>ptsper</code>.</p>
+<div id="highlighter_290032" class="syntaxhighlighter  "><div class="bar   "><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_290032_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_290032" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Find points per shot for each spot on court.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">ptsper &lt;- </code><code class="functions">c</code><code class="plain">()</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">for </code><code class="plain">(i </code><code class="keyword">in</code> <code class="plain">1:</code><code class="functions">length</code><code class="plain">(gsw.agg[,1])) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">xcoord &lt;- gsw.agg$x[i]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">ycoord &lt;- gsw.agg$y[i]</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">spot &lt;- </code><code class="functions">subset</code><code class="plain">(gsw, x == xcoord &amp; y == ycoord)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">totalShots &lt;- </code><code class="functions">length</code><code class="plain">(spot[,1])</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">totalPts &lt;- </code><code class="functions">sum</code><code class="plain">(spot$points[!</code><code class="functions">is.na</code><code class="plain">(spot$points)])</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">ptsper &lt;- </code><code class="functions">c</code><code class="plain">(ptsper, totalPts/totalShots)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Once you have the points per shot for each x- and y-coordinate, you can write a helper function like in the previous example. However, these are rates with a different minimum and maximum, so you adjust accordingly.</p>
+<div id="highlighter_837934" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_837934_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_837934" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Helper function to get color by points per shot.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">getColorByPoints &lt;- </code><code class="keyword">function</code><code class="plain">(val) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">minVal &lt;- 0</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">maxVal &lt;- 3</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">numCols &lt;- 30</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">pal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"#eddfab"</code><code class="plain">, </code><code class="string">"#d86853"</code><code class="plain">))&nbsp; # Yellow to red</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">cols &lt;- </code><code class="functions">pal</code><code class="plain">(numCols)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments"># Get index to pick color.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">colIndex &lt;- </code><code class="functions">round</code><code class="plain">(numCols * (val - minVal) / (maxVal - minVal))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">colIndex &lt;- </code><code class="functions">max</code><code class="plain">(1, colIndex)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">return</code><code class="plain">(cols[colIndex])</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>You run the helper function across all values in <code>ptsper</code> with <code>sapply()</code> again, but this time size the squares by frequency again like you did in the beginning. Now you get shot efficiency and frequency in the same view.</p>
+<div id="highlighter_413900" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_413900_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_413900" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Get colors and draw heat map of points per shot.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">gridColors &lt;- </code><code class="functions">sapply</code><code class="plain">(ptsper, getColorByPoints)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">plot</code><code class="plain">(0, 0, xlim=</code><code class="functions">c</code><code class="plain">(0,50), ylim=</code><code class="functions">c</code><code class="plain">(0,40), type=</code><code class="string">"n"</code><code class="plain">, xaxt=</code><code class="string">"n"</code><code class="plain">, yaxt=</code><code class="string">"n"</code><code class="plain">, xlab=</code><code class="string">""</code><code class="plain">, ylab=</code><code class="string">""</code><code class="plain">, bty=</code><code class="string">"n"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">symbols</code><code class="plain">(gsw.agg$x, gsw.agg$y, squares=</code><code class="functions">sqrt</code><code class="plain">(gsw.agg$freq)/3, asp=1, inches=</code><code class="keyword">FALSE</code><code class="plain">, add=</code><code class="keyword">TRUE</code><code class="plain">, bg=gridColors, fg=</code><code class="keyword">NA</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>This is looking pretty good if you ask me.</p>
+<p><span class="tip">Shot chart sizes by shot frequency and colors by points per shot.</span><img src="./More on Making Heat Maps in R_files/7-Points-per-shot.png" alt="" title="Points per shot" class="alignnone size-medium wp-image-27074" width="625" height="539" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/09/7-Points-per-shot.png?resize=625%2C539" scale="2"></p>
+<h2>Add Context</h2>
+<p>Just for kicks and giggles though, try running the <code>plot()</code> function above and then the code below to draw the outline of a court underneath. Then run the <code>symbols()</code> function above to replot the shot chart.</p>
+<div id="highlighter_330639" class="syntaxhighlighter  "><div class="bar             "><div class="toolbar"><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_330639_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_330639" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Adding an NBA court outline for kicks and giggles.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">draw.arc</code><code class="plain">(25, 5.25, 9/12, angle1=0, angle2=2*</code><code class="constants">pi</code><code class="plain">, col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2) # Hoop</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">lines</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(22,28), </code><code class="functions">c</code><code class="plain">(4,4), col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2)&nbsp;&nbsp; # Backboard</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">lines</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(2.5, 2.5), </code><code class="functions">c</code><code class="plain">(0, 13.5), col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2) # Side 3-pt</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="functions">lines</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(47.5, 47.5), </code><code class="functions">c</code><code class="plain">(0, 13.5), col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="functions">lines</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(19,19), </code><code class="functions">c</code><code class="plain">(0,19), col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2)&nbsp; # Inside lane</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="functions">lines</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(31,31), </code><code class="functions">c</code><code class="plain">(0,19), col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="functions">lines</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(19,31), </code><code class="functions">c</code><code class="plain">(19,19), col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2) # Free throw</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="functions">lines</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(0,50),</code><code class="functions">c</code><code class="plain">(0,0), col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2) # Baseline</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="functions">draw.arc</code><code class="plain">(25, 5.25, 23.75, angle1=</code><code class="constants">pi</code><code class="plain">/9.8, angle2=</code><code class="constants">pi</code><code class="plain">/1.113, col=</code><code class="string">"#cccccc"</code><code class="plain">, lwd=2) # 3-pt arc</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Voila. Now you have the three-point line, baseline, free throw line, and the inside lanes.</p>
+<p><span class="tip">This is the same shot chart as before, but the axes are gone, and the outline of a court was added, using proper <a href="http://en.wikipedia.org/wiki/Basketball_court">measurements</a>.</span><img src="./More on Making Heat Maps in R_files/8-Points-per-shot-on-a-court.png" alt="" title="Points per shot on a court" class="alignnone size-medium wp-image-27075" width="625" height="470" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/09/8-Points-per-shot-on-a-court.png?resize=625%2C470" scale="2"></p>
+<h2>Wrapping Up</h2>
+<p>The key with making your own heat maps is simply knowing the bits and pieces that you have to put together. If you can figure out what color each cell in a grid is supposed to be, you can use the flexible <code>symbols()</code> function to fill a lot of your needs.</p>
+<div class="clear-line"></div>
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="end"></div>
+ 
+<span id="comments"></span>
+<div style="width:625px">
+<div id="comments-block">
+<h2>5 Comments</h2>
+<ul class="commentlist">
+<li class="comment byuser comment-author-pr even thread-even depth-1" id="li-comment-173419">
+<div id="comment-173419" class="">
+<div class="avatar">
+<img alt="" src="./More on Making Heat Maps in R_files/8849f79ccbe75d8f2a107fc38bb20581" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/8849f79ccbe75d8f2a107fc38bb20581?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Patrick Ryan</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#comment-173419">October 4, 2012 at 1:13 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Excellent tutorial. Thanks!</p>
+<p>I wish I had more opportunity to use heatmaps – on the right material, they’re pretty effective…</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-incas odd alt thread-odd thread-alt depth-1" id="li-comment-179689">
+<div id="comment-179689" class="">
+<div class="avatar">
+<img alt="" src="./More on Making Heat Maps in R_files/cb5124da5782aeebb7f58064d147ab8a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/cb5124da5782aeebb7f58064d147ab8a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">shi xiaobin</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#comment-179689">October 16, 2012 at 8:47 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Great job. Thanks!</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-emmm even thread-even depth-1" id="li-comment-195907">
+<div id="comment-195907" class="">
+<div class="avatar">
+<img alt="" src="./More on Making Heat Maps in R_files/7aaa0392d30fb5b0d4463b6263420700" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/7aaa0392d30fb5b0d4463b6263420700?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Emilia Gan</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#comment-195907">November 27, 2012 at 10:43 am</a>
+</span>
+</div>
+<div class="comment-text"><p>This was not what I was hoping to get from the advanced heatmap tutorials — I would like to have dendrograms along the top and right of the heatmap — I am trying to use heatmap.2 and I am having trouble knowing how to format the data and what parameters to provide. I was hoping there might be a tutorial on that.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-hanszenite odd alt thread-odd thread-alt depth-1" id="li-comment-197755">
+<div id="comment-197755" class="">
+<div class="avatar">
+<img alt="" src="./More on Making Heat Maps in R_files/6fa70b96525f544b22fc6b051a8eb756" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/6fa70b96525f544b22fc6b051a8eb756?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Spencer Boucher</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#comment-197755">December 3, 2012 at 9:08 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>I was thinking it might help to add a wee bit of transparency to the squares. Is there an easy parameter change that will have colorRampPalette include an alpha in its hexadecimal output?</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor even depth-2" id="li-comment-210682">
+<div id="comment-210682" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./More on Making Heat Maps in R_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/10/04/more-on-making-heat-maps-in-r/#comment-210682">May 5, 2013 at 4:23 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>@Spencer — Late to this, but when you call <code>pal()</code>, that creates a vector of colors stored in <code>cols</code>, which are essentially strings. You could add “80″ (or something between 00 and 99 to the end of those strings to set the alpha values.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul>
+</div> 
+</div>
+</div>
+</div> 
+</div> 
+</div> 
+<div id="footer">
+<div id="footer-container" class="content">
+<div class="float-left" style="width:32%;margin-right:5%;">
+<div id="about" class="sec">
+<h3>About</h3>
+<p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p>
+<p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+<p><a href="http://flowingdata.com/about/">More...</a></p>
+</div>
+</div>
+<div class="float-left" style="width:36%;margin-right:5%;">
+<div id="book-single" class="sec">
+<h3>Books</h3>
+<ul id="books" style="margin-bottom:0">
+<li>
+<a href="http://flowingdata.com/data-points/"><img src="./More on Making Heat Maps in R_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+<div class="clear-line"></div>
+</li>
+<li><a href="http://flowingdata.com/visualize-this/"><img src="./More on Making Heat Maps in R_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+<div class="clear-line"></div>
+</li>
+</ul>
+</div> 
+</div>
+<div class="float-left" style="width:22%">
+<div id="follow" class="sec">
+<h3>Follow</h3>
+<p>
+<a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp;
+<a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+<a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/feed">RSS</a>
+</p>
+</div>
+<div id="misc" class="sec">
+<h3>Miscellaneous</h3>
+<a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/advertise">Sponsorship</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+</a></div><a>
+</a></div><a>
+<div class="clear-line"></div>
+</a></div><a> 
+</a></div><a> 
+</a><div id="bottom"><a>
+Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+ 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./More on Making Heat Maps in R_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./More on Making Heat Maps in R_files/shCore.js"></script>
+<script type="text/javascript" src="./More on Making Heat Maps in R_files/shBrushR.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="./More on Making Heat Maps in R_files/photon.js"></script>
+<script type="text/javascript" src="./More on Making Heat Maps in R_files/devicepx-jetpack.js"></script>
+<script src="./More on Making Heat Maps in R_files/e-201350.js" type="text/javascript"></script>
+<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'27067',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,27067,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./More on Making Heat Maps in R_files/g.gif" alt="" scale="0">
+</body><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style></html>

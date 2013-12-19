@@ -1,0 +1,16 @@
+{
+    "contents" : "#### Build color grid for intro\nxcoords <- c()\nycoords <- c()\nrownum <- 1\nfor (i in 1:length(colors())) {\n\tcolnum <- i %% 40\n\tif (colnum == 0) {\n\t\trownum <- rownum + 1\n\t}\n\txcoords <- c(xcoords, colnum)\n\tycoords <- c(ycoords, rownum)\n}\nsymbols(xcoords, ycoords, squares=rep(1, length(colors())), inches=FALSE, bg=colors(), fg=\"#ffffff\", lwd=0.5)\n\n\n### Color by data\n\npar(mfrow=c(1,5))\n\n# Playing with the col argument\nfakedata <- c(5, 4, 3, 2, 1)\npie(fakedata, clockwise=TRUE, labels=fakedata)\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\")\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=\"black\")\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=c(\"blue\", \"black\"))\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=c(\"black\", \"dark gray\", \"gray\", \"light gray\", \"white\"))\n\n\n### Color Schemes\n\n# Available colors\ncolors()\nhsv()\nrgb()\n\ncolorRampPalette()\npalette()\n\n\n# Number of data points\nnumdata <- length(fakedata)\n\npar(mfrow=c(1,4))\n\n# Gray color scheme\ngrays <- gray(0:numdata / numdata)\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=grays)\n\n# Heat scheme from yellow to red\nheatcols <- heat.colors(length(fakedata))\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=heatcols)\n\n# All the colors of the rainbow\nrainbowcols <- rainbow(numdata)\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=rainbowcols)\n\n# Topographic color scheme\ntopocols <- topo.colors(numdata)\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=topocols)\n\n\n## Introducing ColorBrewer\n\n# Load RColorBrewer package\nlibrary(RColorBrewer)\n\n# Blue color scheme from ColorBrewer\nblues <- brewer.pal(numdata, \"Blues\")\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=blues)\n\n# Reverse the previous blue color scheme\nblues.rev <- rev(blues)\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=blues.rev)\n\n\n### Picking Your Own Colors\n\n# Use a color ramp\npal <- colorRampPalette(c(\"light gray\", \"red\"))\ncolors <- pal(numdata)\npie(fakedata, clockwise=TRUE, labels=fakedata, border=\"white\", col=colors)\n\n# Some more fake data and default colors\nmorefakedata <- c(5, 3, 2, 6, 8, 1, 3)\npie(morefakedata, clockwise=TRUE, labels=morefakedata)\n\n# Build color ramp and palette\nfakemax <- max(morefakedata)\npal2 <- colorRampPalette(c(\"#f2f2f2\", \"#821122\"))\nnumshades <- 20\ncolors2 <- pal2(numshades)\n\n# Make chart with color ramp\nmorecolors <- c()\nfor (i in 1:length(morefakedata)) {\n\tcolindex <- round((morefakedata[i] / fakemax) * numshades)\n\tmorecolors <- c(morecolors, colors2[colindex])\n}\npie(morefakedata, clockwise=TRUE, labels=morefakedata, border=\"white\", col=morecolors)\n\n\n\n\n\n",
+    "created" : 1387141940282.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "463405566",
+    "id" : "8C01ACAB",
+    "lastKnownWriteTime" : 1387044397,
+    "path" : "~/Desktop/Github/flowingdata_tutorials/color_guide_for_r/color_guide.R",
+    "project_path" : "color_guide_for_r/color_guide.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

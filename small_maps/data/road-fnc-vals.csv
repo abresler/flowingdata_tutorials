@@ -1,0 +1,16 @@
+code,name
+1,Principal Arterial – Interstate
+2,Principal Arterial – Other
+3,Minor Arterial
+4,Major Collector
+5,Minor Collector
+6,Local Road or Street
+9,Unknown Rural
+11,Urban/Interstate
+12,Urban/Other Freeways
+13,Urban/Other Principal Arterial
+14,Urban/Minor Arterial
+15,Urban/Collector
+16,Urban/Local Road or Street
+19,Unknown Urban
+99,Unknown

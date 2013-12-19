@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0077)http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> How to Make an Interactive Choropleth Map</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./How to Make an Interactive Choropleth Map_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./How to Make an Interactive Choropleth Map_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<link rel="alternate" type="application/rss+xml" title="FlowingData » How to Make an Interactive Choropleth Map Comments Feed" href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/feed/">
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/jquery.js"></script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Incredibly divided nation in a map" href="http://flowingdata.com/2012/11/09/incredibly-divided-nation-in-a-map/">
+<link rel="next" title="50 percent" href="http://flowingdata.com/2012/11/12/50-percent/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./How to Make an Interactive Choropleth Map_files/How to Make an Interactive Choropleth Map.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=27511">
+ <script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/democracy.js"></script><link rel="stylesheet" href="./How to Make an Interactive Choropleth Map_files/basic.css" type="text/css"><link rel="stylesheet" href="./How to Make an Interactive Choropleth Map_files/style(1).css" type="text/css"><link rel="stylesheet" href="./How to Make an Interactive Choropleth Map_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><link rel="stylesheet" type="text/css" href="./How to Make an Interactive Choropleth Map_files/shCore.css"><link rel="stylesheet" type="text/css" href="./How to Make an Interactive Choropleth Map_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#fylgpjzpktkekywcwvoexxfrnzttytytsybke{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.fylgpjzpktkekywcwvoexxfrnzttytytsybke-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#fylgpjzpktkekywcwvoexxfrnzttytytsybke br{display:block !important;}#fylgpjzpktkekywcwvoexxfrnzttytytsybke span{background:transparent !important;}#fylgpjzpktkekywcwvoexxfrnzttytytsybke div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#fylgpjzpktkekywcwvoexxfrnzttytytsybke a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#fylgpjzpktkekywcwvoexxfrnzttytytsybke{display:none !important;}}</style></head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./How to Make an Interactive Choropleth Map_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-27511">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/choropleth/" rel="tag">choropleth</a>, <a href="http://flowingdata.com/tag/javascript/" rel="tag">javascript</a>, <a href="http://flowingdata.com/tag/raphael/" rel="tag">Raphael</a> <span class="members-note"><a href="http://flowingdata.com/members-only">Members Only</a></span> </div>
+<h1>How to Make an Interactive Choropleth Map</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./How to Make an Interactive Choropleth Map_files/Interactive-choropleth-map.png" class="attachment-long-form-thumb wp-post-image" alt="Interactive choropleth map" width="425" height="272" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/11/Interactive-choropleth-map.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+When presented with a static graphic, it can be useful to see specific values after you see overall patterns. This tutorial shows you how to add simple interactions to a choropleth map so you can get specifics for regions. </div>
+<div id="tut-meta">
+<div class="button-link"><a href="http://projects.flowingdata.com/intermap/">Demo</a></div>
+<div class="button-link"><a href="http://flowingdata.com/?s2member_file_download=2012/interactivemap.zip">Download Source</a></div>
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>We've seen how to <a href="http://flowingdata.com/2009/11/12/how-to-make-a-us-county-thematic-map-using-free-tools/">make static choropleth maps</a> using freely available SVG files, and you'll do the same in this tutorial. The difference is that you need a way to load data and the map dynamically in the browser and then add interaction via JavaScript. Luckily, the <a href="http://raphaeljs.com/">Raphael JavaScript library</a> makes it fairly straightforward to load SVG files, and the <a href="http://jquery.com/">jQuery</a> library helps with interaction.</p>
+<h2>SVG map</h2>
+<p><span class="tip"><a href="http://www.naturalearthdata.com/">Natural Earth</a> is another good place for open source maps.</span>Wikipedia has quite a few SVG maps that you can download. For this tutorial, you want <a href="http://en.wikipedia.org/wiki/File:Blank_US_Map.svg">the blank state map</a>, as shown below.</p>
+<p><span class="tip">This is a blank state map from <a href="http://en.wikipedia.org/wiki/File:Blank_US_Map.svg">Wikipedia</a>.</span><img src="./How to Make an Interactive Choropleth Map_files/01Blank-US-map.png" alt="" title="Blank US map" class="alignnone size-medium wp-image-27515" width="625" height="399" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/11/01Blank-US-map.png?resize=625%2C399" scale="2"></p>
+<p>If you open the SVG file in a text editor, you'll see it's an XML file that you can edit by hand if you like. There are path elements for each state in the country, and each has a unique id attribute, which are actually just state abbreviations. For example, here's the path for New Hampshire:</p>
+<div id="highlighter_468472" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_468472_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_468472" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">path</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1">style</code><code class="plain">=</code><code class="string">"fill:#d3d3d3;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none"</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1">id</code><code class="plain">=</code><code class="string">"NH"</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1">d</code><code class="plain">=</code><code class="string">"M 880.79902,142.42476 L 881.66802,141.34826 L 882.75824,138.05724 L 880.21516,137.14377 L 879.73017,134.07221 L 875.85032,132.94059 L 875.527,130.19235 L 868.25225,106.75153 L 863.65083,92.208542 L 862.75375,92.203482 L 862.10711,93.820087 L 861.46047,93.335106 L 860.4905,92.365143 L 859.03556,94.305068 L 858.98709,99.337122 L 859.29874,105.00434 L 861.23866,107.75258 L 861.23866,111.7941 L 857.52046,116.85688 L 854.93389,117.98852 L 854.93389,119.12014 L 856.06552,120.89841 L 856.06552,129.46643 L 855.25721,138.6811 L 855.09555,143.53092 L 856.06552,144.82422 L 855.90386,149.35071 L 855.41887,151.12899 L 856.38768,151.83821 L 873.17535,147.41366 L 875.35022,146.81121 L 877.19379,144.03788 L 880.79902,142.42476 z"</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1">sodipodi:nodetypes</code><code class="plain">=</code><code class="string">"ccccccccccccccccccccccccccccccccc"</code> <code class="plain">/&gt;</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The one exception is the element with the id "path57," which is the separator between Alaska, Hawaii, and the contiguous United States. You can remove that element, and the results are as expected.</p>
+<p><span class="tip">This is the same blank state map, without the line separator between Alaska, Hawaii, and contiguous United States.</span><img src="./How to Make an Interactive Choropleth Map_files/02Removed-separator.png" alt="" title="Removed separator" class="alignnone size-medium wp-image-27516" width="625" height="404" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/11/02Removed-separator.png?resize=625%2C404" scale="2"></p>
+<h2>Setup</h2>
+<p><span class="tip">As per usual, I recommend downloading the source and following along instead of copy and pasting the code.</span>The map loads in the browser, so the first thing to do is setup the HTML page (index.html) and load the required JavaScript libraries, Raphael and jQuery. CSS files are also loaded.</p>
+<div id="highlighter_437643" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_437643_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_437643" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "<a href="http://www.w3.org/TR/html4/strict.dtd">http://www.w3.org/TR/html4/strict.dtd</a>"&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">html</code> <code class="color1">lang</code><code class="plain">=</code><code class="string">"en"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">head</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">title</code><code class="plain">&gt;Interactive Choropleth Map&lt;/</code><code class="keyword">title</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">link</code> <code class="color1">rel</code><code class="plain">=</code><code class="string">"stylesheet"</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"text/css"</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"reset.css"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">link</code> <code class="color1">rel</code><code class="plain">=</code><code class="string">"stylesheet"</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"text/css"</code> <code class="color1">href</code><code class="plain">=</code><code class="string">"unemp.css"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">script</code> <code class="color1">src</code><code class="plain">=</code><code class="string">"jquery-1.4.4.min.js"</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"text/javascript"</code> <code class="color1">charset</code><code class="plain">=</code><code class="string">"utf-8"</code><code class="plain">&gt;&lt;/</code><code class="keyword">script</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">script</code> <code class="color1">src</code><code class="plain">=</code><code class="string">"raphael-min.js"</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"text/javascript"</code> <code class="color1">charset</code><code class="plain">=</code><code class="string">"utf-8"</code><code class="plain">&gt;&lt;/</code><code class="keyword">script</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">head</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">body</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"mainwrapper"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"map"</code><code class="plain">&gt;&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">body</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">html</code><code class="plain">&gt;</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<h2>Loading the map</h2>
+<p>You can't just cut and paste the SVG directly into index.html to load the map on to the page. Instead, you have to reformat a little bit. In blankmap.js, you create a new Raphael object:</p>
+<div id="highlighter_77538" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_77538_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_77538" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">var</code> <code class="plain">rsr = Raphael(</code><code class="string">'map'</code><code class="plain">, </code><code class="string">'959'</code><code class="plain">, </code><code class="string">'593'</code><code class="plain">);</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The first argument specifies the id of where the graphics will be placed. It will go in the "map" <code>&lt;div&gt;</code> in this example, with a width of 959 pixels and a height of 593. Then say, if you were to load the path for New Hampshire shown previously, you would do the following:</p>
+<div id="highlighter_826028" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_826028_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_826028" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">var NH = </code><code class="functions">rsr.path</code><code class="plain">(</code><code class="string">"M 880.79902,142.42476 L 881.66802,141.34826 L 882.75824,138.05724 L 880.21516,137.14377 L 879.73017,134.07221 L 875.85032,132.94059 L 875.527,130.19235 L 868.25225,106.75153 L 863.65083,92.208542 L 862.75375,92.203482 L 862.10711,93.820087 L 861.46047,93.335106 L 860.4905,92.365143 L 859.03556,94.305068 L 858.98709,99.337122 L 859.29874,105.00434 L 861.23866,107.75258 L 861.23866,111.7941 L 857.52046,116.85688 L 854.93389,117.98852 L 854.93389,119.12014 L 856.06552,120.89841 L 856.06552,129.46643 L 855.25721,138.6811 L 855.09555,143.53092 L 856.06552,144.82422 L 855.90386,149.35071 L 855.41887,151.12899 L 856.38768,151.83821 L 873.17535,147.41366 L 875.35022,146.81121 L 877.19379,144.03788 L 880.79902,142.42476 z"</code><code class="plain">);</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>This would take a while to do manually though. Luckily, there's a mini-app, <a href="http://readysetraphael.com/">Ready Set Raphael</a>, that you helps you convert SVG files to Raphael. You can either cut and paste the XML into the field, or you can load straight from the file. So when you load Blank_US_Map.svg, the app will output the contents of blankmap.js.</p>
+<p>However, for some reason the app doesn't group all paths in an array at the end, so I edited that at the end:</p>
+<div id="highlighter_872048" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_872048_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_872048" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">var</code> <code class="plain">states = [CA, OR, WA, NV, AZ, ID, UT, MT, WY, NM, CO, TX, NE, SD, ND, OK, KS, MN, IA, MO, AR, LA, WI, IL, MS, TN, KY, IN, AL, MI, FL, OH, GA, NC, VA, WV, SC, PA, MD, NJ, DE, VT, MA, CT, NH, ME, RI, NY, AK, HI, SP, DC];</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Then load blankmap.js at the end of index.html, right before the closing <code>&lt;body&gt;</code> tag.</p>
+<div id="highlighter_13477" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_13477_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_13477" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">script</code> <code class="color1">src</code><code class="plain">=</code><code class="string">"blankmap.js"</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"text/javascript"</code> <code class="color1">charset</code><code class="plain">=</code><code class="string">"utf-8"</code><code class="plain">&gt;&lt;/</code><code class="keyword">script</code><code class="plain">&gt;</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<h2>Loading the data</h2>
+<p>Loading index.html in your browser now would give you the blank map shown at the beginning of this tutorial. Consider this the base, and the rest of the code is used to edit this map to color and add interaction. The <code>getJSON()</code> function in jQuery makes it easier to load data asynchronously. It essentially reads in a JSON file, and when the data is loaded, you provide code to process it. The following, which loads state unemployment data, goes right after loading blankmap.js in index.html.</p>
+<div id="highlighter_444623" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_444623_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_444623" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">script</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"text/javascript"</code> <code class="color1">charset</code><code class="plain">=</code><code class="string">"utf-8"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">$(document).ready(function () {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">// Load the data.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$.getJSON('unemp.json', function(data) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">script</code><code class="plain">&gt;</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The JSON data will be stored in the data variable, which you can iterate through and store for later. The below code stores the data in an associate array, where the key is the state abbreviation and the value is another array with the full state name and unemployment rate.</p>
+<div id="highlighter_373169" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_373169_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_373169" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments">// Store data by state abbreviation.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">var</code> <code class="plain">unemp = {};</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">$.each(data.states, </code><code class="keyword">function</code><code class="plain">(i,state) {&nbsp;&nbsp;&nbsp; </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">unemp[state.abbrev] = { </code><code class="string">"name"</code><code class="plain">:state.name, </code><code class="string">"val"</code><code class="plain">:state.unemprate };</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">}); </code><code class="comments">// @end each</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<h2>Coloring by numbers</h2>
+<p>To review: you loaded a blank map and loaded the state data so far. Now you want to color each state by the data. Extend the function in <code>getJSON()</code>:</p>
+<div id="highlighter_40110" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_40110_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_40110" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments">// Set properties for each state.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">for</code> <code class="plain">(</code><code class="keyword">var</code> <code class="plain">i=0; i &lt; states.length; i++) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">s = states[i];</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">id = s.data(</code><code class="string">"id"</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(id == </code><code class="string">"SP"</code><code class="plain">) { id = </code><code class="string">"MI"</code><code class="plain">; } </code><code class="comments">// A hack to deal with two-part Michigan in SVG</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Set state color.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">s.attr({</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">fill: getColor(unemp[id].val),</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">stroke: </code><code class="string">"#fff"</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The above iterates through each state and sets color, based on unemployment rate. Notice that a helper function, <code>getColor()</code> is used to decide color.</p>
+<div id="highlighter_853145" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_853145_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_853145" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments">// Helper function to determine color. Currently a blue-gray color scheme.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">function</code> <code class="plain">getColor(val) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(val &lt; 5) {&nbsp;&nbsp;&nbsp; </code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">col = </code><code class="string">"#d0d3db"</code><code class="plain">; </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">} </code><code class="keyword">else</code> <code class="keyword">if</code> <code class="plain">(val &lt; 7) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">col = </code><code class="string">"#a9afbe"</code><code class="plain">;&nbsp; </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">} </code><code class="keyword">else</code> <code class="keyword">if</code> <code class="plain">(val &lt; 9) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">col = </code><code class="string">"#677189"</code><code class="plain">; </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">} </code><code class="keyword">else</code> <code class="plain">{</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">col = </code><code class="string">"#434958"</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code><code class="plain">(col);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="plain">} </code><code class="comments">// @end getColor</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Load index.html in your browser now, and you should see a choropleth map that shows unemployment rate by state.</p>
+<p><span class="tip">You now have coloring, based on data.</span><img src="./How to Make an Interactive Choropleth Map_files/04Choropleth-map.png" alt="" title="04Choropleth map" class="alignnone size-medium wp-image-27518" width="625" height="404" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/11/04Choropleth-map.png?resize=625%2C404" scale="2"></p>
+<p>You can of course edit <code>getColor()</code> to use any color scheme you want.</p>
+<p><span class="tip">You can easily adapt the <code>getColor()</code> function to provide the color scheme you want.</span><img src="./How to Make an Interactive Choropleth Map_files/map-colors.png" alt="" title="Map colors" class="alignnone size-full wp-image-27520" width="625" height="400" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/11/map-colors.png?resize=625%2C400" scale="2"></p>
+<h2>Highlighting states on hover</h2>
+<p>Next you want to add events for when you hover over a state. In the <a href="http://projects.flowingdata.com/intermap/">demo</a> you should notice that two things happen: A tooltip appears and the state border turns black and thickens. The code below, which goes inside the for loop in the previous section, takes care of the latter.</p>
+<div id="highlighter_331594" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_331594_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_331594" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments">// Highlight state and show tooltip on mouse over.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">s.mouseover(</code><code class="keyword">function</code><code class="plain">() {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">this</code><code class="plain">.toFront();</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">abbrev = </code><code class="keyword">this</code><code class="plain">.data(</code><code class="string">"id"</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(abbrev == </code><code class="string">'SP'</code> <code class="plain">|| abbrev == </code><code class="string">'MI'</code><code class="plain">) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">SP.attr({</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">stroke: </code><code class="string">"#000"</code><code class="plain">,</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">'stroke-width'</code><code class="plain">: </code><code class="string">'2'</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">MI.attr({</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">stroke: </code><code class="string">"#000"</code><code class="plain">,</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">'stroke-width'</code><code class="plain">: </code><code class="string">'2'</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">} </code><code class="keyword">else</code> <code class="plain">{</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">this</code><code class="plain">.attr({</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">stroke: </code><code class="string">"#000"</code><code class="plain">,</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">'stroke-width'</code><code class="plain">: </code><code class="string">'2'</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">tiphtml = </code><code class="string">'&lt;h3&gt;'</code><code class="plain">+unemp[abbrev].name+</code><code class="string">'&lt;/h3&gt;&lt;p&gt;Unemployment rate: '</code><code class="plain">+unemp[abbrev].val+</code><code class="string">'%&lt;/p&gt;'</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">over = </code><code class="keyword">true</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>22</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(tooltip).show();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>23</code></td><td class="content"><code class="plain">});</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>For each state, a mouseover event is added, which changes the "stroke" and "stroke-width" attributes to black and 2, respectively. Notice that an if statement is used to adapt to the two-part Michigan in the SVG. You could adapt the SVG so that both parts of the state are one (like with the Hawaii islands), but handling the special case in the JavaScript works, too. The HTML that goes inside the tooltip and an indicator that the cursor is over a state are also set at the end of the snippet. These are used in the next section.</p>
+<p>However, before you get to the tooltip, you have to change the state back to its original look when the cursor moves off. The logic is the same as above, but the code below does the reverse. It changes stroke and and stroke-width to white and 1, respectively. </p>
+<div id="highlighter_359018" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_359018_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_359018" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments">// Remove highlight and tool tip.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">s.mouseout(</code><code class="keyword">function</code><code class="plain">() {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">abbrev = </code><code class="keyword">this</code><code class="plain">.data(</code><code class="string">"id"</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(abbrev == </code><code class="string">'SP'</code> <code class="plain">|| abbrev == </code><code class="string">'MI'</code><code class="plain">) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">SP.attr({</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">stroke: </code><code class="string">"#fff"</code><code class="plain">,</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">'stroke-width'</code><code class="plain">: </code><code class="string">"1"</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">MI.attr({</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">stroke: </code><code class="string">"#fff"</code><code class="plain">,</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">'stroke-width'</code><code class="plain">: </code><code class="string">"1"</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">} </code><code class="keyword">else</code> <code class="plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">this</code><code class="plain">.attr({</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">stroke: </code><code class="string">"#fff"</code><code class="plain">,</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="string">'stroke-width'</code><code class="plain">: </code><code class="string">"1"</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">over = </code><code class="keyword">false</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(tooltip).hide();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content"><code class="plain">});</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Mouse over a state, and the border highlights.</p>
+<p><span class="tip">Border turns black and thickens when you mouse over a state to provide focus.</span><img src="./How to Make an Interactive Choropleth Map_files/03Border-roll-over.png" alt="" title="03Border roll over" class="alignnone size-medium wp-image-27517" width="625" height="408" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/11/03Border-roll-over.png?resize=625%2C408" scale="2"></p>
+<h2>Adding tooltips</h2>
+<p>An empty HTML <code>&lt;div&gt;</code> with the id "tooltip" is added below the map &lt;div&gt;. The code above shows the tooltip when you mouse over a state and hides the tooltip when not.</p>
+<div id="highlighter_260065" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_260065_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_260065" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"mainwrapper"</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"map"</code><code class="plain">&gt;&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">div</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"tooltip"</code><code class="plain">&gt;&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">&gt;</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The HTML that goes inside the tooltip was also stored in the code above, but you also need to position the tooltip to where the cursor is.</p>
+<div id="highlighter_95023" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_95023_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_95023" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments">// Set tooltip text and position.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">$(document).mousemove(</code><code class="keyword">function</code><code class="plain">(e) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(over) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(tooltip).css(</code><code class="string">"left"</code><code class="plain">, e.clientX+15).css(</code><code class="string">"top"</code><code class="plain">, e.clientY+15);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">$(tooltip).html(tiphtml);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="plain">});</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Once the tooltip is positioned, the HTML is plugged in, and here's what you get:</p>
+<p><span class="tip">The map has tooltips now when you mouse over a state.</span><img src="./How to Make an Interactive Choropleth Map_files/Interactive-choropleth-map(1).png" alt="" title="Interactive choropleth map" class="alignnone size-medium wp-image-27512" width="625" height="401" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/11/Interactive-choropleth-map.png?resize=625%2C401" scale="2"></p>
+<h2>Pan and zoom</h2>
+<p>Finally, pan and zoom has become an expected standard with interactive maps ever since Google Maps, so it shouldn't be surprising that someone has written the code to do this with Raphael already. The zoomandpan.js file in the source is based on <a href="http://jsfiddle.net/9zu4U/10/">this snippet</a>. I made a few changes to adapt it to the map, namely limiting the amount of zoom when you scroll the mouse and allowing a pan when the cursor on the map. The original code allows unlimited zooming and only allows panning when the cursor is over white space.</p>
+<p><span class="tip">Here's an example of zooming and panning in the map.</span><img src="./How to Make an Interactive Choropleth Map_files/05zoomed.png" alt="" title="Zoomed and panned" class="alignnone size-medium wp-image-27557" width="625" height="385" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/11/05zoomed.png?resize=625%2C385" scale="2"></p>
+<h2>Wrapping up</h2>
+<p>Raphael is a great little JavaScript library that makes handling vector graphics on the Web a lot easier, and although this tutorial is map-focused, the same logic can be applied to any SVG file. Just follow the same steps:</p>
+<ol>
+<li>Convert SVG file to Raphael JavaScript, by hand or programmatically.</li>
+<li>Load data and color paths based on values.</li>
+<li>Add layer of interaction with built-in event handlers.</li>
+</ol>
+<p>When you have larger SVG files or more data, it can take a while to load everything and the interaction and get sluggish. In this case, you might want to experiment with loading a less granular view at first and then loading details only when a user asks for them. For example, the New York Times often <a href="http://elections.nytimes.com/2012/results/president">shows</a> a state map first and then counties only when you zoom in. The first steps taken in this tutorial are the same though.</p>
+<div class="clear-line"></div>
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="end"></div>
+ 
+<span id="comments"></span>
+<div style="width:625px">
+<div id="comments-block">
+<h2>13 Comments</h2>
+<ul class="commentlist">
+<li class="comment byuser comment-author-brentmd even thread-even depth-1" id="li-comment-190283">
+<div id="comment-190283" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/0182826fa03c5736a57cce4221256905" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/0182826fa03c5736a57cce4221256905?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Brent Dupay</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190283">November 13, 2012 at 12:04 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>This is my first time using JS, so I’m a little lost on how to implement all of this. How do I execute this code?</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor odd alt depth-2" id="li-comment-190293">
+<div id="comment-190293" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190293">November 13, 2012 at 12:37 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>@Brent — This runs in the browser, so to start, you should be able to open index.html in Firefox, Chrome, etc.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-brentmd even depth-3" id="li-comment-190297">
+<div id="comment-190297" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/0182826fa03c5736a57cce4221256905" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/0182826fa03c5736a57cce4221256905?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Brent</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190297">November 13, 2012 at 1:06 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Thanks Nathan. I didn’t realize that the index.html file references the various script files.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-siyafrica odd alt thread-odd thread-alt depth-1" id="li-comment-190451">
+<div id="comment-190451" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/f7f65227352d93ecdf65d7aa733890d0" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/f7f65227352d93ecdf65d7aa733890d0?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Siyabonga Africa</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190451">November 13, 2012 at 11:49 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi Nathan. I’m trying to use the above tutorial for my own project with South Africa’s population stats and I run into trouble with the JavaScript and JSON scripts. I used the same same scripts except I changed some values and tried to make sure that the names in my scripts would match those in yours. But my map doesn’t work, I can see the map in my browser but the rollover and color functionality don’t work. Please help.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-siyafrica even thread-even depth-1" id="li-comment-190477">
+<div id="comment-190477" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/f7f65227352d93ecdf65d7aa733890d0" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/f7f65227352d93ecdf65d7aa733890d0?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Siyabonga Africa</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190477">November 14, 2012 at 1:30 am</a>
+</span>
+</div>
+<div class="comment-text"><p>I am tempted to plugin my code so that you can help asap because my project is time sensitive.</p>
+<p>I configured your unemp.json to this:</p>
+<p>{ “provinces”: [{"abbrev":"path_a","name":"Alabama","population":8.3},<br>
+{"abbrev":"path_b","name":"Alaska","population":7.5},<br>
+{"abbrev":"path_c","name":"Arizona","population":8.2},<br>
+{"abbrev":"path_d","name":"Arkansas","population":7.1},<br>
+{"abbrev":"path_e","name":"California","population":10.2},<br>
+{"abbrev":"path_f","name":"Colorado","population":8},<br>
+{"abbrev":"path_g","name":"Connecticut","population":8.9},<br>
+{"abbrev":"path_h","name":"Delaware","population":6.8},<br>
+{"abbrev":"path_i","name":"Distric of Columbia","population":8.7},] }</p>
+<p>Then I tried configuring the JavaScript to this:</p>
+<p> // Helper function to determine color. Currently a blue-gray color scheme.<br>
+function getColor(val) {<br>
+if (val &lt; 5) {<br>
+var col = "#d0d3db";<br>
+} else if (val &lt; 7) {<br>
+var col = "#a9afbe";<br>
+} else if (val &lt; 9) {<br>
+var col = "#677189";<br>
+} else {<br>
+var col = "#434958";<br>
+}<br>
+return(col);<br>
+} // <a href="http://twitter.com/#!/@end" rel="nofollow">@end</a> getColor<br>
+$(document).ready(function () {<br>
+// Load the data.<br>
+$.getJSON(‘population.json’, function(data) {<br>
+var tooltip = $(“#tooltip”).hide();<br>
+var tiphtml = “”;<br>
+var over = false;<br>
+// Store data by province abbreviation.<br>
+var popula = {};<br>
+$.each(data.provinces, function(i,province) {<br>
+// $(“#debug”).append(province.name);<br>
+popula[province.abbrev] = { “name”:province.name, “val”:province.population };<br>
+}); // @end each<br>
+// Set properties for each state.<br>
+for (var i=0; i &lt; provinces.length; i++) {<br>
+var s = provinces[i];<br>
+var id = s.data("id");<br>
+// Set state color.<br>
+s.attr({<br>
+fill: getColor(popula[id].val),<br>
+// fill: "#d6d6d6",<br>
+stroke: "#fff"<br>
+});<br>
+// Highlight state and show tooltip on mouse over.<br>
+s.mouseover(function() {<br>
+this.toFront();<br>
+var abbrev = this.data("id");<br>
+if (abbrev == 'SP' || abbrev == 'MI') {<br>
+SP.attr({<br>
+stroke: "#000",<br>
+'stroke-width': '2'<br>
+});<br>
+MI.attr({<br>
+stroke: "#000",<br>
+'stroke-width': '2'<br>
+});<br>
+} else {<br>
+this.attr({<br>
+stroke: "#000",<br>
+'stroke-width': '2'<br>
+});<br>
+}<br>
+tiphtml = '’+population[abbrev].name+’Population size: ‘+population[abbrev].val+’%';<br>
+over = true;<br>
+$(tooltip).show();<br>
+});<br>
+// Remove highlight and tool tip.<br>
+s.mouseout(function() {<br>
+var abbrev = this.data(“id”);<br>
+if (abbrev == ‘SP’ || abbrev == ‘MI’) {<br>
+SP.attr({<br>
+stroke: “#fff”,<br>
+‘stroke-width’: “1″<br>
+});<br>
+MI.attr({<br>
+stroke: “#fff”,<br>
+‘stroke-width’: “1″<br>
+});<br>
+} else {<br>
+this.attr({<br>
+stroke: “#fff”,<br>
+‘stroke-width’: “1″<br>
+});<br>
+}<br>
+over = false;<br>
+$(tooltip).hide();<br>
+});<br>
+} // @end for loop<br>
+// Set tooltip text and position.<br>
+$(document).mousemove(function(e) {<br>
+if (over) {<br>
+$(tooltip).css(“left”, e.clientX+15).css(“top”, e.clientY+15);<br>
+$(tooltip).html(tiphtml);<br>
+}<br>
+});<br>
+});<br>
+});</p>
+<p>I wanted the colors to work so I could go back and fill in the proper provincial names but I think there is something wrong with the $.getJSON function in terms of the var names and parameters I swopped in.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor odd alt depth-2" id="li-comment-190612">
+<div id="comment-190612" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190612">November 14, 2012 at 10:09 am</a>
+</span>
+</div>
+<div class="comment-text"><p>@Siyabonga – The JavaScript console in your browser will probably come in handy here. In Chrome, you can open it in View &gt; Developer &gt; JavaScript Console. In Firefox, it’s at Tools &gt; Web Console. So with that in view, load your modified map, and there should be an error that shows, which should hint what’s going on.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-theocasey even depth-2" id="li-comment-191655">
+<div id="comment-191655" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/b04b4dbc71fbfa28755e19cb741e8d8f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/b04b4dbc71fbfa28755e19cb741e8d8f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Thelonious Casey</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-191655">November 17, 2012 at 7:07 am</a>
+</span>
+</div>
+<div class="comment-text"><p>The final comma (66th character on this line):</p>
+<p>{“abbrev”:”path_i”,”name”:”Distric of Columbia”,”population”:8.7},] }</p>
+<p>If that is your final line, as it appears to be, it is the source of your problem.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-siyafrica odd alt depth-3" id="li-comment-191947">
+<div id="comment-191947" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/f7f65227352d93ecdf65d7aa733890d0" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/f7f65227352d93ecdf65d7aa733890d0?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Siyabonga Africa</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-191947">November 18, 2012 at 1:13 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi Thelonious</p>
+<p>Thanks. Do you have any idea how I can fix that line.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-siyafrica even depth-3" id="li-comment-191973">
+<div id="comment-191973" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/f7f65227352d93ecdf65d7aa733890d0" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/f7f65227352d93ecdf65d7aa733890d0?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Siyabonga Africa</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-191973">November 18, 2012 at 2:35 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi Thelonious</p>
+<p>Hehe. I removed the comma and it works now. Thanks a mil :-)</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-theocasey odd alt depth-3" id="li-comment-192164">
+<div id="comment-192164" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/b04b4dbc71fbfa28755e19cb741e8d8f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/b04b4dbc71fbfa28755e19cb741e8d8f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Thelonious Casey</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-192164">November 18, 2012 at 2:22 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>No problem :)</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-robertgrantstats even thread-odd thread-alt depth-1" id="li-comment-190491">
+<div id="comment-190491" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/9275416cb192c02008af6369a17ab431" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/9275416cb192c02008af6369a17ab431?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Robert Grant</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190491">November 14, 2012 at 2:06 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi Nathan<br>
+I wondered if you had any general advice on creating the SVG map from KML (e.g. from Google Maps)?<br>
+Robert</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor odd alt depth-2" id="li-comment-190623">
+<div id="comment-190623" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-190623">November 14, 2012 at 11:12 am</a>
+</span>
+</div>
+<div class="comment-text"><p>@Robert – You might want to try indiemapper (<a href="http://indiemapper.com/" rel="nofollow">http://indiemapper.com/</a>). You can import a KML file and export an SVG file. I’ve used the tool, although never for conversion, but I think it should work.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-mo99 even thread-even depth-1" id="li-comment-197816">
+<div id="comment-197816" class="">
+<div class="avatar">
+<img alt="" src="./How to Make an Interactive Choropleth Map_files/711f83bcf014c25f69aa4bf0a6c4bdc5" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/711f83bcf014c25f69aa4bf0a6c4bdc5?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Markus Ungersboeck</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/11/12/how-to-make-and-interactive-choropleth-map/#comment-197816">December 3, 2012 at 11:53 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi Nathan &amp; other ´Visualists´</p>
+<p>I try to create a similar map for Europe and that’s not easy because it seams that Raphael doesn’t like negative values for the coordinates (I have projected the map more to the east and to the southern hemisphere to get a result) – as soon I have a working demo I’ll report the details.</p>
+<p>But my initial question: how can you scale the map, if you enlarge the values of the demo script e.g. var rsr = Raphael(‘map’, ’4620′, ’3910′); nothing happens, if you reduce it only the north west part of the map is shown.</p>
+<p>Any ideas how to perform this task?<br>
+Markus</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul>
+</div> 
+</div>
+</div>
+</div> 
+</div> 
+</div> 
+<div id="footer">
+<div id="footer-container" class="content">
+<div class="float-left" style="width:32%;margin-right:5%;">
+<div id="about" class="sec">
+<h3>About</h3>
+<p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p>
+<p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+<p><a href="http://flowingdata.com/about/">More...</a></p>
+</div>
+</div>
+<div class="float-left" style="width:36%;margin-right:5%;">
+<div id="book-single" class="sec">
+<h3>Books</h3>
+<ul id="books" style="margin-bottom:0">
+<li>
+<a href="http://flowingdata.com/data-points/"><img src="./How to Make an Interactive Choropleth Map_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+<div class="clear-line"></div>
+</li>
+<li><a href="http://flowingdata.com/visualize-this/"><img src="./How to Make an Interactive Choropleth Map_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+<div class="clear-line"></div>
+</li>
+</ul>
+</div> 
+</div>
+<div class="float-left" style="width:22%">
+<div id="follow" class="sec">
+<h3>Follow</h3>
+<p>
+<a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp;
+<a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+<a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/feed">RSS</a>
+</p>
+</div>
+<div id="misc" class="sec">
+<h3>Miscellaneous</h3>
+<a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/advertise">Sponsorship</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+</a></div><a>
+</a></div><a>
+<div class="clear-line"></div>
+</a></div><a> 
+</a></div><a> 
+</a><div id="bottom"><a>
+Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+ 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./How to Make an Interactive Choropleth Map_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/shCore.js"></script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/shBrushXml.js"></script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/shBrushR.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/photon.js"></script>
+<script type="text/javascript" src="./How to Make an Interactive Choropleth Map_files/devicepx-jetpack.js"></script>
+<script src="./How to Make an Interactive Choropleth Map_files/e-201350.js" type="text/javascript"></script>
+<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'27511',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,27511,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./How to Make an Interactive Choropleth Map_files/g.gif" alt="" scale="0">
+</body></html>

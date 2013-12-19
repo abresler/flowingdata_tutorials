@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0077)http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> How to Visualize and Compare Distributions</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./How to Visualize and Compare Distributions_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./How to Visualize and Compare Distributions_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./How to Visualize and Compare Distributions_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<link rel="alternate" type="application/rss+xml" title="FlowingData » How to Visualize and Compare Distributions Comments Feed" href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/feed/">
+<script type="text/javascript" src="./How to Visualize and Compare Distributions_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./How to Visualize and Compare Distributions_files/jquery.js"></script>
+<script type="text/javascript" src="./How to Visualize and Compare Distributions_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="ITP Spring Show: Iraq war and diabetes visualizations" href="http://flowingdata.com/2012/05/15/itp-spring-show-iraq-war-and-diabetes-visualizations/">
+<link rel="next" title="What is missing?" href="http://flowingdata.com/2012/05/16/what-is-missing/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./How to Visualize and Compare Distributions_files/How to Visualize and Compare Distributions.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=24220">
+ <script type="text/javascript" src="./How to Visualize and Compare Distributions_files/democracy.js"></script><link rel="stylesheet" href="./How to Visualize and Compare Distributions_files/basic.css" type="text/css"><link rel="stylesheet" href="./How to Visualize and Compare Distributions_files/style(1).css" type="text/css"><link rel="stylesheet" href="./How to Visualize and Compare Distributions_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><link rel="stylesheet" type="text/css" href="./How to Visualize and Compare Distributions_files/shCore.css"><link rel="stylesheet" type="text/css" href="./How to Visualize and Compare Distributions_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#jsbnybwosttisnxsazvrbtfprowkbuxxnb{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.jsbnybwosttisnxsazvrbtfprowkbuxxnb-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#jsbnybwosttisnxsazvrbtfprowkbuxxnb br{display:block !important;}#jsbnybwosttisnxsazvrbtfprowkbuxxnb span{background:transparent !important;}#jsbnybwosttisnxsazvrbtfprowkbuxxnb div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#jsbnybwosttisnxsazvrbtfprowkbuxxnb a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#jsbnybwosttisnxsazvrbtfprowkbuxxnb{display:none !important;}}</style></head>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./How to Visualize and Compare Distributions_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-24220">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/distributions/" rel="tag">distributions</a>, <a href="http://flowingdata.com/tag/featured/" rel="tag">featured</a>, <a href="http://flowingdata.com/tag/r/" rel="tag">R</a> </div>
+<h1>How to Visualize and Compare Distributions</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./How to Visualize and Compare Distributions_files/distribution-plots1.png" class="attachment-long-form-thumb wp-post-image" alt="How to visualize distributions" width="425" height="269" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/05/distribution-plots1.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+Single data points from a large dataset can make it more relatable, but those individual numbers don't mean much without something to compare to. That's where distributions come in. </div>
+<div id="tut-meta">
+<div class="button-link"><a href="http://flowingdata.com/2010/06/28/do-movie-sequels-live-up-to-their-originals/">Demo</a></div>
+<div class="button-link"><a href="http://media.flowingdata.com/tutorials/show-distributions.R">Download Source</a></div>
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>There are a lot of ways to show distributions, but for the purposes of this tutorial, I'm only going to cover the more traditional plot types like histograms and box plots. Otherwise, we could be here all night. Plus the basic distribution plots aren't exactly well-used as it is.<br>
+<span id="more-24220"></span></p>
+<p>Before you get into plotting in R though, you should know what I mean by distribution. It's basically the spread of a dataset. For example, the median of a dataset is the half-way point. Half of the values are less than the median, and the other half are greater than. That's only part of the picture. </p>
+<p>What happens in between the maximum value and median? Do the values cluster towards the median and quickly increase? Are there are lot of values clustered towards the maximums and minimums with nothing in between? Sometimes the variation in a dataset is a lot more interesting than just mean or median. Distribution plots help you see what's going on.</p>
+<p><span class="tip">Want more? Google and Wikipedia are your friend.</span>Anyways, that's enough talking. Let's make some charts.</p>
+<p>If you don't have R installed yet, <a href="http://www.r-project.org/">do that now</a>.</p>
+<h2>Box-and-Whisker Plot</h2>
+<p>This old standby was created by statistician John Tukey in the age of graphing with pencil and paper. I wrote <a href="http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/">a short guide</a> on how to read them a while back, but you basically have the median in the middle, upper and lower quartiles, and upper and lower fences. If there are outliers more or less than 1.5 times the upper or lower quartiles, respectively, they are shown with dots. </p>
+<p>The method might be old, but they still work for showing basic distribution. Obviously, because only a handful of values are shown to represent a dataset, you do lose the variation in between the points.</p>
+<p>To get started, load the data in R. You'll use state-level crime data from the <a href="http://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/">Chernoff faces tutorial</a>.</p>
+<div id="highlighter_269316" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_269316_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_269316" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Load crime data</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">crime &lt;- </code><code class="functions">read.csv</code><code class="plain">(</code><code class="string">"<a href="http://datasets.flowingdata.com/crimeRatesByState-formatted.csv">http://datasets.flowingdata.com/crimeRatesByState-formatted.csv</a>"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Remove the District of Columbia from the loaded data. Its city-like makeup tends to throw everything off.</p>
+<div id="highlighter_965710" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_965710_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_965710" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Remove Washington, D.C.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">crime.new &lt;- crime[crime$state != </code><code class="string">"District of Columbia"</code><code class="plain">,]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Oh, and you don't need the national averages for this tutorial either.</p>
+<div id="highlighter_279060" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_279060_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_279060" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Remove national averages</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">crime.new &lt;- crime.new[crime.new$state != </code><code class="string">"United States "</code><code class="plain">,]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Now all you have to do to make a box plot for say, robbery rates, is plug the data into <code>boxplot()</code>.</p>
+<div id="highlighter_399881" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_399881_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_399881" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Box plot</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">boxplot</code><code class="plain">(crime.new$robbery, horizontal=</code><code class="keyword">TRUE</code><code class="plain">, main=</code><code class="string">"Robbery Rates in US"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><img src="./How to Visualize and Compare Distributions_files/01box-plot.png" alt="" title="box plot" class="alignnone size-medium wp-image-24241" width="625" height="389" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/05/01box-plot.png?resize=625%2C389" scale="2"></p>
+<p>Want to make box plots for every column, excluding the first (since it's non-numeric state names)? That's easy, too. Same function, different argument.</p>
+<div id="highlighter_935695" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_935695_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_935695" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Box plots for all crime rates</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">boxplot</code><code class="plain">(crime.new[,-1], horizontal=</code><code class="keyword">TRUE</code><code class="plain">, main=</code><code class="string">"Crime Rates in US"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Multiple box plot for comparision.</span><img src="./How to Visualize and Compare Distributions_files/02multiple-box-plots.png" alt="" title="multiple box plots" class="alignnone size-medium wp-image-24242" width="625" height="518" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/05/02multiple-box-plots.png?resize=625%2C518" scale="2"></p>
+<h2>Histogram</h2>
+<p>Like I said though, the box plot hides variation in between the values that it does show. A histogram can provide more details. Histograms look like bar charts, but they are not the same. The horizontal axis on a histogram is continuous, whereas bar charts can have space in between categories.</p>
+<p>Just like <code>boxplot()</code>, you can plug the data right into the <code>hist()</code> function. The <code>breaks</code> argument indicates how many breaks on the horizontal to use. </p>
+<div id="highlighter_868946" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_868946_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_868946" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Histogram</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">hist</code><code class="plain">(crime.new$robbery, breaks=10)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Look, ma! It's not a a bar chart.</span><img src="./How to Visualize and Compare Distributions_files/03histogram.png" alt="" title="histogram" class="alignnone size-medium wp-image-24250" width="625" height="475" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/05/03histogram.png?resize=625%2C475" scale="2"></p>
+<p>Using the <code>hist()</code> function, you have to do a tiny bit more if you want to make multiple histograms in one view. Iterate through each column of the dataframe with a for loop. Call <code>hist()</code> on each iteration.</p>
+<div id="highlighter_442815" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_442815_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_442815" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Multiple histograms</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">par</code><code class="plain">(mfrow=</code><code class="functions">c</code><code class="plain">(3, 3))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">colnames &lt;- </code><code class="functions">dimnames</code><code class="plain">(crime.new)[[2]]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">for </code><code class="plain">(i </code><code class="keyword">in</code> <code class="plain">2:8) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">hist</code><code class="plain">(crime[,i], xlim=</code><code class="functions">c</code><code class="plain">(0, 3500), breaks=</code><code class="functions">seq</code><code class="plain">(0, 3500, 100), main=colnames[i], probability=</code><code class="keyword">TRUE</code><code class="plain">, col=</code><code class="string">"gray"</code><code class="plain">, border=</code><code class="string">"white"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Using the same scale for each makes it easy to compare distributions.</span><img src="./How to Visualize and Compare Distributions_files/04multiple-histograms.png" alt="" title="multiple histograms" class="alignnone size-medium wp-image-24244" width="625" height="500" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/05/04multiple-histograms.png?resize=625%2C500" scale="2"></p>
+<h2>Density Plot</h2>
+<p>For smoother distributions, you can use the density plot. You should have a healthy amount of data to use these or you could end up with a lot of unwanted noise.</p>
+<p>To use them in R, it's basically the same as using the <code>hist()</code> function. Iterate through each column, but instead of a histogram, calculate density, create a blank plot, and then draw the shape.</p>
+<div id="highlighter_710495" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_710495_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_710495" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Density plot</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">par</code><code class="plain">(mfrow=</code><code class="functions">c</code><code class="plain">(3, 3))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">colnames &lt;- </code><code class="functions">dimnames</code><code class="plain">(crime.new)[[2]]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">for </code><code class="plain">(i </code><code class="keyword">in</code> <code class="plain">2:8) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">d &lt;- </code><code class="functions">density</code><code class="plain">(crime[,i])</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">plot</code><code class="plain">(d, type=</code><code class="string">"n"</code><code class="plain">, main=colnames[i])</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">polygon</code><code class="plain">(d, col=</code><code class="string">"red"</code><code class="plain">, border=</code><code class="string">"gray"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Multiple filled density plots.</span><img src="./How to Visualize and Compare Distributions_files/05density-plots.png" alt="" title="density plots" class="alignnone size-medium wp-image-24245" width="625" height="648" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/05/05density-plots.png?resize=625%2C648" scale="2"></p>
+<p>You can also use histograms and density lines together. Instead of <code>plot()</code>, use <code>hist()</code>, and instead of drawing a filled <code>polygon()</code>, just draw a line.</p>
+<div id="highlighter_719687" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_719687_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_719687" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Histograms and density lines</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">par</code><code class="plain">(mfrow=</code><code class="functions">c</code><code class="plain">(3, 3))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">colnames &lt;- </code><code class="functions">dimnames</code><code class="plain">(crime.new)[[2]]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">for </code><code class="plain">(i </code><code class="keyword">in</code> <code class="plain">2:8) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">hist</code><code class="plain">(crime[,i], xlim=</code><code class="functions">c</code><code class="plain">(0, 3500), breaks=</code><code class="functions">seq</code><code class="plain">(0, 3500, 100), main=colnames[i], probability=</code><code class="keyword">TRUE</code><code class="plain">, col=</code><code class="string">"gray"</code><code class="plain">, border=</code><code class="string">"white"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">d &lt;- </code><code class="functions">density</code><code class="plain">(crime[,i])</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">lines</code><code class="plain">(d, col=</code><code class="string">"red"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Histogram and density, reunited, and it feels so good.</span><img src="./How to Visualize and Compare Distributions_files/06histogram-and-density.png" alt="" title="histogram and density" class="alignnone size-medium wp-image-24246" width="625" height="648" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/05/06histogram-and-density.png?resize=625%2C648" scale="2"></p>
+<h2>Rug</h2>
+<p>The rug, which simply draws ticks for each value, is another way to show distributions. It usually accompanies another plot though, rather than serve as a standalone. Simply make a plot like you usually would, and then use <code>rug()</code> to draw said rug.</p>
+<div id="highlighter_925095" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_925095_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_925095" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Density and rug</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">d &lt;- </code><code class="functions">density</code><code class="plain">(crime$robbery)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">plot</code><code class="plain">(d, type=</code><code class="string">"n"</code><code class="plain">, main=</code><code class="string">"robbery"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">polygon</code><code class="plain">(d, col=</code><code class="string">"lightgray"</code><code class="plain">, border=</code><code class="string">"gray"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="functions">rug</code><code class="plain">(crime$robbery, col=</code><code class="string">"red"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Using a rug under a density plot.</span><img src="./How to Visualize and Compare Distributions_files/07rug.png" alt="" title="rug" class="alignnone size-medium wp-image-24249" width="625" height="538" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/05/07rug.png?resize=625%2C538" scale="2"></p>
+<h2>Violin Plot</h2>
+<p>The violin plot is like the lovechild between a density plot and a box-and-whisker plot. There's a box-and-whisker in the center, and it's surrounded by a centered density, which lets you see some of the variation.</p>
+<div id="highlighter_454373" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_454373_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_454373" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Violin plot</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">library</code><code class="plain">(vioplot)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">vioplot</code><code class="plain">(crime.new$robbery, horizontal=</code><code class="keyword">TRUE</code><code class="plain">, col=</code><code class="string">"gray"</code><code class="plain">)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">I bet this violin sounds horrible.</span><img src="./How to Visualize and Compare Distributions_files/07violin-plot.png" alt="" title="violin plot" class="alignnone size-medium wp-image-24247" width="625" height="539" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/05/07violin-plot.png?resize=625%2C539" scale="2"></p>
+<h2>Bean Plot</h2>
+<p>The bean plot takes it a bit further than the violin plot. It's something of a combination of a box plot, density plot, and a rug in the middle. I've never actually used this one, and I probably never will, but there you go.</p>
+<div id="highlighter_795795" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><div style="display: block; cursor: pointer; text-align: center; width: 16px; height: 16px; top: auto; left: auto; position: static;"><div style="-webkit-transition: opacity 150ms ease-out; transition: opacity 150ms ease-out; background-image: url(chrome-extension://gofhjkjmkpinhpoiabjplobcaignabnl/icon_play.png); text-align: left; opacity: 0.25; border: 1px solid rgb(0, 0, 0); width: 100%; height: 100%; background-color: rgba(193, 217, 244, 0.498039); background-repeat: no-repeat no-repeat;"></div></div><embed width="16" height="16" id="highlighter_795795_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_795795" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf" style="display: none !important;"></div><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Bean plot</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">library</code><code class="plain">(beanplot)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">beanplot</code><code class="plain">(crime.new[,-1])</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">A little too busy for me, but here you go.</span><img src="./How to Visualize and Compare Distributions_files/08bean-plot.png" alt="" title="bean plot" class="alignnone size-medium wp-image-24248" width="625" height="538" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/05/08bean-plot.png?resize=625%2C538" scale="2"></p>
+<h2>Wrapping Up</h2>
+<p>If you take away anything from this, it should be that variance within a dataset is worth investigating. Picking out single datapoints or only using medians is the easy thing to do, but it's usually not the most interesting.</p>
+<div class="clear-line"></div>
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="end"></div>
+ 
+<span id="comments"></span>
+<div style="width:625px">
+<div id="comments-block">
+<h2>14 Comments</h2>
+<ul class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-120498">
+<div id="comment-120498" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/176799d85135b16ef8c10846528b289e" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/176799d85135b16ef8c10846528b289e?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Sven Mensing</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120498">May 16, 2012 at 1:04 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi, does anybody know if there is a package that combines the violin plot with a scatter plot? This would help people see the actual data used.<br>
+I coded a small example:</p>
+<p> vPlot&lt;-function(x)<br>
+{<br>
+plot(0,0,type='n',xlim=c(0.5,ncol(x)+0.5),ylim=range(x),xaxt='n',ylab='Score',xlab='')<br>
+axis(1,c(1,2),c('GNTP a','GNTP b'))<br>
+for (r in 1:ncol(x))<br>
+{<br>
+d&lt;-density(x[,r])<br>
+BinVals=(d$y[-1]+d$y[-length(d$x)])/2<br>
+jitt=BinVals[cut(x[,r],d$x)]<br>
+y=rep(NA,N)<br>
+for(i in 1:N) y[i]=runif(1,-jitt[i],jitt[i])/2</p>
+<p> points(r+y,x[,r])<br>
+}<br>
+}</p>
+<p> N=150<br>
+x&lt;-log(0.3+exp(rnorm(N)))<br>
+y&lt;-rnorm(N)<br>
+par(mfrow=c(2,2))<br>
+plot(c(rep(1,N),rep(2,N)),c(x,y))<br>
+hist(x)<br>
+boxplot(x,y)<br>
+vPlot(cbind(x,y))</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-120519">
+<div id="comment-120519" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/65d5a829d86b2bb5b02e4257edac1b20" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/65d5a829d86b2bb5b02e4257edac1b20?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://civilstat.com/" rel="external nofollow" class="url">Jerzy</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120519">May 16, 2012 at 5:57 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Nathan — with the multiple box plot, it might be nice to force horizontal axis labels so you can see all the categories. It worked for me if I run this right before calling boxplot():<br>
+par(mar=par()$mar+c(0,5,0,0), las=1)</p>
+<p>Sven — that’s pretty cool. Jittered scatterplots are a quick-and-dirty approximation to that (not as nice as yours, but less code):<br>
+GroupNr &lt;- rep(c(1,2),length(x))<br>
+plot(jitter(GroupNr), c(x,y))</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor even depth-3" id="li-comment-120550">
+<div id="comment-120550" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120550">May 16, 2012 at 12:03 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Thanks, Jerzy. I guess I’m so used to post-processing that I don’t change parameters much.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-babelson odd alt thread-odd thread-alt depth-1" id="li-comment-120531">
+<div id="comment-120531" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/df6fac5b2d68b6ccdc2e7d9e570ecd7d" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/df6fac5b2d68b6ccdc2e7d9e570ecd7d?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Brian Abelson</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120531">May 16, 2012 at 7:58 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Here’s a simple example of adding transparency to colors in order to visualize the relationships between multiple distributions:</p>
+<p>require(“RColorBrewer”)</p>
+<p>#generate a bunch of normal distributions around different means<br>
+x1=seq(-4,4,length=200)<br>
+y1=1/sqrt(2*pi)*exp(-x^2/2)</p>
+<p>x2=seq(-2,6,length=200)<br>
+y2=1/sqrt(2*pi)*exp(-x^2/2)</p>
+<p>x3=seq(-6,2,length=200)<br>
+y3=1/sqrt(2*pi)*exp(-x^2/2)</p>
+<p>x4=seq(-8,0,length=200)<br>
+y4=1/sqrt(2*pi)*exp(-x^2/2)</p>
+<p>x5=seq(0,8,length=200)<br>
+y5=1/sqrt(2*pi)*exp(-x^2/2) </p>
+<p>x6=seq(-10,-2,length=200)<br>
+y6=1/sqrt(2*pi)*exp(-x^2/2)</p>
+<p>x7=seq(2,10,length=200)<br>
+y7=1/sqrt(2*pi)*exp(-x^2/2)</p>
+<p>#assign colors, paste on a number between 10 to 99 to add transparency<br>
+col &lt;- brewer.pal(7, "RdBu")<br>
+alpha &lt;- 50<br>
+col &lt;- paste(col, alpha, sep="")</p>
+<p>#plot<br>
+plot(x1,y1,type="n",lwd=2, xlim=c(-4,4))<br>
+polygon(x1,y1, col=col[7])<br>
+polygon(x2,y2, col=col[6])<br>
+polygon(x3,y3, col=col[5])<br>
+polygon(x4,y4, col=col[4])<br>
+polygon(x5,y5, col=col[3])<br>
+polygon(x6,y6, col=col[2])<br>
+polygon(x7,y7, col=col[1])</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-123528">
+<div id="comment-123528" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/ef0c30b61386a6f9e0a26d47e4b9a3f9" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/ef0c30b61386a6f9e0a26d47e4b9a3f9?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Marek</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-123528">June 6, 2012 at 3:47 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>You could add transparency as percent value by adjustcolor function:</p>
+<p>col &lt;- adjustcolor(brewer.pal(7, "RdBu"), alpha=0.75)</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-120598">
+<div id="comment-120598" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/4419dd6c22ef5b24c496d9337887c59a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/4419dd6c22ef5b24c496d9337887c59a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://www.plainfigures.com/" rel="external nofollow" class="url">Sally Bigwood</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120598">May 17, 2012 at 1:41 am</a>
+</span>
+</div>
+<div class="comment-text"><p>All of these examples could be improved by comprehensive titles and labelling. Intelligible wording on a chart or graph makes the difference between confusion and coherence.<br>
+I know you’re just trying to find a design that works, but if the readers don’t understand your message, then your design, regardless of originality and creativity, has failed. For example, the Multiple box plot shows 7 indicates but only 3 labels?!? The Bean plot shows 7 indicators are only 5 labels?!? It would only take a few seconds to ensure that each indicate was labeled.<br>
+BTW, histograms are distinguished from bar charts because they show the distribution of data – often the values within ranges or class intervals. There are no spaces between the columns on a histogram but that’s just a convention, not the essential difference.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-120605">
+<div id="comment-120605" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/4419dd6c22ef5b24c496d9337887c59a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/4419dd6c22ef5b24c496d9337887c59a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://www.plainfigures.com/" rel="external nofollow" class="url">Sally Bigwood</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120605">May 17, 2012 at 3:43 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Hey friends, pay no attention to that last paragraph of my previous comment. Obviously having a demented morning to be followed by a demented afternoon.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-120616">
+<div id="comment-120616" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/39f305f0b7935dbdb9b03d069f480961" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/39f305f0b7935dbdb9b03d069f480961?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Mark</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120616">May 17, 2012 at 5:44 am</a>
+</span>
+</div>
+<div class="comment-text"><p>I second Sally’s comment – this whole post is really hard to grasp due to lack of proper legend, labels and titles on the graphs. I would really like to understand this better, but can’t figure what exactly is being plotted on either the x or y axes of any of these graphs. At the risk of appearing stupid, can someone please explain.<br>
+Thanks<br>
+Mark</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-125207">
+<div id="comment-125207" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/375f41ebda8fc910e0e6e51038095e0e" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/375f41ebda8fc910e0e6e51038095e0e?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Nate</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-125207">June 16, 2012 at 3:02 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Hey Mark,</p>
+<p>I think he explained the boxplot’s notable points on the x-axis. There is no significance to the y-axis in this example (although I have seen graphs before where the thickness of the box plot is proportional to the size of the sample; it makes the multiple box plot chart more informative.) Also, most of the time I see box plots drawn vertically.</p>
+<p>The histogram is pretty simple, and can also be done by hand pretty easily. The data points are “binned” – that is, put into groups of the same length. It looks like R chose to create 13 bins of length 20 (e.g. [0-20), [20-40), etc.) Then the y-axis is the number of data points in each bin. That’s what they mean by “frequency”.</p>
+<p>The density plot uses some kind of estimation of frequency, although it’s similar to the histogram. Not sure what the heck that violin plot is, though…</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-120633">
+<div id="comment-120633" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/5d096d36020f2cf639c49884719f12f7" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/5d096d36020f2cf639c49884719f12f7?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://www.storytellingwithdata.com/" rel="external nofollow" class="url">Cole Nussbaumer</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120633">May 17, 2012 at 10:16 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Hi Nathan,</p>
+<p>Great tutorial. I’ve been thinking about learning R for a while and this post is giving me the inspiration to finally take a crack at it. One related question for you – I have both a PC and Mac at my disposal – would you recommend one over the other for using R?</p>
+<p>Thanks so much!<br>
+Cole</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor even depth-2" id="li-comment-120695">
+<div id="comment-120695" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120695">May 18, 2012 at 3:54 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Nope, R should be the same on both.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-120967">
+<div id="comment-120967" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/b9e46fddc86698eb402e714eb85eb1ee" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/b9e46fddc86698eb402e714eb85eb1ee?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">dM/</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-120967">May 22, 2012 at 5:47 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Hey Nathan</p>
+<p>Thanks for this. I quite like strip plots where each dot is hollow. This is good for limited space, where you’re only trying to show broad spread and outliers. Obviously spikes in the tail are not observed this way, but it’s a quick snap shot. </p>
+<p>What would be good is a tutorial on box plots, where you can over-ride the 1.5 * IQR defaults, which determin the default whisker length. I often need to show simulated output from a stochastic monte carlo model, so I’d like whiskers at the 10th and 90th percentile, with dots at the 1 and 99th percentile.</p>
+<p>The advantge of strip and box over historgram, is that you avoid discussions about the height of histograms.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-125012">
+<div id="comment-125012" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/b5fecd2ec530bad0bd9c802719fe8168" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/b5fecd2ec530bad0bd9c802719fe8168?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Eye Reward</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-125012">June 15, 2012 at 3:52 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>How are outliers handled?</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-184971">
+<div id="comment-184971" class="">
+<div class="avatar">
+<img alt="" src="./How to Visualize and Compare Distributions_files/b09935caead960e5ae68cd6ebdcf14bf" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/b09935caead960e5ae68cd6ebdcf14bf?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Tosin</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/#comment-184971">October 29, 2012 at 9:32 am</a>
+</span>
+</div>
+<div class="comment-text"><p>What do you intend showing when you plot histogram?</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul>
+</div> 
+</div>
+</div>
+</div> 
+</div> 
+</div> 
+<div id="footer">
+<div id="footer-container" class="content">
+<div class="float-left" style="width:32%;margin-right:5%;">
+<div id="about" class="sec">
+<h3>About</h3>
+<p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p>
+<p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+<p><a href="http://flowingdata.com/about/">More...</a></p>
+</div>
+</div>
+<div class="float-left" style="width:36%;margin-right:5%;">
+<div id="book-single" class="sec">
+<h3>Books</h3>
+<ul id="books" style="margin-bottom:0">
+<li>
+<a href="http://flowingdata.com/data-points/"><img src="./How to Visualize and Compare Distributions_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+<div class="clear-line"></div>
+</li>
+<li><a href="http://flowingdata.com/visualize-this/"><img src="./How to Visualize and Compare Distributions_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+<div class="clear-line"></div>
+</li>
+</ul>
+</div> 
+</div>
+<div class="float-left" style="width:22%">
+<div id="follow" class="sec">
+<h3>Follow</h3>
+<p>
+<a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp;
+<a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+<a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/feed">RSS</a>
+</p>
+</div>
+<div id="misc" class="sec">
+<h3>Miscellaneous</h3>
+<a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/advertise">Sponsorship</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+</a></div><a>
+</a></div><a>
+<div class="clear-line"></div>
+</a></div><a> 
+</a></div><a> 
+</a><div id="bottom"><a>
+Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+ 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./How to Visualize and Compare Distributions_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./How to Visualize and Compare Distributions_files/shCore.js"></script>
+<script type="text/javascript" src="./How to Visualize and Compare Distributions_files/shBrushR.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="./How to Visualize and Compare Distributions_files/photon.js"></script>
+<script type="text/javascript" src="./How to Visualize and Compare Distributions_files/devicepx-jetpack.js"></script>
+<script src="./How to Visualize and Compare Distributions_files/e-201350.js" type="text/javascript"></script>
+<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'24220',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,24220,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./How to Visualize and Compare Distributions_files/g.gif" alt="" scale="0">
+</body><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style></html>

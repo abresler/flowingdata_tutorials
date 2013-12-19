@@ -1,0 +1,640 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0060)http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> How to Make a Contour Map</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./How to Make a Contour Map_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./How to Make a Contour Map_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./How to Make a Contour Map_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<link rel="alternate" type="application/rss+xml" title="FlowingData » How to Make a Contour Map Comments Feed" href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/feed/">
+<link rel="stylesheet" id="ws-plugin--s2member-css" href="./How to Make a Contour Map_files/s2member-o.php" type="text/css" media="all">
+<script type="text/javascript" src="./How to Make a Contour Map_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/jquery.js"></script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="A data mess" href="http://flowingdata.com/2012/02/06/a-data-mess/">
+<link rel="next" title="Weave for visualization development" href="http://flowingdata.com/2012/02/07/weave-for-visualization-development/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./How to Make a Contour Map_files/How to Make a Contour Map.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=21149">
+ <script type="text/javascript" src="./How to Make a Contour Map_files/democracy.js"></script><link rel="stylesheet" href="./How to Make a Contour Map_files/basic.css" type="text/css"><link rel="stylesheet" href="./How to Make a Contour Map_files/style(1).css" type="text/css"><link rel="stylesheet" href="./How to Make a Contour Map_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><link rel="stylesheet" type="text/css" href="./How to Make a Contour Map_files/shCore.css"><link rel="stylesheet" type="text/css" href="./How to Make a Contour Map_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#rvdasktrizfrxojodfvtzxpbholxrefyznqumcxr{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.rvdasktrizfrxojodfvtzxpbholxrefyznqumcxr-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#rvdasktrizfrxojodfvtzxpbholxrefyznqumcxr br{display:block !important;}#rvdasktrizfrxojodfvtzxpbholxrefyznqumcxr span{background:transparent !important;}#rvdasktrizfrxojodfvtzxpbholxrefyznqumcxr div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#rvdasktrizfrxojodfvtzxpbholxrefyznqumcxr a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#rvdasktrizfrxojodfvtzxpbholxrefyznqumcxr{display:none !important;}}</style></head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./How to Make a Contour Map_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-21149">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/contour-map/" rel="tag">contour map</a>, <a href="http://flowingdata.com/tag/mysql/" rel="tag">MySQL</a>, <a href="http://flowingdata.com/tag/python/" rel="tag">Python</a>, <a href="http://flowingdata.com/tag/r/" rel="tag">R</a> <span class="members-note"><a href="http://flowingdata.com/members-only">Members Only</a></span> </div>
+<h1>How to Make a Contour Map</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./How to Make a Contour Map_files/10-filled-contour-colors.png" class="attachment-long-form-thumb wp-post-image" alt="Contour plots" width="425" height="260" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/10-filled-contour-colors.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+Filled contour plots are useful for looking at density across two dimensions and are often used to visualize geographic data. It's straightforward to make them in R — once you get your data in the right format, that is. </div>
+<div id="tut-meta">
+<div class="button-link"><a href="http://flowingdata.com/2011/07/07/where-the-aliens-are-flying-their-ufos/">Demo</a></div>
+<div class="button-link"><a href="http://flowingdata.com/?s2member_file_download=2012/contour-code.zip">Download Source</a></div>
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>When you have a bunch of data points with latitude and longitude, sticking all of them on a map is straightforward. But it can get cluttered in a hurry when you have a lot of dots on your map. Areas with a lot of points overlap. A contour map, on the other hand, can better show geographic density.</p>
+<p>The <code>contour()</code> function in R will do most of the work for you, all in just one line of code, but you have to get the data in the right format. This takes the most time. Ideally, you'd be able to plug in points with latitude and longitude and let the software do the rest, but that's not how R does it. <span class="tip">There are lots of different ways to do this, even in R, but this was the most straightforward route for me.</span>A big (and expensive) application like ArcGIS, which is designed specifically for geographic data, might be able to get you there, but where's the fun in that?</p>
+<h2>Setup</h2>
+<p>This tutorial covers data formatting and derivation with Python and MySQL, but if you're not into that part of the process, you can skip to the next section. The derived counts are included in the download (<code>cnt_matrix.txt</code>). However, if you want to take this from start to finish, you will need to have access to the following:</p>
+<ul>
+<li><a href="http://python.org/">Python</a> — used to access the database and format data</li>
+<li><a href="http://mysql.com/">MySQL</a> — stores the longitude and latitude</li>
+<li><a href="http://www.r-project.org/">R</a> — makes the contour plots</li>
+</ul>
+<h3>Download and Prepare the Data</h3>
+<p>Over 60,000 documented UFO sightings is the data of interest, which you can <a href="http://www.infochimps.com/datasets/60000-documented-ufo-sightings-with-text-descriptions-and-metada">download in full</a> from Infochimps. It's a pretty large file at 78 megabytes. </p>
+<p>The problem is that you only get addresses, not latitude and longitude. To do that, you have to geocode the addresses. I used <a href="http://flowingdata.com/?s2member_file_download=2012/geocode_sightings.py">this Python script</a> to do that. I won't go into the details here since geocoding really needs its own tutorial, but I've included comments in the script that I hope are helpful.</p>
+<p><span class="tip"><a href="http://support.modwest.com/content/6/253/en/how-do-i-import-delimited-data-into-mysql.html">This article</a> on Modwest should help if you're unfamiliar with <code>LOAD DATA INFILE</code></span>Once you have the CSV file with latitude and longitude, you can use <code>LOAD DATA INFILE</code> to import the CSV to a MySQL database. I created a table called sightings with the following schema.</p>
+<p><img src="./How to Make a Contour Map_files/UFO-table.png" alt="" title="UFO table" class="alignnone size-full wp-image-21412" width="607" height="241" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/02/UFO-table.png?resize=607%2C241" scale="2"></p>
+<p><span class="tip">There's <a href="http://dev.mysql.com/doc/refman/5.1/en/mysqldump.html">official documentation</a> and plenty of tutorials on importing a MySQL dump.</span>Optionally, you can <a href="http://flowingdata.com/?s2member_file_download=2012/ufo.sql.zip">download the prepared data as an SQL file</a> and import. The main thing is that you want latitude and longitude for each row to be stored as a point in MySQL, so that you can query by bounding rectangle.</p>
+<h3>Build a Counts Matrix</h3>
+<p>On to the queries. The point of all of this is to get the data in the format that R will be able to use it. Direct from Infochimps, you get a CSV file with latitude and longitude. The function you use in R though needs a matrix of counts. Or in other words, imagine you placed a grid over the United States. You want to know how many sightings there were in the region encapsulated by each cell in the grid. Putting the data in a MySQL database lets ask this question.</p>
+<p><span class="tip">I initially made queries in R, but it was really slow. In the time it took for my R script (albeit not the most efficient code) to finish, I had written and run the Python script that follows.</span>Now you just need a way to query the database, which can be done in a lot of different languages. I chose Python for this example, but you could use PHP, Perl, etc. </p>
+<p>Back to the Python script, <code>build_matrix.py</code>.</p>
+<p>Import the necessary libraries and create a connection to the database. Then enter your own credentials for the <code>user</code> and <code>passwd</code> arguments.</p>
+<div id="highlighter_675987" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_675987_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_675987" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">import</code> <code class="plain">csv, time, MySQLdb</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">connection </code><code class="keyword">=</code> <code class="plain">MySQLdb.Connect(host</code><code class="keyword">=</code><code class="string">'localhost'</code><code class="plain">, user</code><code class="keyword">=</code><code class="string">'root'</code><code class="plain">, passwd</code><code class="keyword">=</code><code class="plain">'</code><code class="string">', db='</code><code class="plain">ufo')</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">cursor </code><code class="keyword">=</code> <code class="plain">connection.cursor()</code></td></tr></tbody></table></div></div></div>
+<p>The lines that follow set the initial variables. You have the beginning and end of an SQL query. As you iterate through each cell in the imaginary grid, you will send a query to the database that asks, "How many sightings occurred inside this rectangle?" The rectangle is defined by the top left and bottom right corners.</p>
+<p>In between <code>sql_beg</code> and <code>sql_end</code> you insert the coordinates of each rectangle.</p>
+<div id="highlighter_385077" class="syntaxhighlighter  "><div class="bar  "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_385077_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_385077" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># SQL query</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">sql_beg </code><code class="keyword">=</code> <code class="string">'SELECT COUNT(*) FROM sightings WHERE MBRContains(GeomFromText(\'LineString('</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">sql_end </code><code class="keyword">=</code> <code class="string">')\'), lat_lng)'</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="comments"># Northwest and southeast points of the United States</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">lat_NW </code><code class="keyword">=</code> <code class="value">54.162434</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="plain">lng_NW </code><code class="keyword">=</code> <code class="keyword">-</code><code class="value">135.351563</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="plain">lat_SE </code><code class="keyword">=</code> <code class="value">23.725012</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="plain">lng_SE </code><code class="keyword">=</code> <code class="keyword">-</code><code class="value">61.347656</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="comments"># About 20 miles</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="plain">lat_incr </code><code class="keyword">=</code> <code class="keyword">-</code><code class="plain">.</code><code class="value">29</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="plain">lng_incr </code><code class="keyword">=</code> <code class="plain">.</code><code class="value">29</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="plain">lat_curr </code><code class="keyword">=</code> <code class="plain">lat_NW</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="plain">lng_curr </code><code class="keyword">=</code> <code class="plain">lng_NW</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="plain">cnt_matrix </code><code class="keyword">=</code> <code class="plain">[]</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="plain">num_rows </code><code class="keyword">=</code> <code class="value">0</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>You use two loops. One to iterate north to south.</p>
+<div id="highlighter_587231" class="syntaxhighlighter  "><div class="bar  "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_587231_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_587231" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># North to south</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">while</code> <code class="plain">lat_curr &gt; lat_SE:</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">lat_nxt </code><code class="keyword">=</code> <code class="plain">lat_curr </code><code class="keyword">+</code> <code class="plain">lat_incr</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">lng_curr </code><code class="keyword">=</code> <code class="plain">lng_NW</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">row_curr </code><code class="keyword">=</code> <code class="plain">[]</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The other to iterate east to west. Again, you are visiting each cell in the imaginary grid, in increments of <code>lat_incr</code> and <code>lon_incr</code>, or about twenty by twenty mile squares. Notice the construction of the full SQL statement.</p>
+<div id="highlighter_364514" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_364514_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_364514" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># West to east</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">while</code> <code class="plain">lng_curr &lt; lng_SE:</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">lng_nxt </code><code class="keyword">=</code> <code class="plain">lng_curr </code><code class="keyword">+</code> <code class="plain">lng_incr</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">sql </code><code class="keyword">=</code> <code class="plain">sql_beg </code><code class="keyword">+</code> <code class="functions">str</code><code class="plain">(lat_curr) </code><code class="keyword">+</code> <code class="string">" "</code> <code class="keyword">+</code> <code class="functions">str</code><code class="plain">(lng_curr) </code><code class="keyword">+</code> <code class="string">", "</code> <code class="keyword">+</code> <code class="functions">str</code><code class="plain">(lat_nxt) </code><code class="keyword">+</code> <code class="string">" "</code> <code class="keyword">+</code> <code class="functions">str</code><code class="plain">(lng_nxt) </code><code class="keyword">+</code> <code class="plain">sql_end</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Then execute the SQL statement to get back a result in the form of a count, and store the count in <code>row_curr</code>. After each row is computed, you append it to <code>cnt_matrix</code>. <code>lat_curr</code> and <code>lng_curr</code> are incremented accordingly to move on to the next cell.</p>
+<div id="highlighter_707922" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_707922_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_707922" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Execute the SQL and store data in array</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">cursor.execute(sql)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">result </code><code class="keyword">=</code> <code class="plain">cursor.fetchone()</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">cnt </code><code class="keyword">=</code> <code class="plain">result[</code><code class="value">0</code><code class="plain">]</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">row_curr.append(cnt)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">lng_curr </code><code class="keyword">+</code><code class="keyword">=</code> <code class="plain">lng_incr</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">cnt_matrix.append(row_curr)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">lat_curr </code><code class="keyword">+</code><code class="keyword">=</code> <code class="plain">lat_incr</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">num_rows </code><code class="keyword">+</code><code class="keyword">=</code> <code class="value">1</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Once you've iterated all the way through, the only thing left to do is output <code>cnt_matrix</code>.</p>
+<div id="highlighter_855450" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_855450_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_855450" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Output the counts matrix</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="keyword">for</code> <code class="plain">i </code><code class="keyword">in</code> <code class="functions">range</code><code class="plain">(</code><code class="functions">len</code><code class="plain">(cnt_matrix)):</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">s </code><code class="keyword">=</code> <code class="string">', '</code><code class="plain">.join(</code><code class="functions">map</code><code class="plain">(</code><code class="functions">str</code><code class="plain">, cnt_matrix[i]))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions">print</code> <code class="plain">s</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Run the script, and save the output as <code>cnt_matrix.txt</code> (found in the download for this tutorial).</p>
+<p><span class="tip">Running <code>build_matrix.py</code> in the Terminal</span><img src="./How to Make a Contour Map_files/Run-script.png" alt="" title="Run script" class="alignnone size-medium wp-image-21434" width="625" height="488" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/Run-script.png?resize=625%2C488" scale="2"></p>
+<p>This is what the resulting data looks like. </p>
+<p><span class="tip">Matrix of counts of UFO sightings in the United States</span><img src="./How to Make a Contour Map_files/Counts-matrix.png" alt="" title="Counts matrix" class="alignnone size-medium wp-image-21195" width="625" height="540" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/02/Counts-matrix.png?resize=625%2C540" scale="2"></p>
+<p>Nothing too exciting, but now it's easy to make a contour plot. On to R and the <code>contour()</code> function.</p>
+<h2>Visualize the Data</h2>
+<p>Simply load <code>cnt_matrix.txt</code> with <code>read.csv()</code> in R. This loads the data as a data frame, but you want it as a matrix, so convert with <code>as.matrix()</code>, and remove default dimension names.</p>
+<div id="highlighter_620197" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_620197_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_620197" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Counts matrix derived using Python/MySQL</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">cnts &lt;- </code><code class="functions">read.csv</code><code class="plain">(</code><code class="string">"cnt_matrix.txt"</code><code class="plain">, header=</code><code class="keyword">FALSE</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">cnts_matrix &lt;- </code><code class="functions">as.matrix</code><code class="plain">(cnts)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">dimnames</code><code class="plain">(cnts_matrix)[[2]] &lt;- </code><code class="keyword">NULL</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Plug <code>cnts_matrix</code> into <code>contour()</code>.</p>
+<div id="highlighter_34003" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_34003_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_34003" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Make a contour plot</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">contour</code><code class="plain">(cnts_matrix)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>This is what you get:</p>
+<p><span class="tip">Default contour plot generated in R, need to transform the data to get the map facing the right direction</span><img src="./How to Make a Contour Map_files/00-contour-flipped.png" alt="" title="Flipped contour" class="alignnone size-full wp-image-21213" width="435" height="593" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/00-contour-flipped.png?resize=435%2C593" scale="2"></p>
+<p>That's not quite right. </p>
+<h3>Transform</h3>
+<p><span class="tip">Alternatively, we could have output the data in the Python script turned right around, but as you can see, it's straightforward to move it around after the fact.</span>The shape of the United States is kind of visible, but it's flipped on its side. Transform the matrix to turn things around.</p>
+<div id="highlighter_392478" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_392478_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_392478" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Transform counts matrix</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">cnts_matrix &lt;- </code><code class="functions">t</code><code class="plain">(cnts_matrix[105:1,])</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">contour</code><code class="plain">(cnts_matrix)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>That's better. The country is properly oriented.</p>
+<p><span class="tip">Default contour map with transformed data</span><img src="./How to Make a Contour Map_files/01-contourdefault.png" alt="" title="01-contourdefault" class="alignnone size-medium wp-image-21214" width="625" height="360" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/02/01-contourdefault.png?resize=625%2C360" scale="2"></p>
+<p>The high values dominate though, and you can only see the dense city areas. The counts matrix is sparse, but not that sparse. One common way to unearth the lower values is to use a logarithmic scale. </p>
+<div id="highlighter_637797" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_637797_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_637797" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Contour plot with logarithmic scale</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>You can see more now, but the plot is cluttered. </p>
+<p><span class="tip">Using a logarithmic scale so that the higher counts do not dominate and the lower values are visible</span><img src="./How to Make a Contour Map_files/02-contour-levels.png" alt="" title="02-contour-levels" class="alignnone size-medium wp-image-21215" width="625" height="365" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/02-contour-levels.png?resize=625%2C365" scale="2"></p>
+<h3>Customize</h3>
+<p>Like most plot types in R, you can supply values to arguments to customize the plot. Remove the x-axis ticks by setting the x-axis type (<code>xaxt</code>) to "n," which stands for none. Same for the y-axis. Use the number of levels (<code>nlevels</code>) to control granularity, and <code>lwd</code>, or line width, to make thicker or thinner contours.</p>
+<div id="highlighter_388817" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_388817_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_388817" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Using arguments in function</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), xaxt=</code><code class="string">"n"</code><code class="plain">, yaxt=</code><code class="string">"n"</code><code class="plain">, nlevels=5, lwd=0.5)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Arguments in the <code>contour()</code> function let you change the look of the map and make it easier to read</span><img src="./How to Make a Contour Map_files/03-contour-args.png" alt="" title="03-contour-args" class="alignnone size-medium wp-image-21216" width="625" height="385" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/02/03-contour-args.png?resize=625%2C385" scale="2"></p>
+<p>As you <a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/">learned before</a>, you can create custom color palettes. It's straightforward to use your own colors with the <code>col</code> argument.</p>
+<div id="highlighter_888424" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_888424_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_888424" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Color palettes for contours</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">bwpal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"white"</code><code class="plain">, </code><code class="string">"black"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">orangepal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"white"</code><code class="plain">, </code><code class="string">"#c75a00"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="comments"># Contour with colors</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="functions">contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), xaxt=</code><code class="string">"n"</code><code class="plain">, yaxt=</code><code class="string">"n"</code><code class="plain">, nlevels=5, col=</code><code class="functions">bwpal</code><code class="plain">(6))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>This is a simple color palette with white and black and grays in between.</p>
+<p><span class="tip">Black and white color palette used so that higher values are represented darker</span><img src="./How to Make a Contour Map_files/04-contour-colors.png" alt="" title="04-contour-colors" class="alignnone size-medium wp-image-21217" width="625" height="382" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/04-contour-colors.png?resize=625%2C382" scale="2"></p>
+<p>Just as easily, try an orange palette.</p>
+<div id="highlighter_69578" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_69578_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_69578" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Contour plot using orange palette</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), xaxt=</code><code class="string">"n"</code><code class="plain">, yaxt=</code><code class="string">"n"</code><code class="plain">, nlevels=10, col=</code><code class="functions">orangepal</code><code class="plain">(12))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Using a white to orange color palette</span><img src="./How to Make a Contour Map_files/05-contour-orange.png" alt="" title="05-contour-orange" class="alignnone size-medium wp-image-21218" width="625" height="381" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/02/05-contour-orange.png?resize=625%2C381" scale="2"></p>
+<p>Here's a closer view of what's going on. In the country-wide view, it looks like there are filled in areas, but those are actually spots where contours are more dense.</p>
+<p><span class="tip">Zoomed in on California. I did this by viewing the saved plot in a PDF viewer, but you can also change <code>xlim</code> and <code>ylim</code> in <code>contour()</code></span><img src="./How to Make a Contour Map_files/06-contour-colors.png" alt="" title="06-contour-colors" class="alignnone size-full wp-image-21219" width="625" height="412" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/02/06-contour-colors.png?resize=625%2C412" scale="2"></p>
+<p>Rainbow palette, maybe?</p>
+<div id="highlighter_405655" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_405655_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_405655" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># With rainbow palette</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), xaxt=</code><code class="string">"n"</code><code class="plain">, yaxt=</code><code class="string">"n"</code><code class="plain">, nlevels=10, col=</code><code class="functions">rainbow</code><code class="plain">(12))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Same map with R's built-in <code>rainbow()</code> palette, just for kicks</span><img src="./How to Make a Contour Map_files/07-contour-rainbow.png" alt="" title="07-contour-rainbow" class="alignnone size-medium wp-image-21220" width="625" height="380" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/02/07-contour-rainbow.png?resize=625%2C380" scale="2"></p>
+<h3>Filled Contour Map</h3>
+<p>Filled contour plots can be used to similar effect. The benefit of filled contours is that they can sometimes provide higher granularity in your data than regular contour plots can. The process is basically the same, except you use <code>filled.contour()</code> instead.</p>
+<p>Try a black to red to white color palette. Notice that you can use the <code>color.palette</code> argument over the <code>col</code> argument, as done previously.</p>
+<div id="highlighter_551521" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_551521_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_551521" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Black-red-white palette for filled contours</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">redpal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"black"</code><code class="plain">, </code><code class="string">"red"</code><code class="plain">, </code><code class="string">"white"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="comments"># Make the filled contour plot</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="functions">filled.contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), color.palette=redpal, nlevels=5)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The brighter shades indicate areas where there where more UFO sightings. Mostly dense city centers.</p>
+<p><span class="tip">Filled contour map with black to red to white color palette, logarithmic scale</span><img src="./How to Make a Contour Map_files/08-filled-lowlevel.png" alt="" title="08-filled-lowlevel" class="alignnone size-medium wp-image-21221" width="625" height="346" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/02/08-filled-lowlevel.png?resize=625%2C346" scale="2"></p>
+<p>There are only five levels in between the endpoints because of <code>nlevels</code>, but you can bump that up to get more shades in between.</p>
+<div id="highlighter_922430" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_922430_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_922430" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions">filled.contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), color.palette=redpal, nlevels=30)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>More shades of red now.</p>
+<p><span class="tip">More levels provider higher granularity</span><img src="./How to Make a Contour Map_files/09-filled-highlevel.png" alt="" title="09-filled-highlevel" class="alignnone size-medium wp-image-21222" width="625" height="347" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/02/09-filled-highlevel.png?resize=625%2C347" scale="2"></p>
+<p>You get what's going on here? Try some more colors just for fun.</p>
+<div id="highlighter_613309" class="syntaxhighlighter  "><div class="bar   "><div class="toolbar"><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_613309_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_613309" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># More color palettes</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">cyanpal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"black"</code><code class="plain">, </code><code class="string">"cyan"</code><code class="plain">, </code><code class="string">"white"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">purppal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"black"</code><code class="plain">, </code><code class="string">"purple"</code><code class="plain">, </code><code class="string">"white"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">bluepal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"black"</code><code class="plain">, </code><code class="string">"blue"</code><code class="plain">, </code><code class="string">"white"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="comments"># Trying different palettes</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="functions">filled.contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), color.palette=cyanpal, nlevels=30)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="functions">filled.contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), color.palette=purppal, nlevels=30)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="functions">filled.contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), color.palette=bluepal, nlevels=30)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="functions">filled.contour</code><code class="plain">(</code><code class="functions">log</code><code class="plain">(cnts_matrix+1), color.palette=bwpal, nlevels=30)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Like I said, once you have the data in the right format, the rest is straightforward.</p>
+<p><span class="tip">Straightforward to use the color scheme you want</span><img src="./How to Make a Contour Map_files/10-filled-contour-colors(1).png" alt="" title="10-filled-contour-colors" class="alignnone size-full wp-image-21223" width="625" height="383" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/10-filled-contour-colors.png?resize=625%2C383" scale="2"></p>
+<p>If you like, save the output as a PDF and bring it into Illustrator for final editing. You can also use InkScape, but the size of the file did seem to give the software problems when I tried it. It might be okay for less dense data.</p>
+<p><span class="tip">Edited the map in Illustrator, removing the grid and compressing the legend</span><img src="./How to Make a Contour Map_files/ufo_map_edit.png" alt="" title="UFO map edited" class="alignnone size-medium wp-image-21206" width="625" height="406" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/ufo_map_edit.png?resize=625%2C406" scale="2"></p>
+<p>Don't forget proper labeling that describes what the graphic is about and where the data comes from.</p>
+<p><span class="tip">Filled contour map with annotation added in Illustrator. You can also do this in R with <code>text()</code>, or same the graphic as an image and use your favorite image editing software.</span><img src="./How to Make a Contour Map_files/ufo_map_annotated1.png" alt="" title="UFO Sightings" class="alignnone size-medium wp-image-21204" width="625" height="406" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/02/ufo_map_annotated1.png?resize=625%2C406" scale="2"></p>
+<h2>Wrapping Up</h2>
+<p>R is powerful in that there's a lot of built-in functionality and plenty of packages that extend the core. Like with most graphic functions though — and this is true for all languages — a lot of time is spent formatting data to get everything just right. Once you prepare the data though, the actual visualization is straightforward, which I think makes learning the data munging part of visualization just as important. </p>
+<div class="clear-line"></div>
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="end"></div>
+ 
+<span id="comments"></span>
+<div style="width:625px">
+<div id="comments-block">
+<h2>12 Comments</h2>
+<ul class="commentlist">
+<li class="comment byuser comment-author-dangoldin even thread-even depth-1" id="li-comment-110475">
+<div id="comment-110475" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/e7dd049b9542efd46749a9014f68f98e" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/e7dd049b9542efd46749a9014f68f98e?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Dan Goldin</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-110475">February 7, 2012 at 8:57 am</a>
+</span>
+</div>
+<div class="comment-text"><p>It looks as if the python code is taking the bulk of the time. I think it should be possible to improve it by doing some of the aggregation in the SQL code to minimize the number of calls to the database. I just started messing around and have had some success by transforming the lat/lng values into two columns and then grouping by them. The python code would then just need to pivot the data which would make the csv creation code a lot quicker.</p>
+<p>For example, the SQL code can be something like:<br>
+select<br>
+round(lat * 100 / 29) as lat_bucket,<br>
+round(lng * 100 / 29) as lng_bucket,<br>
+count(1) as count<br>
+from sightings<br>
+where lat 23.725012<br>
+and lng &gt; -135.351563<br>
+and lng &lt; -61.347656<br>
+group by lat_est, lng_est;</p>
+<p>I know the SQL is probably incorrect but I haven't had a chance to tweak it to get it working.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor odd alt depth-2" id="li-comment-110476">
+<div id="comment-110476" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://twitter.com/flowingdata" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-110476">February 7, 2012 at 9:07 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Thanks, Dan. I’m positive there’s a more efficient way to aggregate, too. Although the Python script finishes up in less than a second, so I was happy with it enough to go on to the actual visualization :).</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-dangoldin even depth-3" id="li-comment-110478">
+<div id="comment-110478" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/e7dd049b9542efd46749a9014f68f98e" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/e7dd049b9542efd46749a9014f68f98e?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Dan Goldin</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-110478">February 7, 2012 at 9:12 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Weird. The Python script took a while for me and I have a pretty good machine. I’m doing a bunch of other things on the SQL db so maybe that’s what it is.</p>
+<p>In any case, I think it’s a nice practice to try to offload as much work to SQL as possible since it’s more optimized for the aggregation.</p>
+<p>The visualization is definitely cool though and that’s what I’m hear to learn about.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-wadingindata odd alt thread-odd thread-alt depth-1" id="li-comment-113451">
+<div id="comment-113451" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/dd0600c374872bf964a2e13a01b7b859" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/dd0600c374872bf964a2e13a01b7b859?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Wade Anderson</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113451">February 25, 2012 at 7:06 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>I appreciate you sharing your knowledge. I downloaded the ufo_awesome.tsv file from Infochimps, but I don’t see the lat, lng, and lat_lng. I see the lat, lng, and lat_lng in the prepared data as an SQL file that you posted. I don’t know Python, but I want to learn it. Are you generating the lat, lng with Python? Or am I downloading the wrong file? Thanks.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-wadingindata even depth-2" id="li-comment-113499">
+<div id="comment-113499" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/dd0600c374872bf964a2e13a01b7b859" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/dd0600c374872bf964a2e13a01b7b859?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Wade Anderson</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113499">February 26, 2012 at 5:13 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Do you just geocode the location as a completely different step? It looks like the Python code is only aggregating and transforming the data.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor odd alt depth-3" id="li-comment-113544">
+<div id="comment-113544" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://twitter.com/flowingdata" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113544">February 26, 2012 at 10:18 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>@Wade — Sorry for the confusion. I remembered by example incorrectly, and you’re right. The data from Infochimps only includes addresses, and not the latitude and longitude, so I had to geocode those separately. This is the Python script that I used to geocode and insert locations directly into the MySQL database:</p>
+<p><a href="http://flowingdata.com/?s2member_file_download=2012/geocode_sightings.py" rel="nofollow">http://flowingdata.com/?s2memb.....ghtings.py</a></p>
+<p>Hopefully the comments in the code are helpful for now. I need to work on a separate geocoding tutorial.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-wadingindata even thread-even depth-1" id="li-comment-113596">
+<div id="comment-113596" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/dd0600c374872bf964a2e13a01b7b859" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/dd0600c374872bf964a2e13a01b7b859?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Wade Anderson</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113596">February 27, 2012 at 6:04 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Nathan – I appreciate the quick response and including geocoding Python script. Thanks, Wade</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-patrick-stewart odd alt thread-odd thread-alt depth-1" id="li-comment-113883">
+<div id="comment-113883" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/d762d02b10074692f9af987d2c5cd63f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/d762d02b10074692f9af987d2c5cd63f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Patrick Stewart</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113883">February 29, 2012 at 3:04 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Thanks for the code, Nathan! I made a few changes to the python and sql script. On my computer, which isn’t all that powerful, it can go through 100,000 + records in a minute or two. Note that I am creating temp tables in a database called tmp, accounts from a table called account, and getting lat/lng data from a table called place. </p>
+<p>Basically, all it’s doing differently is splitting the world up into X by Y boxes, ignoring actual lat/lng values and inserts it into tmp.base. It then takes the same logic and populates tmp.target with actual data. Left join the two, include coalesce and you’re set.</p>
+<p>patrick.</p>
+<p>import csv<br>
+import time<br>
+import MySQLdb</p>
+<p>def getCursor():</p>
+<p> conn = MySQLdb.connect(host = “host”, user = “username”, passwd = “password”, db = “db_name”)<br>
+curs = conn.cursor()</p>
+<p> return curs</p>
+<p>def getDates():</p>
+<p> start_date = ’2012-02-01′<br>
+end_date = ’2012-02-29′</p>
+<p> return (start_date, end_date)</p>
+<p>def createTempTables(curs):</p>
+<p> curs.execute(“”"CREATE TEMPORARY TABLE tmp.base(lat_key INT, lng_key INT, INDEX(lat_key,lng_key))”"”)<br>
+curs.execute(“”"CREATE TEMPORARY TABLE tmp.target(lat_key INT, lng_key INT, cnt INT, INDEX (lat_key,lng_key))”"”)</p>
+<p>def runQueries(curs, start_date, end_date):</p>
+<p> #world<br>
+lat_NW = 90.0<br>
+lng_NW = -180.0<br>
+lat_SE = -90.0<br>
+lng_SE = 180.0</p>
+<p> # About 20 miles<br>
+lat_incr = -.29<br>
+lng_incr = .29</p>
+<p> lat_curr = lat_NW<br>
+lng_curr = lng_NW<br>
+insert_string = []<br>
+dict_matrix = {}<br>
+contour_matrix = [[]]</p>
+<p> while lat_curr &gt; lat_SE:</p>
+<p> lng_curr = lng_NW</p>
+<p> while lng_curr = ‘%s 00:00:00′<br>
+AND a.end_datetime &lt;= '%s 23:59:59'<br>
+AND p.latitude %s #lat_SE<br>
+AND p.longitude &gt;= %s #lng_NW<br>
+AND p.longitude &lt; %s #lng_SE<br>
+GROUP BY 1,2<br>
+""" % ( lat_NW, lat_incr, lng_NW, lng_incr, start_date, end_date, lat_NW, lat_SE, lng_NW, lng_SE ))</p>
+<p> curs.execute(""" SELECT b.lat_key, b.lng_key, COALESCE(cnt,0)<br>
+FROM tmp.base b<br>
+LEFT OUTER JOIN tmp.target t ON t.lat_key = b.lat_key<br>
+AND t.lng_key = b.lng_key""")</p>
+<p> result = curs.fetchall()</p>
+<p> for line in result:<br>
+(lat_key, lng_key, cnt) = line<br>
+if not lat_key in dict_matrix:<br>
+dict_matrix[lat_key] = []</p>
+<p> dict_matrix[lat_key].append(cnt)</p>
+<p> for cnt in dict_matrix:<br>
+contour_matrix.append(dict_matrix[cnt])</p>
+<p> return contour_matrix</p>
+<p>def exportData(data, filename):</p>
+<p> writer = csv.writer(open(filename,'wb'),delimiter=',',lineterminator='\n')</p>
+<p> writer.writerows(data)</p>
+<p>if __name__ == '__main__':<br>
+start_time = time.time()<br>
+curs = getCursor()<br>
+createTempTables(curs)<br>
+(start_date, end_date) = getDates()<br>
+contour_matrix = runQueries(curs, start_date, end_date)<br>
+exportData(contour_matrix, 'contour_matrix.csv')<br>
+end_time = time.time()<br>
+print "took %s seconds" % (end_time – start_time)</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-patrick-stewart even depth-2" id="li-comment-113884">
+<div id="comment-113884" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/d762d02b10074692f9af987d2c5cd63f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/d762d02b10074692f9af987d2c5cd63f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Patrick Stewart</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113884">February 29, 2012 at 3:06 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>hmmmm…That didn’t work all that well. Maybe there’s a way to upload a .py file instead of just pasting?</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-nathany bypostauthor odd alt depth-3" id="li-comment-113896">
+<div id="comment-113896" class="flowingdata-author">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://twitter.com/flowingdata" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113896">February 29, 2012 at 6:36 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>@Patrick — try this? <a href="https://gist.github.com/" rel="nofollow">https://gist.github.com/</a></p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-patrick-stewart even depth-2" id="li-comment-113885">
+<div id="comment-113885" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/d762d02b10074692f9af987d2c5cd63f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/d762d02b10074692f9af987d2c5cd63f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Patrick Stewart</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-113885">February 29, 2012 at 3:08 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Yeah, the above script got jumbled somehow. Not functional.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment byuser comment-author-patrick-stewart odd alt thread-even depth-1" id="li-comment-114016">
+<div id="comment-114016" class="">
+<div class="avatar">
+<img alt="" src="./How to Make a Contour Map_files/d762d02b10074692f9af987d2c5cd63f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/d762d02b10074692f9af987d2c5cd63f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Patrick Stewart</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2012/02/07/how-to-make-a-contour-map/#comment-114016">March 1, 2012 at 5:36 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Here you go. Optimized version.</p>
+<p><a href="https://gist.github.com/1954528" rel="nofollow">https://gist.github.com/1954528</a></p>
+<p>A few notes:</p>
+<p>1.) It’s creating temp tables in a database called tmp. Adjust as necessary.<br>
+2.) I’m pulling from a table called “account” which is where the lat-lngs and records are stored. Also, I’m filtering by “created_at”, which is datetime. </p>
+<p>Works very quickly for me, primarily because it’s not looking for records where there are none, such as in the middle of the pacific. </p>
+<p>Once again, thanks for posting this!</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul>
+</div> 
+</div>
+</div>
+</div> 
+</div> 
+</div> 
+<div id="footer">
+<div id="footer-container" class="content">
+<div class="float-left" style="width:32%;margin-right:5%;">
+<div id="about" class="sec">
+<h3>About</h3>
+<p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p>
+<p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+<p><a href="http://flowingdata.com/about/">More...</a></p>
+</div>
+</div>
+<div class="float-left" style="width:36%;margin-right:5%;">
+<div id="book-single" class="sec">
+<h3>Books</h3>
+<ul id="books" style="margin-bottom:0">
+<li>
+<a href="http://flowingdata.com/data-points/"><img src="./How to Make a Contour Map_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+<div class="clear-line"></div>
+</li>
+<li><a href="http://flowingdata.com/visualize-this/"><img src="./How to Make a Contour Map_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+<div class="clear-line"></div>
+</li>
+</ul>
+</div> 
+</div>
+<div class="float-left" style="width:22%">
+<div id="follow" class="sec">
+<h3>Follow</h3>
+<p>
+<a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp;
+<a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+<a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/feed">RSS</a>
+</p>
+</div>
+<div id="misc" class="sec">
+<h3>Miscellaneous</h3>
+<a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/advertise">Sponsorship</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+</a></div><a>
+</a></div><a>
+<div class="clear-line"></div>
+</a></div><a> 
+</a></div><a> 
+</a><div id="bottom"><a>
+Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+ 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./How to Make a Contour Map_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/shCore.js"></script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/shBrushPython.js"></script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/shBrushR.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/photon.js"></script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./How to Make a Contour Map_files/s2member-o(1).php"></script>
+<script src="./How to Make a Contour Map_files/e-201350.js" type="text/javascript"></script>
+<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'21149',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,21149,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./How to Make a Contour Map_files/g.gif" alt="" scale="0">
+</body></html>

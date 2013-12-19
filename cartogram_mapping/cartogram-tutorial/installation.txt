@@ -1,0 +1,23 @@
+Installing gcc
+===================
+One-click install for OS X: https://github.com/kennethreitz/osx-gcc-installer
+Windows: http://gcc.gnu.org/install/binaries.html
+
+
+Install FFTW 3.3.2
+===================
+Download here: http://www.fftw.org/download.html
+Unpack and install: 
+	./configure --enable-shared
+	make
+	make install
+	
+
+Cart
+====================
+Download C source code: http://www-personal.umich.edu/~mejn/cart/
+Installation: http://www-personal.umich.edu/~mejn/cart/doc/
+	
+	gcc -O -o cart cart.c main.c -lfftw3 -lm
+
+

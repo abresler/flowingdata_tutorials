@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0071)http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> Using Color Scales and Palettes in R</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./Using Color Scales and Palettes in R_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./Using Color Scales and Palettes in R_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./Using Color Scales and Palettes in R_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<script type="text/javascript" src="./Using Color Scales and Palettes in R_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Using Color Scales and Palettes in R_files/jquery.js"></script>
+<script type="text/javascript" src="./Using Color Scales and Palettes in R_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Social network analysis used to convict slumlords" href="http://flowingdata.com/2012/01/19/social-network-analysis-used-to-convict-slumlords/">
+<link rel="next" title="Introduction to Probability" href="http://flowingdata.com/2012/01/19/introduction-to-probability/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./Using Color Scales and Palettes in R_files/Using Color Scales and Palettes in R.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=20827">
+ <script type="text/javascript" src="./Using Color Scales and Palettes in R_files/democracy.js"></script><link rel="stylesheet" href="./Using Color Scales and Palettes in R_files/basic.css" type="text/css"><link rel="stylesheet" href="./Using Color Scales and Palettes in R_files/style(1).css" type="text/css"><link rel="stylesheet" href="./Using Color Scales and Palettes in R_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><link rel="stylesheet" type="text/css" href="./Using Color Scales and Palettes in R_files/shCore.css"><link rel="stylesheet" type="text/css" href="./Using Color Scales and Palettes in R_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#aukjnsaekqpvijhugsnbeagfzuxrjjfgehhxhln{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.aukjnsaekqpvijhugsnbeagfzuxrjjfgehhxhln-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#aukjnsaekqpvijhugsnbeagfzuxrjjfgehhxhln br{display:block !important;}#aukjnsaekqpvijhugsnbeagfzuxrjjfgehhxhln span{background:transparent !important;}#aukjnsaekqpvijhugsnbeagfzuxrjjfgehhxhln div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#aukjnsaekqpvijhugsnbeagfzuxrjjfgehhxhln a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#aukjnsaekqpvijhugsnbeagfzuxrjjfgehhxhln{display:none !important;}}</style></head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./Using Color Scales and Palettes in R_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-20827">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/color/" rel="tag">color</a>, <a href="http://flowingdata.com/tag/r/" rel="tag">R</a> <span class="members-note"><a href="http://flowingdata.com/members-only">Members Only</a></span> </div>
+<h1>Using Color Scales and Palettes in R</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./Using Color Scales and Palettes in R_files/colormatrix-stripped.png" class="attachment-long-form-thumb wp-post-image" alt="Colors in R" width="425" height="171" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/01/colormatrix-stripped.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+Color can drastically change how a chart reads and what you see in your data, so don't leave it up to chance with defaults. </div>
+<div id="tut-meta">
+<div class="button-link"><a href="http://flowingdata.com/?s2member_file_download=2012/color_guide.R">Download Source</a></div>
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>I almost never stick with default color suggestions, because every dataset can usually benefit from a color scheme picked out specifically for the topic that it represents. Some schemes can be better than others, depending on what you're looking for or what you want to show in your data.</p>
+<p>Luckily, it's fairly straightforward to modify your colors in R. You can choose from a variety of existing palettes, or you can just as easily pick colors of your own.<br>
+<span id="more-20827"></span></p>
+<h2>Color by Data</h2>
+<p>The important thing to remember is that color isn't just about making your charts look pretty or more flashy. Color can serve as a visual cue just like the height of a bar or the position of a dot. Different shades can indicate lesser and greater values.</p>
+<p><span class="tip">If <code>col</code> doesn't work, the alternative is usually <code>fg</code> for foreground, and <code>bg</code> for background.</span>For most of the charting functions in R, color can be changed by providing values to the <code>col</code> argument. As shown below, you can provide a single color or a vector of colors. With the former, all data points are represented with a single color (black in this example). In the latter, each color is assigned to one of the values in your data.</p>
+<p>However, if you have a dataset with five values and only provide two colors, R will cycle through the colors vector until all the data points are shown.</p>
+<div id="highlighter_943633" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_943633_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_943633" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">fakedata &lt;- </code><code class="functions">c</code><code class="plain">(5, 4, 3, 2, 1)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=</code><code class="string">"black"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=</code><code class="functions">c</code><code class="plain">(</code><code class="string">"blue"</code><code class="plain">, </code><code class="string">"black"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=</code><code class="functions">c</code><code class="plain">(</code><code class="string">"black"</code><code class="plain">, </code><code class="string">"dark gray"</code><code class="plain">, </code><code class="string">"gray"</code><code class="plain">, </code><code class="string">"light gray"</code><code class="plain">, </code><code class="string">"white"</code><code class="plain">))</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The first line of code above simply creates a vector called <code>fakedata</code>, and the following lines make pie charts based on that data, from default to a black-white gradient.</p>
+<p><span class="tip">Manually setting colors with the <code>col</code> argument</span><img src="./Using Color Scales and Palettes in R_files/col-argument.png" alt="" title="col-argument" class="alignnone size-full wp-image-20829" width="625" height="183" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/01/col-argument.png?resize=625%2C183" scale="2"></p>
+<p>The default color scheme uses several shades that are better fit for categorical data. The black-white color scheme, on the other hand, is better for sequential data, because it goes from dark to light. Note that the data points are already in descending order, so the colors naturally match up. You'll see what to do if the data isn't already in order a little later.</p>
+<h2>Color Schemes</h2>
+<p>R offers a handful of boilerplate color schemes, so you don't have to look for your own. With the exception of grays, they all have the same syntax. Enter the number of shades you want from the scheme, and the function returns a vector of colors. </p>
+<p>So going back to your <code>fakedata</code>, use <code>length()</code> to see how many data points there are and store it in <code>numdata</code>.</p>
+<div id="highlighter_9171" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_9171_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_9171" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Number of data points</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">numdata &lt;- </code><code class="functions">length</code><code class="plain">(fakedata)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>The <code>gray()</code> function takes a value from 0 to 1, where 0 means black and 1 means white. In the code below, you pass a vector of length <code>numdata</code> to get a vector of grays.</p>
+<div id="highlighter_836257" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_836257_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_836257" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Gray color scheme</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">grays &lt;- </code><code class="functions">gray</code><code class="plain">(0:numdata / numdata)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=grays)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Using <code>heat.colors()</code>, <code>rainbow()</code>, and <code>topo.colors()</code> is slightly different, but the same idea. You get a vector of colors, and you can pass that to the <code>col</code> argument in <code>plot()</code>, or in this case, <code>pie()</code>.</p>
+<div id="highlighter_664978" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_664978_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_664978" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Heat scheme from yellow to red</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">heatcols &lt;- </code><code class="functions">heat.colors</code><code class="plain">(numdata)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=heatcols)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="comments"># All the colors of the rainbow</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">rainbowcols &lt;- </code><code class="functions">rainbow</code><code class="plain">(numdata)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=rainbowcols)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="comments"># Topographic color scheme</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="plain">topocols &lt;- </code><code class="functions">topo.colors</code><code class="plain">(numdata)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=topocols)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Using existing color schemes offered natively in R</span><img src="./Using Color Scales and Palettes in R_files/pie-colors.png" alt="" title="pie-colors" class="alignnone size-full wp-image-20831" width="625" height="183" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2012/01/pie-colors.png?resize=625%2C183" scale="2"></p>
+<p><span class="tip">The RColorBrewer package is not installed by default, so you will have to install it via the Packages &amp; Data &gt; Package Installer menu item.</span>While convenient, these schemes can still be limiting. The <code>RColorBrewer</code> package offers more though. The original ColorBrewer was designed by Cynthia Brewer and Mark Harrower. It was originally for maps, but has found its way into traditional data graphics. Basically, it provides color suggestions based on criteria such as how many shades you want and whether your data is categorial, sequential, or diverging. You can play with the interactive version, by Axis Maps, <a href="http://colorbrewer2.org/">here</a>. Punch in some information and see how different color schemes look.</p>
+<p>In any case, Erich Neuwirth ported ColorBrewer to R, so if you want more color options, but don't want to pick every color yourself, this is a great option, as shown below.</p>
+<div id="highlighter_97837" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_97837_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_97837" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Load RColorBrewer package</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="functions">library</code><code class="plain">(RColorBrewer)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="comments"># Blue color scheme from ColorBrewer</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">blues &lt;- </code><code class="functions">brewer.pal</code><code class="plain">(numdata, </code><code class="string">"Blues"</code><code class="plain">)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=blues)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="comments"># Reverse the previous blue color scheme</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="plain">blues.rev &lt;- </code><code class="functions">rev</code><code class="plain">(blues)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=blues.rev)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Blue scheme in forward and reverse using RColorBrewer package. Enter <code>?brewer.pal</code> in the R console for documentation on the function and what palettes are available.</span><img src="./Using Color Scales and Palettes in R_files/pies-brewer.png" alt="" title="pies-brewer" class="alignright size-full wp-image-20832" width="280" height="179" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/01/pies-brewer.png?resize=280%2C179" scale="2">You use it the same way that you did previously. Using <code>brewer.pal()</code>, select the number of shades and the color type you want. In this example, you used blue, but there are several others. This is just the tip of the iceberg. Enter <code>?brewer.pal</code> in the R console for more.</p>
+<div class="clear-line"></div>
+<h2>Picking Your Own Colors</h2>
+<p>While the options covered so far offer plenty of flexibility, they're still set color schemes. What if you want to choose your own colors? You can do that, too. Enter <code>colors()</code>, and you can see all the shades that you can use by name. </p>
+<p><span class="tip">Colors available to you in R, by name</span><img src="./Using Color Scales and Palettes in R_files/Colors-window.png" alt="" title="Colors window" class="alignnone size-medium wp-image-20837" width="625" height="488" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/01/Colors-window.png?resize=625%2C488" scale="2"></p>
+<p>Select two colors from that list for your end points, and you can punch them in <code>colorRampPalette()</code>. The function takes two or more colors in a vector, and automatically interpolates colors in between. For example, try light gray and red, and <code>colorRampPalette()</code> finds the shades of gray-red in between. The output is another function similar to <code>heat.colors()</code> or <code>rainbow()</code> (stored as <code>pal()</code> below), where it takes a number as an argument, and it will give you a vector of colors.</p>
+<div id="highlighter_725132" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_725132_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_725132" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Use a color ramp</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">pal &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"light gray"</code><code class="plain">, </code><code class="string">"red"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">colors &lt;- </code><code class="functions">pal</code><code class="plain">(numdata)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="functions">pie</code><code class="plain">(fakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=fakedata, border=</code><code class="string">"white"</code><code class="plain">, col=colors)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p><span class="tip">Choosing your own colors and using <code>colorRampPalette()</code></span><img src="./Using Color Scales and Palettes in R_files/pies-pickyourown.png" alt="" title="pies-pickyourown" class="alignright size-full wp-image-20833" width="425" height="184" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/01/pies-pickyourown.png?resize=425%2C184" scale="2">This is all well and good if you use a handful of colors regularly, but it's hard to remember what all of these colors look like (there are 657 of them). Since R accepts colors in hexadecimal format though, you can go to a site like <a href="http://0to255.com/">0to255</a>, and easily pick out the right shades. </p>
+<p><span class="tip">While pie charts, everyone's favorite chart type, are used here, you can follow the same process with other plots.</span>Also, we've kind of been cheating, assuming that the data will always be in order. You should almost always use ordered data for pie charts so that it's easier to read, but what do you do if your data isn't in order and you still want to use color as a visual cue? </p>
+<p>Starting with a new vector of out-of-order data, <code>morefakedata</code>, you can see the default colors. Smaller values aren't necessarily lighter. The wedge for 3, for example, is darker than the one for 8, because the default colors are chosen in a set order.</p>
+<div id="highlighter_294397" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_294397_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_294397" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Some more fake data and default colors</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">morefakedata &lt;- </code><code class="functions">c</code><code class="plain">(5, 3, 2, 6, 8, 1, 3)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="functions">pie</code><code class="plain">(morefakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=morefakedata)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<p>Like before though, you can create a color palette and use your own colors. The difference this time though is that you make a ramp that isn't just one color per data point. Instead, you make one with 20 shades. Then loop through each data point to figure out which shade corresponds. So you build a vector of colors to pass to the <code>col</code> argument point-by-point instead of relying on the data to be ordered. As shown in the figure above, the wedges are colored accordingly.</p>
+<div id="highlighter_550766" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_550766_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_550766" menu="false" src="http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf"></div><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://flowingdata.com/2012/01/19/using-color-scales-and-palettes-in-r/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="comments"># Build color ramp and palette</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">fakemax &lt;- </code><code class="functions">max</code><code class="plain">(morefakedata)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">pal2 &lt;- </code><code class="functions">colorRampPalette</code><code class="plain">(</code><code class="functions">c</code><code class="plain">(</code><code class="string">"#f2f2f2"</code><code class="plain">, </code><code class="string">"#821122"</code><code class="plain">))</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">numshades &lt;- 20</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">colors2 &lt;- </code><code class="functions">pal2</code><code class="plain">(numshades)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="comments"># Make chart with color ramp</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="plain">morecolors &lt;- </code><code class="functions">c</code><code class="plain">()</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="functions">for </code><code class="plain">(i </code><code class="keyword">in</code> <code class="plain">1:</code><code class="functions">length</code><code class="plain">(morefakedata)) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">colindex &lt;- </code><code class="functions">round</code><code class="plain">((morefakedata[i] / fakemax) * numshades)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">morecolors &lt;- </code><code class="functions">c</code><code class="plain">(morecolors, colors2[colindex])</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="functions">pie</code><code class="plain">(morefakedata, clockwise=</code><code class="keyword">TRUE</code><code class="plain">, labels=morefakedata, border=</code><code class="string">"white"</code><code class="plain">, col=morecolors)</code></td></tr></tbody></table></div></div></div>
+<p></p>
+<h2>Wrapping Up</h2>
+<p>As you can see, there are lots of options, and you can use just about any color scheme you want. You can manually enter colors using names available in R, or you can get colors in hexadecimal format and enter them that way. From there, you can easily make your own color ramp rather than manually entering shades. So the next time you design a chart, you won't be stuck with defaults, unless you want to be. </p>
+<div class="clear-line"></div>
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="end"></div>
+ 
+<span id="comments"></span>
+<div style="width:625px">
+</div>
+</div>
+</div> 
+</div> 
+</div> 
+<div id="footer">
+<div id="footer-container" class="content">
+<div class="float-left" style="width:32%;margin-right:5%;">
+<div id="about" class="sec">
+<h3>About</h3>
+<p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p>
+<p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+<p><a href="http://flowingdata.com/about/">More...</a></p>
+</div>
+</div>
+<div class="float-left" style="width:36%;margin-right:5%;">
+<div id="book-single" class="sec">
+<h3>Books</h3>
+<ul id="books" style="margin-bottom:0">
+<li>
+<a href="http://flowingdata.com/data-points/"><img src="./Using Color Scales and Palettes in R_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+<div class="clear-line"></div>
+</li>
+<li><a href="http://flowingdata.com/visualize-this/"><img src="./Using Color Scales and Palettes in R_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+<div class="clear-line"></div>
+</li>
+</ul>
+</div> 
+</div>
+<div class="float-left" style="width:22%">
+<div id="follow" class="sec">
+<h3>Follow</h3>
+<p>
+<a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp;
+<a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+<a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/feed">RSS</a>
+</p>
+</div>
+<div id="misc" class="sec">
+<h3>Miscellaneous</h3>
+<a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.com/advertise">Sponsorship</a> &nbsp;•&nbsp;
+<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+</a></div><a>
+</a></div><a>
+<div class="clear-line"></div>
+</a></div><a> 
+</a></div><a> 
+</a><div id="bottom"><a>
+Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+ 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Using Color Scales and Palettes in R_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./Using Color Scales and Palettes in R_files/shCore.js"></script>
+<script type="text/javascript" src="./Using Color Scales and Palettes in R_files/shBrushR.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://flowingdata.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="./Using Color Scales and Palettes in R_files/photon.js"></script>
+<script type="text/javascript" src="./Using Color Scales and Palettes in R_files/devicepx-jetpack.js"></script>
+<script src="./Using Color Scales and Palettes in R_files/e-201350.js" type="text/javascript"></script>
+<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'20827',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,20827,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./Using Color Scales and Palettes in R_files/g.gif" alt="" scale="0">
+</body></html>

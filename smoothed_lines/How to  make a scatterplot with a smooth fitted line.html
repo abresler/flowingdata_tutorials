@@ -1,0 +1,961 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0086)http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> How to: make a scatterplot with a smooth fitted line</title>
+<meta name="generator" content="WordPress 3.8">  
+<link rel="stylesheet" href="./How to  make a scatterplot with a smooth fitted line_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://flowingdata.com/feed">
+<link rel="pingback" href="http://flowingdata.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://flowingdata.com/wp-content/themes/flowingdata-4-8/images/favicon.ico">
+<script src="./How to  make a scatterplot with a smooth fitted line_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript" src="./How to  make a scatterplot with a smooth fitted line_files/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + 
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+<script type="text/javascript">
+    googletag.cmd.push(function() {
+    googletag.defineSlot('/2462688/Sidebar_rectangle', [300, 250], 'div-gpt-ad-1332011316310-2').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square1', [125, 125], 'div-gpt-ad-1332011316310-3').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square2', [125, 125], 'div-gpt-ad-1332011316310-4').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square3', [125, 125], 'div-gpt-ad-1332011316310-5').addService(googletag.pubads());
+    googletag.defineSlot('/2462688/Square4', [125, 125], 'div-gpt-ad-1358209090048-5').addService(googletag.pubads());
+googletag.defineSlot('/2462688/Bottom_Post', [300, 250], 'div-gpt-ad-1332011316310-0').addService(googletag.pubads());    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+    });
+    </script>
+<link rel="alternate" type="application/rss+xml" title="FlowingData » How to: make a scatterplot with a smooth fitted line Comments Feed" href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/feed/">
+<script type="text/javascript" src="./How to  make a scatterplot with a smooth fitted line_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./How to  make a scatterplot with a smooth fitted line_files/jquery.js"></script>
+<script type="text/javascript" src="./How to  make a scatterplot with a smooth fitted line_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://flowingdata.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://flowingdata.com/wp-includes/wlwmanifest.xml">
+<link rel="prev" title="Data Underload #15 – Life Simile" href="http://flowingdata.com/2010/03/29/data-underload-15-life-simile/">
+<link rel="next" title="Design for America – Win $5,000" href="http://flowingdata.com/2010/03/29/design-for-america-win-5000/">
+<meta name="generator" content="WordPress 3.8">
+<link rel="canonical" href="./How to  make a scatterplot with a smooth fitted line_files/How to  make a scatterplot with a smooth fitted line.html">
+<link rel="shortlink" href="http://flowingdata.com/?p=6479">
+ <script type="text/javascript" src="./How to  make a scatterplot with a smooth fitted line_files/democracy.js"></script><link rel="stylesheet" href="./How to  make a scatterplot with a smooth fitted line_files/basic.css" type="text/css"><link rel="stylesheet" href="./How to  make a scatterplot with a smooth fitted line_files/style(1).css" type="text/css"><link rel="stylesheet" href="./How to  make a scatterplot with a smooth fitted line_files/wp-page-numbers.css" type="text/css" media="screen"><style type="text/css">img#wpstats{display:none}</style><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>#bmiwwjtwikqmeeotycikbyfswdwxcnmqvqfhueqaor{border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.bmiwwjtwikqmeeotycikbyfswdwxcnmqvqfhueqaor-blocked{color:#777 !important;display:inline !important;text-decoration:line-through !important;}#bmiwwjtwikqmeeotycikbyfswdwxcnmqvqfhueqaor br{display:block !important;}#bmiwwjtwikqmeeotycikbyfswdwxcnmqvqfhueqaor span{background:transparent !important;}#bmiwwjtwikqmeeotycikbyfswdwxcnmqvqfhueqaor div{border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#bmiwwjtwikqmeeotycikbyfswdwxcnmqvqfhueqaor a{font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}@media print{#bmiwwjtwikqmeeotycikbyfswdwxcnmqvqfhueqaor{display:none !important;}}</style></head><style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</style>
+<body style="">
+<a name="top"></a>
+<div id="topnav">
+<div id="topnav-content" class="content">
+<div id="login" class="float-right">
+<span id="username-meta">Logged in as <a href="http://flowingdata.com/profile/">abresler</a> &nbsp;&nbsp;</span>
+<a href="http://flowingdata.com/wp-login.php?action=logout&_wpnonce=d018091d15">Log out</a> </div>
+</div>
+<div class="clear-line"></div>
+</div> 
+<div id="header">
+<div id="header-content" class="content">
+<div id="nav">
+<a href="http://flowingdata.com/">
+<img src="./How to  make a scatterplot with a smooth fitted line_files/logo.png" class="float-left" scale="0">
+</a>
+<div id="pages" class="float-right">
+<ul>
+<li><a href="http://flowingdata.com/membership/">Membership</a></li>
+<li><a href="http://flowingdata.com/learning/">Learning</a></li>
+<li><a href="https://jobs.flowingdata.com/">Job Board</a></li>
+<li><a href="http://flowingdata.com/category/projects/">Projects</a></li>
+<li><a href="http://flowingdata.com/about/">About</a></li>
+</ul>
+</div> 
+<div class="clear-line"></div>
+</div> 
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="main-wrapper">
+<div id="content-wrapper" class="content">
+<div class="post" id="post-6479">
+<div id="content" class="single-long">
+<div class="entry">
+<div class="category">
+<a href="http://flowingdata.com/category/tutorials/" title="View all posts in Tutorials" rel="category tag">Tutorials</a> &nbsp;/&nbsp; <a href="http://flowingdata.com/tag/loess/" rel="tag">LOESS</a>, <a href="http://flowingdata.com/tag/r/" rel="tag">R</a> </div>
+<h1>How to: make a scatterplot with a smooth fitted line</h1>
+<div class="clear-line"></div>
+<div class="author">
+By <strong>Nathan Yau</strong>
+</div> 
+<div id="lead-in">
+<p class="img-right"><img src="./How to  make a scatterplot with a smooth fitted line_files/loessplot-revised.png" class="attachment-long-form-thumb wp-post-image" alt="Loess Plot" width="425" height="289" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2012/01/loessplot-revised.png?fit=425%2C9999" scale="2"></p>
+<div class="entry-excerpt">
+Oftentimes, you'll want to fit a line to a bunch of data points. This tutorial will show you how to do that quickly and easily using open-source software, R. </div>
+<div id="tut-meta">
+<div class="clear-line"></div>
+</div> 
+<div class="clear-line"></div>
+</div> 
+<div class="entry-content">
+<p>Maybe you have observations over time or it might be two variables that are possibly related. In either case, a scatter plot just might not be enough to see something useful. A fitted line can let you see a trend or relationship more easily.</p>
+<p>As an example, we'll take a look at monthly unemployment data, from 1948 to February this year, according to the <a href="http://www.bls.gov/bls/unemployment.htm">Bureau of Labor Statistics</a>.<br>
+<span id="more-6479"></span></p>
+<h2>What LOESS is</h2>
+<p>First, let's briefly go over what we're actually doing with this loess thing. LOESS stands for locally weighted scatterplot smoothing. It was <a href="http://www.econ.pdx.edu/faculty/KPL/readings/cleveland88.pdf">developed</a> [pdf] in 1988 by William Cleveland and Susan Devlin, and it's a way to fit a curve to a dataset.</p>
+<p>If we plot unemployment without any lines or anything fancy, it looks like this:</p>
+<p><span class="tip">Dot plot showing unemployment over time</span><img src="./How to  make a scatterplot with a smooth fitted line_files/plain-plot.png" alt="" title="plain-plot" class="alignnone size-full wp-image-6592" width="545" height="322" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2010/03/plain-plot.png?resize=545%2C322" scale="2"></p>
+<p>Most of us are familiar with fitting just a plain old straight line. The end result is a slope and an intercept. You know the whole <em>y=mx + b</em> equation back from middle school?</p>
+<p><span class="tip">Scatterplot with a linear fit, <em>y = mx + b</em></span><img src="./How to  make a scatterplot with a smooth fitted line_files/linear-fit.png" alt="" title="linear-fit" class="alignnone size-full wp-image-6594" width="545" height="322" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2010/03/linear-fit.png?resize=545%2C322" scale="2"></p>
+<p>So without going into the nitty-gritty, the above fit looks at all the data and then fits a line. Loess however, moves along the dataset, and looks at chunks at a time, fitting a bunch of smaller lines that connect to make one smooth line.</p>
+<p>Alright, enough background. On to the how-to.</p>
+<h3>Step 0. Download R</h3>
+<p>You've already done this, right? If not, you can download it for <a href="http://cran.stat.ucla.edu/bin/windows/base/">Windows</a>, <a href="http://cran.stat.ucla.edu/bin/macosx/">Mac</a>, or <a href="http://cran.stat.ucla.edu/bin/linux/">Linux</a>. Don't let the out-dated site full you. You can get a lot done with the free software, and it'll be a simple one-click install for most.</p>
+<h3>Step 1. Load the data</h3>
+<p>Like I said, I got the data from the Bureau of Labor Statistics. You can download it <a href="http://datasets.flowingdata.com/unemployment-rate-1948-2010.csv">here</a> in CSV format if you like, but we'll load it directly into R with the following:</p>
+<p><code>unemployment &lt;- read.csv("http://datasets.flowingdata.com/unemployment-rate-1948-2010.csv", sep=",")</code></p>
+<p>You're basically telling R to load data in the <code>unemployment</code> variable from the given URL, and columns are separated by commas.</p>
+<p>Once it's loaded, take a brief look by typing <code>unemployment[1:10,]</code>. Your screen will look something like this:</p>
+<p><span class="tip">As usual, you load your data in R before you start anything else</span><img src="./How to  make a scatterplot with a smooth fitted line_files/datashot.png" alt="" title="datashot" class="alignnone size-medium wp-image-6601" width="545" height="508" src-orig="http://i1.wp.com/flowingdata.com/wp-content/uploads/2010/03/datashot.png?resize=545%2C508" scale="2"></p>
+<p>There are four columns, but we're actually just going to use that last one: <code>Value</code>.</p>
+<h3>Step 2. Time to plot</h3>
+<p>Yup, it's already time to make the scatterplot with fitted curve:</p>
+<p><code>scatter.smooth(x=1:length(unemployment$Value), y=unemployment$Value)</code></p>
+<p>Since we're only looking at unemployment, the x-axis is just a sequence from 1 to the total number of observations. Here's what the above line will give you.</p>
+<p><span class="tip">Fit a LOESS curve to the dots</span><img src="./How to  make a scatterplot with a smooth fitted line_files/loessplot.png" alt="" title="loessplot" class="alignnone size-full wp-image-6604" width="542" height="327" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2010/03/loessplot.png?resize=542%2C327" scale="2"></p>
+<p>Not bad, right? Two lines of code, and you've already got your plot. We can do a little better though. Let's fix it up a bit.</p>
+<h3>Step 3. Modify axis limits</h3>
+<p>It's usually a good idea to start your values axis at zero if you can. The above graph doesn't start at zero, so let's fix that using the <code>ylim</code> argument to make it go from 0 to 11.</p>
+<p><code>scatter.smooth(x=1:length(unemployment$Value), y=unemployment$Value, ylim=c(0,11))</code></p>
+<p><span class="tip">Update the axes to start at zero</span><img src="./How to  make a scatterplot with a smooth fitted line_files/loess2.png" alt="" title="loess2" class="alignnone size-full wp-image-6607" width="543" height="326" src-orig="http://i0.wp.com/flowingdata.com/wp-content/uploads/2010/03/loess2.png?resize=543%2C326" scale="2"></p>
+<p>That's a little better. Now let's do something about the color.</p>
+<h3>Step 4. Modify colors</h3>
+<p>I want the curve to stand out some more. Everything blends together as it is now. We'll use the <code>col</code> argument to change the dots to light gray:</p>
+<p><code>scatter.smooth(x=1:length(unemployment$Value), y=unemployment$Value, ylim=c(0,11), col="#CCCCCC")</code></p>
+<p><span class="tip">Make the fitted the line the point of interest and put dots in the background</span><img src="./How to  make a scatterplot with a smooth fitted line_files/loess-light.png" alt="" title="loess-light" class="alignnone size-full wp-image-6608" width="543" height="325" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2010/03/loess-light.png?resize=543%2C325" scale="2"></p>
+<h3>Step 5. Save as PDF and do whatever</h3>
+<p>So at this point, you can fuss around with arguments to tweak. Just type <code>?scatter.smooth</code> to read documentation on the function. As many of you know though, I like to take it into Adobe Illustrator at this point. This just happens to be what works for me. There are lots of ways to edit PDF files.</p>
+<p>Anyways, after some color changes, and label cleanup, we're done.</p>
+<p><span class="tip">Title, color, cite, and fonts</span><img src="./How to  make a scatterplot with a smooth fitted line_files/loessplot-final.png" alt="" title="US Unemployment" class="alignnone size-full wp-image-6612" width="545" height="377" src-orig="http://i2.wp.com/flowingdata.com/wp-content/uploads/2010/03/loessplot-final.png?resize=545%2C377" scale="2"></p>
+<p>Tada. And it only took two lines of code. How about that? Give it a try for yourself, and happy graphing.</p>
+<p>For more examples, guidance, and all-around data goodness like this, <a href="http://flowingdata.com/book/">pre-order Visualize This</a>, the upcoming FlowingData book.</p>
+<div class="clear-line"></div>
+</div> 
+</div> 
+<div class="clear-line"></div>
+<div id="end"></div>
+ 
+<span id="comments"></span>
+<div style="width:625px">
+<div id="comments-block">
+<h2>38 Comments</h2>
+<ul class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-41441">
+<div id="comment-41441" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/b655df4df4fd8e49784c03e01b02c619" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/b655df4df4fd8e49784c03e01b02c619?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://jyotirmoy.net/" rel="external nofollow" class="url">Jyotirmoy</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41441">March 29, 2010 at 3:38 am</a>
+</span>
+</div>
+<div class="comment-text"><p>The danger with smoothers is that in throwing away the noise you also throw away the interesting variation in the data. </p>
+<p>In this example, the interesting thing about unemployment, brought out clearly by the scatter plot, is that it is highly spiky and cyclical. The loess curve with the default degree of smoothing smooths away this cyclicity.</p>
+<p>I would have preferred either a loess with less smoothing (controllable by varying the parameter ‘span’ in R) or, even better, a plot of the autocorrelation and partial autocorrelation functions, to summarise this series.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-41455">
+<div id="comment-41455" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/81d6475c57ba26baec332cf06e6eae0a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/81d6475c57ba26baec332cf06e6eae0a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://differ.raysend.com/" rel="external nofollow" class="url">Mark James Adams</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41455">March 29, 2010 at 8:44 am</a>
+</span>
+</div>
+<div class="comment-text"><p>I have to disagree. The purpose of loess here is not to capture all the cyclical nature of the data, but rather to help you visualize and explain the secular trend.</p>
+<p>You are right that, for modeling the data, this level of smoothing is not going to help, and for that you do want to take care of autocorrelation in this time series.</p>
+<p>I find loess extremely helpful for making initial modeling choice, such as when to add polynomials or whether I can get away with just linear functions of the data. For illustrative purposes, the unemployment data is well chosen because it is easy to compare the local regression to the actual data, but lots of data just look like a huge blob of points. In such cases, loess really fits the bill.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-41445">
+<div id="comment-41445" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/ef5327b695b99669b84b7d662c0f1112" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/ef5327b695b99669b84b7d662c0f1112?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Rhys Kidd</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41445">March 29, 2010 at 6:41 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Good to see more advocacy of R where it makes for the best tool Nathan.</p>
+<p>One point you raise in this post (as you have before) is your preference to use Adobe Illustrator to “clean up” the R output PDF.</p>
+<p>Could you post something in future that outlines the basic first steps you take in Illustrator to clean up a graph? Similar as is done in Excel, most knowledgeable users will immediately change the auto colours of bar/columns, remove the border around the plot area, and perhaps set the fill on the chart and plot areas to None.</p>
+<p>I know you posted <a href="http://flowingdata.com/2008/12/16/how-to-make-a-graph-in-adobe-illustrator/" rel="nofollow">http://flowingdata.com/2008/12.....lustrator/</a> before, but I’d like to see those ideas fleshed out a bit more.</p>
+<p>Thanks in anticipation!</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-41482">
+<div id="comment-41482" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/8729233d525a654914051bf8c1234c78" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/8729233d525a654914051bf8c1234c78?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://www.nicolaromano.net/" rel="external nofollow" class="url">nico</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41482">March 29, 2010 at 2:34 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Or… if you want to stay opensource use Inkscape instead of Illustrator! Also, it is much more intuitive to use IMHO!</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-3" id="li-comment-41488">
+<div id="comment-41488" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/5e3b90fd3690ea7baa3b99b67c89b4a7" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/5e3b90fd3690ea7baa3b99b67c89b4a7?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">wwwald</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41488">March 29, 2010 at 5:09 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>I have to agree with this, I’ve been using Inkscape for years to finish up graphs &amp; illustrations. Feature-rich, flexible, and your documents are saved in an *open* SVG format.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt depth-3" id="li-comment-41489">
+<div id="comment-41489" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41489">March 29, 2010 at 5:14 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>maybe i should give inkscape a try :). to be fair, illustrator also lets you save in .ai, .svg, and .pdf formats, along with the usual image formats.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment even depth-2" id="li-comment-41500">
+<div id="comment-41500" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/7df6586973c755e5a019324f7db8e51f" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/7df6586973c755e5a019324f7db8e51f?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Iyh</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41500">March 29, 2010 at 9:07 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>I second what RK said… I’d love to hear how you moved from the R output to the spiffed up final product.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-41446">
+<div id="comment-41446" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/72c991431d56f503ddec0cd54abea738" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/72c991431d56f503ddec0cd54abea738?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">dcbs</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41446">March 29, 2010 at 6:52 am</a>
+</span>
+</div>
+<div class="comment-text"><p>The bigger issue I have with this is brought up peripherally by Jyotirmoy. The point of dataviz is to increase understanding of the real world. Utilizing smoothing functions when the user doesn’t understand the mathematics behind them is the exact opposite of understanding – its making pretty things out of complicated ones for no reason other than aesthetics. </p>
+<p>How does that graph increase understanding? It does not. There is no reason that trend line says anything more about the data than a loess function with less smoothing, or for that matter a linear function. This blog is usually good at not falling into that trap, but not here.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-41459">
+<div id="comment-41459" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/296eb65cd19415ba3b850394634a2f4d" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/296eb65cd19415ba3b850394634a2f4d?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://johnsonanalytical.com/" rel="external nofollow" class="url">Jeff Johnson</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41459">March 29, 2010 at 9:27 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Couldn’t disagree here and with Jyotirmoy more. The cyclical nature of unemployment is exactly what obscures drawing conclusions about the long-term structure of the economy from unemployment data. The smoothing function allows that, and in fact shows something interesting: the decline in unemployment starts not in the “Morning in America” 1980s but in 1978. The smoothing is not merely aesthetic; removing the noise from the data uncovers a long-term trend.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-3" id="li-comment-41462">
+<div id="comment-41462" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/296eb65cd19415ba3b850394634a2f4d" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/296eb65cd19415ba3b850394634a2f4d?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://johnsonanalytical.com/" rel="external nofollow" class="url">Jeff Johnson</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41462">March 29, 2010 at 9:28 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Note to self: look at graph again before posting about it from memory.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment even depth-2" id="li-comment-41472">
+<div id="comment-41472" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41472">March 29, 2010 at 11:05 am</a>
+</span>
+</div>
+<div class="comment-text"><p>with this dataset, it’s not as useful as in other cases, yes, but the point of this tutorial was just to teach how to fit a curve.</p>
+<p>with datasets where the peaks and valleys aren’t so easy to spot, the observations aren’t at regular intervals, and the values are more scattered then the curve grows in value.</p>
+<p>then it gets even better when you start doing a lot of them like in this matrix layout, for example:</p>
+<p><a href="http://www.fort.usgs.gov/BRDScience/images/LearnR10-05-37.jpg" rel="nofollow">http://www.fort.usgs.gov/BRDSc.....-05-37.jpg</a></p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt depth-2" id="li-comment-41494">
+<div id="comment-41494" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/93bea07e713080ed0d5be6865d6e7cf4" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/93bea07e713080ed0d5be6865d6e7cf4?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://peltiertech.com/WordPress/" rel="external nofollow" class="url">Jon Peltier</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41494">March 29, 2010 at 7:31 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>My impression was that the graph here was oversmoothed. I generally run loess with a series of different points in the moving regression, to see what features of the data persist over a number of computed curves.</p>
+<p>I built myself an Excel add-in to handle LOESS, and I’ve made it available free to the world: <a href="http://peltiertech.com/WordPress/loess-utility-awesome-update/" rel="nofollow">http://peltiertech.com/WordPre.....me-update/</a>. Let me know what you all think.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-41449">
+<div id="comment-41449" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/568dcb02d209b895f64cc3dd6b45c386" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/568dcb02d209b895f64cc3dd6b45c386?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Vincent</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41449">March 29, 2010 at 8:07 am</a>
+</span>
+</div>
+<div class="comment-text"><p>ggplot(df,aes(x,y))+geom_point()+geom_smooth()</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-41453">
+<div id="comment-41453" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/81d6475c57ba26baec332cf06e6eae0a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/81d6475c57ba26baec332cf06e6eae0a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://differ.raysend.com/" rel="external nofollow" class="url">Mark James Adams</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41453">March 29, 2010 at 8:32 am</a>
+</span>
+</div>
+<div class="comment-text"><p>ggplot(unemployment, aes(x=1:length(Value), y=Value)) + geom_point() + geom_smooth()</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-3" id="li-comment-41471">
+<div id="comment-41471" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41471">March 29, 2010 at 10:56 am</a>
+</span>
+</div>
+<div class="comment-text"><p>since it’s mostly a non-R audience here, i like to side-step installing packages when i can. thanks, though. i’m sure hadley appreciates it too.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt depth-3" id="li-comment-41473">
+<div id="comment-41473" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41473">March 29, 2010 at 11:10 am</a>
+</span>
+</div>
+<div class="comment-text"><p>speaking of which, you can sidestep R altogether with this online ggplot implementation:</p>
+<p><a href="http://flowingdata.com/2009/12/22/build-statistical-graphics-online-with-ggplot2/" rel="nofollow">http://flowingdata.com/2009/12.....h-ggplot2/</a></p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even depth-3" id="li-comment-41498">
+<div id="comment-41498" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/568dcb02d209b895f64cc3dd6b45c386" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/568dcb02d209b895f64cc3dd6b45c386?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Vincent</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41498">March 29, 2010 at 7:57 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Thanks Mark. I really should have put in the extra effort to produce code that actually works. </p>
+<p>Nice post by the way Nathan!</p>
+<p>Best, </p>
+<p>Vincent</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-41456">
+<div id="comment-41456" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/81d6475c57ba26baec332cf06e6eae0a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/81d6475c57ba26baec332cf06e6eae0a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://differ.raysend.com/" rel="external nofollow" class="url">Mark James Adams</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41456">March 29, 2010 at 8:51 am</a>
+</span>
+</div>
+<div class="comment-text"><p>Not to get too Andrew Gelman-y on you Nathan, but why the choice of ticks in the x-axis? 15 year increments from 1948–2008.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-41470">
+<div id="comment-41470" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41470">March 29, 2010 at 10:51 am</a>
+</span>
+</div>
+<div class="comment-text"><p>laziness. even increments are always best, so i thought 15 years would work. it didn’t quite, but i needed to sleep :). looking at it now, i would’ve started at 1950 and then done 10-year increments.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-41460">
+<div id="comment-41460" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/93bea07e713080ed0d5be6865d6e7cf4" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/93bea07e713080ed0d5be6865d6e7cf4?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://peltiertech.com/WordPress/" rel="external nofollow" class="url">Jon Peltier</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41460">March 29, 2010 at 9:28 am</a>
+</span>
+</div>
+<div class="comment-text"><p>For anyone using Excel, I’ve built a nice little LOESS add-in. I built it for my own use, so you know it’s good :-)</p>
+<p>I describe a recent update to the add-in <a href="http://peltiertech.com/WordPress/loess-utility-awesome-update/" title="LOESS Utility - Awesome Update" rel="nofollow">LOESS Utility – Awesome Update</a>.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="li-comment-41464">
+<div id="comment-41464" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a332dcb1e051f733dc9a9bd78df3b560" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a332dcb1e051f733dc9a9bd78df3b560?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://wesgarrison.us/" rel="external nofollow" class="url">Wes Garrison</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41464">March 29, 2010 at 9:50 am</a>
+</span>
+</div>
+<div class="comment-text"><p>I’ve only been subscribed to your website for a couple week, but these tutorial articles are fantastic. I’d second the request for an Illustrator walkthrough showing the basics that you tweak.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-41483">
+<div id="comment-41483" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/27b9aaca2520d605651e0314c557f662" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/27b9aaca2520d605651e0314c557f662?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Mike</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41483">March 29, 2010 at 2:55 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>How’s about STL?</p>
+<p>And to dcbs: “Utilizing smoothing functions when the user doesn’t understand the mathematics behind them is the exact opposite of understanding – its making pretty things out of complicated ones for no reason other than aesthetics.”</p>
+<p>You’ve got to be kidding me.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-41485">
+<div id="comment-41485" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/72c991431d56f503ddec0cd54abea738" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/72c991431d56f503ddec0cd54abea738?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">dcbs</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41485">March 29, 2010 at 3:55 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>I’m sorry Mike – but flame war says what? </p>
+<p>I think Nathan’s explanation that this was for the purpose of a tutorial make a lot of sense (although I worry about giving people the tools to use smoothing functions without at least linking to the underlying mathematics), and its clear that he at least understands what hes talking about. But I can’t quite figure out what you’re trying to get across here. Are you arguing for doing dataviz without understanding the basic statistical relationships behind what is been shown? Help me out.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-3" id="li-comment-41487">
+<div id="comment-41487" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41487">March 29, 2010 at 4:23 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>yeah, let’s try to keep it at a gentle smoke :). </p>
+<p>i do provide a brief background on loess and link to more information about it, if that counts for anything. i don’t think the general users need to know _exactly_ how it’s done for it to be useful though. As long as the curve is there as a supplement and not a replacement, i think it adds to the understanding. again, this dataset wasn’t the best example, but there are still plenty of decent applications.</p>
+<p>pollster’s use of it for obama’s approval ratings is another good example:</p>
+<p><a href="http://www.pollster.com/polls/us/jobapproval-presobama-health.php" rel="nofollow">http://www.pollster.com/polls/.....health.php</a></p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even depth-3" id="li-comment-41495">
+<div id="comment-41495" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/93bea07e713080ed0d5be6865d6e7cf4" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/93bea07e713080ed0d5be6865d6e7cf4?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://peltiertech.com/WordPress/" rel="external nofollow" class="url">Jon Peltier</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41495">March 29, 2010 at 7:34 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Nathan’s tutorial here is very good, hands on without too much detail. If people understand it’s a moving regression, that’s most of what they really need. That and don’t remove the original data, because that serves as a sanity check.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-41501">
+<div id="comment-41501" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/74508a45c6e81cf3394956dc45b39bab" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/74508a45c6e81cf3394956dc45b39bab?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">John Christie</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41501">March 29, 2010 at 9:13 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>If you wish to avoid Illustrator all together then you could do something like this after you get your data. It’s a few more lines of code but hopefully it illustrates the abilities of the built in plotting.</p>
+<p>x = 1:length(unemployment$Value)<br>
+y = unemployment$Value<br>
+plot(x, y, ylim=c(0,11), col=”gray”, axes = FALSE, xlab = ‘Year’, ylab = ”)<br>
+axis(1, c(1, (1:4)*15*12), labels = c(’1948′, ’1963′, ’1978′, ’1993′, ’2008′), cex.axis = 0.8, font = 3)<br>
+axis(2, seq(0,10,2), labels = FALSE)<br>
+labels = paste(seq(0,10,2), ‘%’, sep = ”)<br>
+text(-40, seq(0,10,2), labels = labels, cex =0.8, pos = 2, xpd = TRUE)<br>
+text(-130, 12, labels = ‘United States Unemployment Rate, 1948-2010′, xpd = TRUE, pos = 4)<br>
+abline(h=seq(0,10,2), col=”lightgray”, lty=”dotted”)<br>
+l &lt;- loess(y~x)<br>
+lines(x, predict(l), lwd = 3)</p>
+<p>#NOTE: to get the same line as the author change the loess parameters to the scatter.smooth default l &lt;- loess(y~x, span = 2/3, degree = 0)</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-41502">
+<div id="comment-41502" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/74508a45c6e81cf3394956dc45b39bab" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/74508a45c6e81cf3394956dc45b39bab?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">John Christie</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41502">March 29, 2010 at 9:18 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>rats… to get an output even closer to the authors use this…</p>
+<p>unemployment &lt;- read.csv("<a href="http://datasets.flowingdata.com/unemployment-rate-1948-2010.csv&quot" rel="nofollow">http://datasets.flowingdata.co.....&amp;quot</a>;, sep=",")<br>
+x = 1:length(unemployment$Value)<br>
+y = unemployment$Value<br>
+plot(x, y, ylim=c(0,11), col="gray", axes = FALSE, xlab = '', ylab = '')<br>
+axis(1, c(1, (1:4)*15*12), labels = c('1948', '1963', '1978', '1993', '2008'), cex.axis = 0.8, font = 3)<br>
+axis(2, seq(0,10,2), labels = FALSE)<br>
+labels = paste(seq(0,10,2), '%', sep = '')<br>
+text(-40, seq(0,10,2), labels = labels, cex =0.8, pos = 2, xpd = TRUE)<br>
+text(-130, 12, labels = 'United States Unemployment Rate, 1948-2010', xpd = TRUE, pos = 4)<br>
+abline(h=seq(0,10,2), col="lightgray", lty="dotted")<br>
+l &lt;- loess(y~x)<br>
+lines(x, predict(l), lwd = 3)<br>
+text(-130, -3, labels = 'Source:Bureau of Labor Statistics | FlowingData, <a href="http://flowingdata.com%26/#039" rel="nofollow">http://flowingdata.com&amp;#039</a>;, cex = 0.5, font = 3, pos = 4, xpd = TRUE)</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-3" id="li-comment-41503">
+<div id="comment-41503" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41503">March 29, 2010 at 9:44 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>@John – nice. getting there :)</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even depth-3" id="li-comment-41507">
+<div id="comment-41507" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/74508a45c6e81cf3394956dc45b39bab" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/74508a45c6e81cf3394956dc45b39bab?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">John Christie</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41507">March 29, 2010 at 11:27 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>thanks… that second one was what I had planned to paste but I picked up the wrong thing</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment odd alt depth-3" id="li-comment-41510">
+<div id="comment-41510" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/81d6475c57ba26baec332cf06e6eae0a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/81d6475c57ba26baec332cf06e6eae0a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://differ.raysend.com/" rel="external nofollow" class="url">Mark James Adams</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41510">March 30, 2010 at 4:40 am</a>
+</span>
+</div>
+<div class="comment-text"><p>A nice post would one that starts a discussion about when you need to break into Illustrator/Inkscape to make your point. I’m with John that you can get pretty far in R for making your graph publication ready, so when do you need that extra bit of polish that a drawing tools will provide? (didn’t Tufte say something about needing one tool that can count and one tools that can see).</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+</ul> 
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-41539">
+<div id="comment-41539" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/52ef40d3d35318670b86094e3963bcdf" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/52ef40d3d35318670b86094e3963bcdf?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://chartsgraphs.wordpress.com/" rel="external nofollow" class="url">Kelly O'Day</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41539">March 30, 2010 at 4:27 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>I have a problem with the trend line. Looking at the monthly values, I notice a substantial rise after 2008, consistent with news reports of our economy.</p>
+<p>Your trend line does not respond to the increase in unemployment starting around 2008, rather it continues a decline.</p>
+<p>I have reproduced your chart, however, my loess trend line shows the appropriate increase after 2008. </p>
+<p>Not sure why the discrepancy.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-41546">
+<div id="comment-41546" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/81d6475c57ba26baec332cf06e6eae0a" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/81d6475c57ba26baec332cf06e6eae0a?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://differ.raysend.com/" rel="external nofollow" class="url">Mark James Adams</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41546">March 30, 2010 at 5:59 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>The exact line you get will be sensitive to the parameters you feed into loess (the size of the local regression window). </p>
+<p>If nothing else, though, Nathan’s chart accentuates how out of wack the decrease in employment is since 2008—way more than structural.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="comment even depth-2" id="li-comment-41550">
+<div id="comment-41550" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/93bea07e713080ed0d5be6865d6e7cf4" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://1.gravatar.com/avatar/93bea07e713080ed0d5be6865d6e7cf4?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://peltiertech.com/WordPress/" rel="external nofollow" class="url">Jon Peltier</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41550">March 30, 2010 at 6:41 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Kelly -</p>
+<p>I agree. Using the algorithm based on the NIST documentation, I could not duplicate Nathan’s smoothing. With a large enough span (&gt;=66%) my fit doesn’t curve upwards and its general shape is similar, but it doesn’t sink as low as Nathan’s does at the end.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment odd alt thread-even depth-1" id="li-comment-41544">
+<div id="comment-41544" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/ae2fb5d0dbb77420205fc914420901f5" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/ae2fb5d0dbb77420205fc914420901f5?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://www.neuralmarkettrends.com/" rel="external nofollow" class="url">Tom</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-41544">March 30, 2010 at 5:52 pm</a>
+</span>
+</div>
+<div class="comment-text"><p>Or you could use Rapidminer 5.0 and their time series operators. You could build a nonlinear trend line using Support Vector Machines or a standard Neural Net for this time series data.</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+</li> 
+<li class="pingback even thread-odd thread-alt depth-1" id="li-comment-41555">
+<div id="comment-41555">
+<p>Pingback:
+<cite class="fn"><a href="http://datavisualization.org/data-visualization/combining-and-filtering-time-series-and-static-data-sets-in-ex-dashboards" rel="external nofollow" class="url">Data Visualization Resources - Combining and Filtering Time Series and Static Data Sets in EX Dashboards</a></cite> </p>
+</div>
+</li> 
+<li class="pingback odd alt thread-even depth-1" id="li-comment-41563">
+<div id="comment-41563">
+<p>Pingback:
+<cite class="fn"><a href="http://williamtozier.com/slurry/2010/03/31/links-for-2010-03-30" rel="external nofollow" class="url">Notional Slurry » links for 2010-03-30</a></cite> </p>
+</div>
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-43556">
+<div id="comment-43556" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/c4409a49ded2e7952458f168e5eeb292" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/c4409a49ded2e7952458f168e5eeb292?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn">Andrea</cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-43556">May 7, 2010 at 10:06 am</a>
+</span>
+</div>
+<div class="comment-text"><p>This is probably the wrong place to post this question but how do I write the values of the fitted curve into a text file?<br>
+Thanks,</p>
+</div>
+<div class="reply">
+</div>
+</div> 
+<div class="clear-line"></div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-43558">
+<div id="comment-43558" class="">
+<div class="avatar">
+<img alt="" src="./How to  make a scatterplot with a smooth fitted line_files/a61decc5c78c05770cb107e4c5cbbb33" class="avatar avatar-50 photo" height="50" width="50" originals="50" src-orig="http://0.gravatar.com/avatar/a61decc5c78c05770cb107e4c5cbbb33?s=50&amp;d=http%3A%2F%2Fflowingdata.com%2Fwp-content%2Fthemes%2Fflowingdata-4-8%2Fimages%2Fblank-square.png%3Fs%3D50&amp;r=PG" scale="2"> </div> 
+<div class="comment-content">
+<div class="comment-author vcard">
+<cite class="fn"><a href="http://flowingdata.com/about-nathan" rel="external nofollow" class="url">Nathan Yau</a></cite> <span class="comment-meta">— <a href="http://flowingdata.com/2010/03/29/how-to-make-a-scatterplot-with-a-smooth-fitted-line/#comment-43558">May 7, 2010 at 10:17 am</a>
+</span>
+</div>
+<div class="comment-text"><p>instead of scatter.smooth, use loess.smooth (with the same variables). that’ll show you the x and y values of the curve. Like this:</p>
+<p>p &lt; - loess.smooth(x=1:length(unemployment$Value), y=unemployment$Value)</p>
+<p>So if you type 'p$x' that'll give you the x-values.</p>
+<p>After that, read up on write.table() to write to a text file:</p>
+<p><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">http://pbil.univ-lyon1.fr/libr.....table.html</a></p><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+</a></div><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+
+      		<div class="reply">
+         		      		</div>
+     	</a></div><!-- @end comment-content --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+		<div class="clear-line"></div>
+		</a></div><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+
+</a></li><!-- #comment-## --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+</a></ul><!-- .children --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+</a></li><!-- #comment-## --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+		</a></ul><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+		
+	</a></div><!-- @end comments-block --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+	
+
+</a></div><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">				
+	
+				
+	
+	</a></div><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+</a></div><!-- end content --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+		
+
+</a></div><!-- end content-wrapper --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+
+</a></div><!-- end main-wrapper --><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+
+
+</a><div id="footer"><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+    </a><div id="footer-container" class="content"><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+        
+        </a><div class="float-left" style="width:32%;margin-right:5%;"><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+            </a><div id="about" class="sec"><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow">
+                <h3>About</h3>
+    	        <p>FlowingData explores how designers, statisticians, and computer scientists are using data to understand ourselves better — mainly through data visualization.</p> 
+    	        <p>As for me, I'm Nathan Yau, and I have a PhD in statistics, with a background in eating.</p>
+    	        </a><p><a href="http://pbil.univ-lyon1.fr/library/base/html/write.table.html" rel="nofollow"></a><a href="http://flowingdata.com/about/">More...</a></p>
+    	    </div>
+    	</div>
+    	
+    	<div class="float-left" style="width:36%;margin-right:5%;">
+            <div id="book-single" class="sec">
+                <h3>Books</h3>
+    			<ul id="books" style="margin-bottom:0">
+    			    <li>
+    			        <a href="http://flowingdata.com/data-points/"><img src="./How to  make a scatterplot with a smooth fitted line_files/DataPoints60x75.png" title="Data Points" class="img-left" style="margin-bottom:0" scale="0"><strong>Data Points</strong><br>Visualization that Means Something</a><br>
+    					    <div class="clear-line"></div>
+    			    </li>
+    				<li><a href="http://flowingdata.com/visualize-this/"><img src="./How to  make a scatterplot with a smooth fitted line_files/flowingdata60x79.jpg" title="Visualize This" class="img-left" style="margin-bottom:0" scale="0"><strong>Visualize This</strong><br>The FlowingData Guide to Design, Visualization, and Statistics</a><br>
+    					<div class="clear-line"></div>
+    				</li>
+    			</ul>
+    		</div><!-- @end books -->
+    		
+        </div>
+        
+        <div class="float-left" style="width:22%">
+            <div id="follow" class="sec">
+                <h3>Follow</h3>
+                <p>
+                    <a href="http://twitter.com/flowingdata">Twitter</a> &nbsp;•&nbsp; 
+                    <a href="http://facebook.com/flowingdata">Facebook</a> &nbsp;•&nbsp;
+                    <a href="http://eepurl.com/icL0o">Email</a> &nbsp;•&nbsp;
+                    <a href="http://flowingdata.com/feed">RSS</a>
+                </p>
+            </div>
+            <div id="misc" class="sec">
+                <h3>Miscellaneous</h3>
+                <a href="http://flowingdata.com/contact">Contact</a> &nbsp;•&nbsp; 
+    			<a href="http://flowingdata.com/advertise">Sponsorship</a>  &nbsp;•&nbsp; 
+    			<a href="http://flowingdata.bigcartel.com/">Shop</a><a>
+            </a></div><a>
+            
+        </a></div><a>
+        <div class="clear-line"></div>
+		
+    </a></div><!-- @end #footer-container --><a>
+</a></div><!-- @end #footer --><a>
+</a><div id="bottom"><a>
+    Unless otherwise noted, graphics and words by me are licensed under </a><a href="http://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons BY-NC</a>. Contact original authors for everything else.
+</div>
+
+
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./How to  make a scatterplot with a smooth fitted line_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-865100-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script type="text/javascript" src="./How to  make a scatterplot with a smooth fitted line_files/photon.js"></script>
+<script type="text/javascript" src="./How to  make a scatterplot with a smooth fitted line_files/devicepx-jetpack.js"></script>
+
+	<script src="./How to  make a scatterplot with a smooth fitted line_files/e-201350.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'1938889',post:'6479',tz:'-8'});
+	var load_cmc = function(){linktracker_init(1938889,6479,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./How to  make a scatterplot with a smooth fitted line_files/g.gif" alt="" scale="0">
+</body></html>
